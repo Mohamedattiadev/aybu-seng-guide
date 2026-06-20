@@ -408,8 +408,9 @@ tr.cat-row:hover td { background: var(--accent-soft); }
 .note strong { display: block; margin-bottom: 4px; }
 
 /* Lists */
-ul.clean { padding-inline-start: 20px; margin: 8px 0; }
-ul.clean li { margin: 4px 0; }
+ul.clean { padding-inline-start: 24px; margin: 10px 0; list-style: disc; }
+ul.clean li { margin: 6px 0; }
+ul.clean li::marker { color: var(--accent); font-size: 1.1em; }
 ol.steps { padding-inline-start: 20px; margin: 8px 0; }
 ol.steps li { margin: 6px 0; }
 a { color: var(--accent); }
