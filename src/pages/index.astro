@@ -1,0 +1,9 @@
+---
+import Base from '../layouts/Base.astro';
+import bodyHtml from '../_body.html?raw';
+import mainScript from '../scripts/main.js?raw';
+---
+<Base>
+  <Fragment set:html={bodyHtml} />
+  <script is:inline set:html={mainScript}></script>
+</Base>

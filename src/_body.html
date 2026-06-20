@@ -1,0 +1,661 @@
+<svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol>
+    <symbol id="i-extlink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></symbol>
+    <symbol id="i-mega" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></symbol>
+  </defs>
+</svg>
+
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a href="#home" class="logo">AYBU SENG <span>· <span data-i18n="brand">Student Guide</span></span></a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="nav-tabs" id="navTabs">
+      <button class="nav-tab" data-page="home" data-i18n="nav.home">Home</button>
+      <button class="nav-tab" data-page="curriculum" data-i18n="nav.curriculum">Curriculum</button>
+      <button class="nav-tab" data-page="internship" data-i18n="nav.internship">Internship &amp; Project</button>
+      <button class="nav-tab" data-page="graduation" data-i18n="nav.graduation">Graduation</button>
+      <button class="nav-tab" data-page="pathways" data-i18n="nav.pathways">Pathways</button>
+      <button class="nav-tab" data-page="people" data-i18n="nav.people">People</button>
+      <button class="nav-tab" data-page="club" data-i18n="nav.club">Club</button>
+    </div>
+    <button class="icon-btn" id="searchOpen" title="Search" aria-label="Search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </button>
+    <button class="theme-toggle" id="themeToggle" title="Theme" aria-label="Toggle theme">☾</button>
+    <div class="lang-switch">
+      <button class="lang-current" id="langCurrent" type="button" aria-haspopup="listbox">EN <span class="caret">▾</span></button>
+      <div class="lang-menu" id="langMenu" role="listbox">
+        <button class="lang-btn" data-lang="en"><span class="lang-code">EN</span> English</button>
+        <button class="lang-btn" data-lang="tr"><span class="lang-code">TR</span> Türkçe</button>
+        <button class="lang-btn" data-lang="ar"><span class="lang-code">AR</span> العربية</button>
+        <button class="lang-btn" data-lang="fr"><span class="lang-code">FR</span> Français</button>
+        <button class="lang-btn" data-lang="de"><span class="lang-code">DE</span> Deutsch</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HOME -->
+<section class="page" id="home">
+  <div class="hero">
+    <h1 data-i18n="home.title">AYBU Software Engineering</h1>
+    <p data-i18n="home.subtitle">Everything you need as a student — one place.</p>
+    <div class="badges">
+      <span class="badge" data-i18n="home.badge1">100% English</span>
+      <span class="badge" data-i18n="home.badge2">1+4 Years</span>
+      <span class="badge" data-i18n="home.badge3">240+ ECTS</span>
+      <span class="badge" data-i18n="home.badge4">Etlik Campus</span>
+    </div>
+  </div>
+
+  <div class="card intro-card">
+    <h2 data-i18n="home.aboutTitle">About this guide</h2>
+    <p data-i18n="home.aboutDesc">Single-page, unofficial student companion for AYBU Software Engineering — full curriculum, internship process, graduation requirements, faculty contacts, ASEC club. Track your progress, grades, and GNO right inside the page.</p>
+    <h3 data-i18n="home.gradTitle">What you need to graduate</h3>
+    <ul class="grad-checklist">
+      <li><span class="num">240</span><span data-i18n="home.g1">total ECTS over 8 semesters</span></li>
+      <li><span class="num">2.00</span><span data-i18n="home.g2">minimum GPA (out of 4.00)</span></li>
+      <li><span class="num">50</span><span data-i18n="home.g3">ECTS from SENG department electives</span></li>
+      <li><span class="num">6</span><span data-i18n="home.g4">ECTS from Faculty / University electives</span></li>
+      <li><span class="num">2</span><span data-i18n="home.g5">mandatory internships — SENG300 (after sem 4) + SENG400 (after sem 6)</span></li>
+      <li><span class="num">1</span><span data-i18n="home.g6">graduation project — SENG401 + SENG402 (sem 7 & 8)</span></li>
+      <li><span class="num">DD</span><span data-i18n="home.g7">minimum grade in any prereq marked with *</span></li>
+    </ul>
+    <p class="intro-foot" data-i18n="home.programLine">Program: 100% English · 1 prep year + 4-year bachelor · Etlik campus.</p>
+  </div>
+
+  <h3 data-i18n="home.quickAccess">Quick access</h3>
+  <div class="quick-grid">
+    <div class="quick-card" onclick="go('curriculum')">
+      <span class="icon"><svg><use href="#i-book"/></svg></span>
+      <h3 data-i18n="nav.curriculum">Curriculum</h3>
+      <p data-i18n="home.q1">All 8 semesters, course codes, ECTS.</p>
+    </div>
+    <div class="quick-card" onclick="go('internship')">
+      <span class="icon"><svg><use href="#i-briefcase"/></svg></span>
+      <h3 data-i18n="nav.internship">Internship</h3>
+      <p data-i18n="home.q2">Documents, process, commission.</p>
+    </div>
+    <div class="quick-card" onclick="go('graduation')">
+      <span class="icon"><svg><use href="#i-cap"/></svg></span>
+      <h3 data-i18n="nav.graduation">Graduation</h3>
+      <p data-i18n="home.q3">Requirements and graduation project.</p>
+    </div>
+    <div class="quick-card" onclick="go('pathways')">
+      <span class="icon"><svg><use href="#i-compass"/></svg></span>
+      <h3 data-i18n="nav.pathways">Pathways</h3>
+      <p data-i18n="home.qPath">Double major, Erasmus, MSc.</p>
+    </div>
+    <div class="quick-card" onclick="go('people')">
+      <span class="icon"><svg><use href="#i-users"/></svg></span>
+      <h3 data-i18n="nav.people">People</h3>
+      <p data-i18n="home.q4">Faculty staff and commissions.</p>
+    </div>
+    <div class="quick-card" onclick="go('club')">
+      <span class="icon"><svg><use href="#i-rocket"/></svg></span>
+      <h3 data-i18n="nav.club">ASEC Club</h3>
+      <p data-i18n="home.q5">Student software community.</p>
+    </div>
+    <a class="quick-card" href="https://obs.aybu.edu.tr/" target="_blank">
+      <span class="icon"><svg><use href="#i-extlink"/></svg></span>
+      <h3>OBS</h3>
+      <p data-i18n="home.q6">Student information system.</p>
+    </a>
+    <a class="quick-card" href="https://aybuzem.aybu.edu.tr/" target="_blank">
+      <span class="icon"><svg><use href="#i-monitor"/></svg></span>
+      <h3>AYBUZEM</h3>
+      <p data-i18n="home.q7">Distance learning platform.</p>
+    </a>
+    <a class="quick-card" href="https://aybu.edu.tr/yazilimmuh/tr/duyurular" target="_blank">
+      <span class="icon"><svg><use href="#i-mega"/></svg></span>
+      <h3 data-i18n="home.q8">Announcements</h3>
+      <p data-i18n="home.q9">Department news feed.</p>
+    </a>
+  </div>
+
+  <div class="card">
+    <h2 data-i18n="home.contactTitle">Department contact</h2>
+    <div class="info-grid">
+      <div class="info-card"><div class="label" data-i18n="lbl.address">Address</div><div class="val">Ayvalı Mh. Takdir Cad. 150 Sk. No:5 Etlik-Keçiören / Ankara</div></div>
+      <div class="info-card"><div class="label" data-i18n="lbl.phone">Phone</div><div class="val">(0312) 906 2202 / 2330</div></div>
+      <div class="info-card"><div class="label" data-i18n="lbl.email">Email</div><div class="val"><a href="mailto:seng@aybu.edu.tr">seng@aybu.edu.tr</a></div></div>
+      <div class="info-card"><div class="label" data-i18n="lbl.office">Office</div><div class="val">B421</div></div>
+      <div class="info-card"><div class="label" data-i18n="lbl.head">Head</div><div class="val">Doç. Dr. Hilal Arslan<br><a href="mailto:hilalarslan@aybu.edu.tr">hilalarslan@aybu.edu.tr</a></div></div>
+      <div class="info-card"><div class="label" data-i18n="lbl.secretary">Secretary</div><div class="val">Hasancan Suer<br>+90 312 906 2828</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section class="page" id="curriculum">
+<div class="curriculum-layout">
+<div class="curriculum-main">
+  <div class="card">
+    <h2 data-i18n="cur.title">Undergraduate Curriculum</h2>
+    <p data-i18n="cur.intro">Bachelor program, 100% English, 1-year prep + 4-year degree. Total 244 ECTS (min 240).</p>
+    <div class="note"><strong data-i18n="cur.formatTitle">Format</strong><span data-i18n="cur.formatDesc">T (Theory) · U (Practice) · L (Local Credit) · ECTS. Prerequisite * = minimum grade DD required.</span></div>
+    <p><a href="https://aybu.edu.tr/GetFile?id=Upload/b178548a-063c-4f2c-8dbd-1df82304a97c.pdf" target="_blank" data-i18n="cur.pdfLink">Download 2025-26 curriculum PDF</a></p>
+    <div class="ppl-filter-wrap"><input class="ppl-filter" id="curFilter" type="search" placeholder="Filter courses by code or name…" data-i18n-attr="placeholder" data-i18n="cur.filterPh"></div>
+    <div class="cur-filter-info" id="curFilterInfo"></div>
+  </div>
+
+  <div class="card">
+    <h3><span data-i18n="cur.sem">Semester</span> 1 — 30 <span data-i18n="lbl.ects">ECTS</span></h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th class="chk">✓</th><th data-i18n="th.code">Code</th><th data-i18n="th.name">Course</th><th>T</th><th>U</th><th>L</th><th><span data-i18n="lbl.ects">ECTS</span></th><th data-i18n="th.prereq">Prereq</th><th class="grade" data-i18n="th.grade">Grade</th></tr></thead>
+      <tbody>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="PHYS101" data-ects="4" data-cat="mandatory"></td><td class="code">PHYS101</td><td>Physics I</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">4</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="PHYS101"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="PHYS103" data-ects="2" data-cat="mandatory"></td><td class="code">PHYS103</td><td>Physics Laboratory I</td><td class="num">0</td><td class="num">2</td><td class="num">0</td><td class="num">2</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="PHYS103"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="TDL101" data-ects="2" data-cat="mandatory"></td><td class="code">TDL101</td><td>Türk Dili I</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="TDL101"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="TİT101" data-ects="2" data-cat="mandatory"></td><td class="code">TİT101</td><td>Türk İnkılap Tarihi I</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="TİT101"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="MATH101" data-ects="6" data-cat="mandatory"></td><td class="code">MATH101</td><td>Calculus I</td><td class="num">4</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="MATH101"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="CHEM101" data-ects="5" data-cat="mandatory"></td><td class="code">CHEM101</td><td>General Chemistry</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="CHEM101"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="ENG101" data-ects="2" data-cat="mandatory"></td><td class="code">ENG101</td><td>Academic English I</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="ENG101"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG113" data-ects="5" data-cat="mandatory"></td><td class="code">SENG113</td><td>Computer Programming I</td><td class="num">3</td><td class="num">2</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG113"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG101" data-ects="2" data-cat="mandatory"></td><td class="code">SENG101</td><td>Introduction to Software Engineering</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG101"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3><span data-i18n="cur.sem">Semester</span> 2 — 30 <span data-i18n="lbl.ects">ECTS</span></h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th class="chk">✓</th><th data-i18n="th.code">Code</th><th data-i18n="th.name">Course</th><th>T</th><th>U</th><th>L</th><th><span data-i18n="lbl.ects">ECTS</span></th><th data-i18n="th.prereq">Prereq</th><th class="grade" data-i18n="th.grade">Grade</th></tr></thead>
+      <tbody>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="ENG102" data-ects="2" data-cat="mandatory"></td><td class="code">ENG102</td><td>Academic English II</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="ENG102"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="PHYS102" data-ects="4" data-cat="mandatory"></td><td class="code">PHYS102</td><td>Physics II</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">4</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="PHYS102"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="PHYS104" data-ects="2" data-cat="mandatory"></td><td class="code">PHYS104</td><td>Physics Laboratory II</td><td class="num">0</td><td class="num">2</td><td class="num">0</td><td class="num">2</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="PHYS104"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="MATH104" data-ects="6" data-cat="mandatory"></td><td class="code">MATH104</td><td>Applied Linear Algebra</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="MATH104"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="MATH102" data-ects="6" data-cat="mandatory" data-prereq="MATH101"></td><td class="code">MATH102</td><td>Calculus II</td><td class="num">4</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td>MATH101*</td><td class="grade"><select class="grade-sel" data-grade-code="MATH102"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="TİT102" data-ects="2" data-cat="mandatory"></td><td class="code">TİT102</td><td>Türk İnkılap Tarihi II</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="TİT102"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="TDL102" data-ects="2" data-cat="mandatory"></td><td class="code">TDL102</td><td>Türk Dili II</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="TDL102"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG114" data-ects="6" data-cat="mandatory" data-prereq="SENG113"></td><td class="code">SENG114</td><td>Computer Programming II</td><td class="num">3</td><td class="num">2</td><td class="num">0</td><td class="num">6</td><td>SENG113*</td><td class="grade"><select class="grade-sel" data-grade-code="SENG114"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3><span data-i18n="cur.sem">Semester</span> 3 — 33 <span data-i18n="lbl.ects">ECTS</span></h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th class="chk">✓</th><th data-i18n="th.code">Code</th><th data-i18n="th.name">Course</th><th>T</th><th>U</th><th>L</th><th><span data-i18n="lbl.ects">ECTS</span></th><th data-i18n="th.prereq">Prereq</th><th class="grade" data-i18n="th.grade">Grade</th></tr></thead>
+      <tbody>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG207" data-ects="6" data-cat="mandatory"></td><td class="code">SENG207</td><td>Probability and Statistics</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG207"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG201" data-ects="6" data-cat="mandatory" data-prereq="SENG114"></td><td class="code">SENG201</td><td>Object Oriented Programming</td><td class="num">3</td><td class="num">2</td><td class="num">0</td><td class="num">6</td><td>SENG114*</td><td class="grade"><select class="grade-sel" data-grade-code="SENG201"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="ENGR201" data-ects="6" data-cat="mandatory"></td><td class="code">ENGR201</td><td>Differential Equations</td><td class="num">4</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="ENGR201"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG209" data-ects="6" data-cat="mandatory"></td><td class="code">SENG209</td><td>Software Requirements Engineering</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG209"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="ENGR265" data-ects="3" data-cat="mandatory"></td><td class="code">ENGR265</td><td>Occupational Health and Safety I</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">3</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="ENGR265"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG211" data-ects="6" data-cat="mandatory"></td><td class="code">SENG211</td><td>Software Project Management</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG211"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3><span data-i18n="cur.sem">Semester</span> 4 — 30 <span data-i18n="lbl.ects">ECTS</span></h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th class="chk">✓</th><th data-i18n="th.code">Code</th><th data-i18n="th.name">Course</th><th>T</th><th>U</th><th>L</th><th><span data-i18n="lbl.ects">ECTS</span></th><th data-i18n="th.prereq">Prereq</th><th class="grade" data-i18n="th.grade">Grade</th></tr></thead>
+      <tbody>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="ENGR202" data-ects="6" data-cat="mandatory"></td><td class="code">ENGR202</td><td>Discrete Mathematics</td><td class="num">4</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="ENGR202"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG206" data-ects="6" data-cat="mandatory" data-prereq="SENG114"></td><td class="code">SENG206</td><td>Concepts of Programming Languages</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td>SENG114*</td><td class="grade"><select class="grade-sel" data-grade-code="SENG206"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="ENGR266" data-ects="3" data-cat="mandatory"></td><td class="code">ENGR266</td><td>Occupational Health and Safety II</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">3</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="ENGR266"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG214" data-ects="6" data-cat="mandatory"></td><td class="code">SENG214</td><td>Software Testing & QA</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG214"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="FACUE1" data-ects="3" data-cat="fac-elective"></td><td class="code">ENGR/UE</td><td data-i18n="cur.elFacUni">Faculty / University Elective</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">3</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="FACUE1"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG204" data-ects="6" data-cat="mandatory" data-prereq="SENG201"></td><td class="code">SENG204</td><td>Data Structures</td><td class="num">3</td><td class="num">2</td><td class="num">0</td><td class="num">6</td><td>SENG201*</td><td class="grade"><select class="grade-sel" data-grade-code="SENG204"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3><span data-i18n="cur.sem">Semester</span> 5 — 31 <span data-i18n="lbl.ects">ECTS</span></h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th class="chk">✓</th><th data-i18n="th.code">Code</th><th data-i18n="th.name">Course</th><th>T</th><th>U</th><th>L</th><th><span data-i18n="lbl.ects">ECTS</span></th><th data-i18n="th.prereq">Prereq</th><th class="grade" data-i18n="th.grade">Grade</th></tr></thead>
+      <tbody>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG303" data-ects="5" data-cat="mandatory" data-prereq="SENG204"></td><td class="code">SENG303</td><td>Design & Analysis of Algorithms</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>SENG204*</td><td class="grade"><select class="grade-sel" data-grade-code="SENG303"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG301" data-ects="5" data-cat="mandatory" data-prereq="SENG201"></td><td class="code">SENG301</td><td>Database Management Systems</td><td class="num">3</td><td class="num">2</td><td class="num">0</td><td class="num">5</td><td>SENG201*</td><td class="grade"><select class="grade-sel" data-grade-code="SENG301"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG319" data-ects="6" data-cat="mandatory" data-prereq="SENG201"></td><td class="code">SENG319</td><td>Software Design Patterns</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td>SENG201*</td><td class="grade"><select class="grade-sel" data-grade-code="SENG319"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG305" data-ects="6" data-cat="mandatory" data-prereq="SENG204"></td><td class="code">SENG305</td><td>Operating Systems</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td>SENG204*</td><td class="grade"><select class="grade-sel" data-grade-code="SENG305"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"></td><td class="code">SENG-X</td><td data-i18n="cur.elDept">Department Elective</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG300" data-ects="4" data-cat="internship"></td><td class="code">SENG300</td><td>Industrial Practice I (<span data-i18n="cur.internship1">Internship 1</span>)</td><td class="num">0</td><td class="num">2</td><td class="num">0</td><td class="num">4</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG300"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3><span data-i18n="cur.sem">Semester</span> 6 — 30 <span data-i18n="lbl.ects">ECTS</span></h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th class="chk">✓</th><th data-i18n="th.code">Code</th><th data-i18n="th.name">Course</th><th>T</th><th>U</th><th>L</th><th><span data-i18n="lbl.ects">ECTS</span></th><th data-i18n="th.prereq">Prereq</th><th class="grade" data-i18n="th.grade">Grade</th></tr></thead>
+      <tbody>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG304" data-ects="6" data-cat="mandatory"></td><td class="code">SENG304</td><td>Computer Networks</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG304"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG326" data-ects="6" data-cat="mandatory"></td><td class="code">SENG326</td><td>Software Architecture</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG326"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG302" data-ects="6" data-cat="mandatory"></td><td class="code">SENG302</td><td>Secure Software Development</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG302"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"></td><td class="code">SENG-X</td><td data-i18n="cur.elDept">Department Elective</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG306" data-ects="7" data-cat="mandatory" data-prereq="SENG113"></td><td class="code">SENG306</td><td>Scientific Computing</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">7</td><td>SENG113*</td><td class="grade"><select class="grade-sel" data-grade-code="SENG306"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3><span data-i18n="cur.sem">Semester</span> 7 — 30 <span data-i18n="lbl.ects">ECTS</span></h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th class="chk">✓</th><th data-i18n="th.code">Code</th><th data-i18n="th.name">Course</th><th>T</th><th>U</th><th>L</th><th><span data-i18n="lbl.ects">ECTS</span></th><th data-i18n="th.prereq">Prereq</th><th class="grade" data-i18n="th.grade">Grade</th></tr></thead>
+      <tbody>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG401" data-ects="6" data-cat="project" data-prereq="SENG204"></td><td class="code">SENG401</td><td>Graduation Project I</td><td class="num">3</td><td class="num">3</td><td class="num">0</td><td class="num">6</td><td>SENG204*</td><td class="grade"><select class="grade-sel" data-grade-code="SENG401"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG400" data-ects="4" data-cat="internship"></td><td class="code">SENG400</td><td>Industrial Practice II (<span data-i18n="cur.internship2">Internship 2</span>)</td><td class="num">0</td><td class="num">2</td><td class="num">0</td><td class="num">4</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG400"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"></td><td class="code">SENG-X ×4</td><td data-i18n="cur.elDept4">Department Elective × 4</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5×4</td><td>—</td><td class="grade"></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3><span data-i18n="cur.sem">Semester</span> 8 — 30 <span data-i18n="lbl.ects">ECTS</span></h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th class="chk">✓</th><th data-i18n="th.code">Code</th><th data-i18n="th.name">Course</th><th>T</th><th>U</th><th>L</th><th><span data-i18n="lbl.ects">ECTS</span></th><th data-i18n="th.prereq">Prereq</th><th class="grade" data-i18n="th.grade">Grade</th></tr></thead>
+      <tbody>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG402" data-ects="7" data-cat="project" data-prereq="SENG204"></td><td class="code">SENG402</td><td>Graduation Project II</td><td class="num">3</td><td class="num">3</td><td class="num">0</td><td class="num">7</td><td>SENG204*</td><td class="grade"><select class="grade-sel" data-grade-code="SENG402"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="FACUE2" data-ects="3" data-cat="fac-elective"></td><td class="code">ENGR/UE</td><td data-i18n="cur.elFacUni">Faculty / University Elective</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">3</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="FACUE2"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"></td><td class="code">SENG-X ×4</td><td data-i18n="cur.elDept4">Department Elective × 4</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5×4</td><td>—</td><td class="grade"></td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <h2 data-i18n="cur.electivesTitle">Electives</h2>
+    <p data-i18n="cur.electivesDesc">All SENG electives are 3-0-0-5 ECTS (unless noted).</p>
+
+    <h3 data-i18n="cur.deptElectives">Department electives (SENG)</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th class="chk">✓</th><th data-i18n="th.code">Code</th><th data-i18n="th.name">Course</th><th>T</th><th>U</th><th>L</th><th><span data-i18n="lbl.ects">ECTS</span></th><th data-i18n="th.prereq">Prereq</th><th class="grade" data-i18n="th.grade">Grade</th></tr></thead>
+      <tbody>
+        <tr class="cat-row"><td colspan="9" data-i18n="cur.gOnSite">Long-term On-site Training</td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="ENGR450" data-ects="15" data-cat="dept-elective"></td><td class="code">ENGR450</td><td data-i18n="cur.engr450Name">Engineering Application on Site</td><td class="num">5</td><td class="num">0</td><td class="num">0</td><td class="num">15</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="ENGR450"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr class="cat-row"><td colspan="9" data-i18n="cur.gAI">Yapay Zeka & Veri</td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG317" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG317</td><td>Artificial Intelligence</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG317"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG410" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG410</td><td>Data Mining</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG410"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG420" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG420</td><td>Natural Language Processing</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG420"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG425" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG425</td><td>Data Science</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG425"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG427" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG427</td><td>Bioinformatics</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG427"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG428" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG428</td><td>Neural Networks</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG428"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG445" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG445</td><td>Introduction to Machine Learning</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG445"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr class="cat-row"><td colspan="9" data-i18n="cur.gWeb">Web & Uygulamalar</td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG311" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG311</td><td>Web Technologies</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG311"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG318" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG318</td><td>Rapid Application Development</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG318"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG411" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG411</td><td>Web Programming</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG411"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG415" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG415</td><td>Internet Engineering</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG415"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr class="cat-row"><td colspan="9" data-i18n="cur.gSec">Güvenlik</td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG429" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG429</td><td>Cyber Security</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG429"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG430" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG430</td><td>Information Security</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG430"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr class="cat-row"><td colspan="9" data-i18n="cur.gSys">Sistemler & Altyapı</td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG316" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG316</td><td>Computer Architecture</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG316"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG418" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG418</td><td>Parallel Computing</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG418"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG419" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG419</td><td>System Administration</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG419"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG422" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG422</td><td>Cloud Computing</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG422"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG423" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG423</td><td>Internet of Things</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG423"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG424" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG424</td><td>Embedded Systems</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG424"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr class="cat-row"><td colspan="9" data-i18n="cur.gGfx">Grafik & Görü</td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG315" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG315</td><td>Computer Graphics</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG315"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG414" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG414</td><td>3D Modeling & Game Programming</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG414"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG416" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG416</td><td>Digital Image Processing</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG416"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr class="cat-row"><td colspan="9" data-i18n="cur.gTheory">Teori & Diller</td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG313" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG313</td><td>Compiler Design</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG313"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG314" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG314</td><td>Formal Languages & Automata</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG314"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr class="cat-row"><td colspan="9" data-i18n="cur.gMath">Matematik & Optimizasyon</td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG320" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG320</td><td>Numerical Analysis</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG320"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG426" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG426</td><td>Optimization</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG426"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG431" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG431</td><td>Simulation</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG431"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr class="cat-row"><td colspan="9" data-i18n="cur.gSE">Yazılım Müh. & Diğer</td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG310" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG310</td><td>Human-Computer Interaction</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG310"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG312" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG312</td><td>Robotics</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG312"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG324" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG324</td><td>Advanced Databases</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG324"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG413" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG413</td><td>Open Source Software</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG413"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG417" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG417</td><td>ERP Systems</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG417"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG432" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG432</td><td>Software Metrics</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG432"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG433" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG433</td><td>Blockchain</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG433"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+        <tr><td class="chk"><input type="checkbox" data-track data-code="SENG434" data-ects="5" data-cat="dept-elective"></td><td class="code">SENG434</td><td>Green Software Engineering</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td><td class="grade"><select class="grade-sel" data-grade-code="SENG434"><option value="">—</option><option>AA</option><option>BA</option><option>BB</option><option>CB</option><option>CC</option><option>DC</option><option>DD</option><option>FD</option><option>FF</option></select></td></tr>
+      </tbody>
+    </table></div>
+
+    <p><a href="https://aybu.edu.tr/GetFile?id=Upload/1592fb84-b8c3-44e0-99bd-5860311a685e.pdf" target="_blank" data-i18n="cur.otherDeptElectives">Electives from other departments (CENG/MATH/MCE) — full list PDF</a></p>
+  </div>
+
+  <div class="note good"><strong data-i18n="gpa.hintTitle">GPA tip</strong><span data-i18n="gpa.hint">Pick a grade in any table — your GNO updates live in the sidebar.</span></div>
+</div><!-- /.curriculum-main -->
+
+<aside class="progress-tracker" id="progressTracker">
+  <div class="pt-head">
+    <h3 data-i18n="pt.title">My Progress</h3>
+    <button class="pt-toggle" id="ptToggle" title="Toggle">▾</button>
+  </div>
+  <div class="pt-body">
+    <div class="pt-ring" id="ptRing">
+      <div class="pt-ring-text">
+        <div class="big" id="ptPercent">0%</div>
+        <span class="small" id="ptEcts">0 / 240 <span data-i18n="lbl.ects">ECTS</span></span>
+      </div>
+    </div>
+    <div class="pt-counters">
+      <div class="pt-counter gno"><span class="lbl" data-i18n="pt.gno">GNO</span><span class="val" id="ptGno">— / 4.00</span></div>
+      <div class="pt-counter"><span class="lbl" data-i18n="pt.dept">Dept. Electives</span><span class="val" id="ptDept">0 / 50</span></div>
+      <div class="pt-counter"><span class="lbl" data-i18n="pt.facuni">Fac/Uni Electives</span><span class="val" id="ptFacuni">0 / 6</span></div>
+      <div class="pt-counter"><span class="lbl" data-i18n="pt.intern">Internships</span><span class="val" id="ptIntern">0 / 2</span></div>
+      <div class="pt-counter"><span class="lbl" data-i18n="pt.project">Grad. Project</span><span class="val" id="ptProject">0 / 2</span></div>
+    </div>
+    <div class="pt-actions">
+      <button class="pt-btn danger" id="ptReset" data-i18n="pt.reset">Reset</button>
+    </div>
+  </div>
+</aside>
+</div><!-- /.curriculum-layout -->
+</section>
+
+<!-- INTERNSHIP -->
+<section class="page" id="internship">
+  <div class="card">
+    <h2 data-i18n="int.title">Internship (Mandatory)</h2>
+    <div class="note warn"><strong data-i18n="int.requiredTitle">2 Mandatory Internships</strong><span data-i18n="int.requiredDesc">SENG300 Industrial Practice I (Semester 5) + SENG400 Industrial Practice II (Semester 7). Both required for graduation.</span></div>
+    <p><a href="https://aybu.edu.tr/yazilimmuh/tr/sayfa/4927" target="_blank" data-i18n="int.officialLink">Official internship page</a></p>
+
+    <h3 data-i18n="int.docs">Required documents</h3>
+    <ul class="clean">
+      <li data-i18n="int.doc1">Mandatory Internship Letter (e-signed)</li>
+      <li data-i18n="int.doc2">Internship Acceptance Form (company signed)</li>
+      <li data-i18n="int.doc3">Pre-Internship Control Form</li>
+      <li data-i18n="int.doc4">GSS Declaration and Commitment Form</li>
+      <li data-i18n="int.doc5">Internship Report (with daily summary)</li>
+      <li data-i18n="int.doc6">Internship Result Document (signed by company engineer)</li>
+      <li data-i18n="int.doc7">Post-Internship Control Form</li>
+    </ul>
+
+  </div>
+
+  <div class="card staj-card">
+    <h2><span data-i18n="int.staj1Title">Internship 1 — SENG300</span> <span class="intern-progress" data-progress-for="s1">0 / 10</span></h2>
+    <p data-i18n="int.staj1Desc">Done in the summer after Semester 4 (counts toward Semester 5).</p>
+    <h3 data-i18n="int.before">Process — before internship</h3>
+    <ul class="checklist" data-checklist="s1">
+      <li><input type="checkbox" data-ck="s1_b1"><span data-i18n="int.b1">Read AYBU Internship Directive.</span></li>
+      <li><input type="checkbox" data-ck="s1_b2"><span data-i18n="int.b2">Find a suitable workplace.</span></li>
+      <li><input type="checkbox" data-ck="s1_b3"><span data-i18n="int.b3">Give e-signed internship letter to the company.</span></li>
+      <li><input type="checkbox" data-ck="s1_b4"><span data-i18n="int.b4">Get signed acceptance form.</span></li>
+      <li><input type="checkbox" data-ck="s1_b5"><span data-i18n="int.b5">Submit documents to Internship Commission before deadline.</span></li>
+      <li><input type="checkbox" data-ck="s1_b6"><span data-i18n="int.b6">Request insurance document 1-2 business days before start.</span></li>
+    </ul>
+    <h3 data-i18n="int.after">Process — after internship</h3>
+    <ul class="checklist" data-checklist="s1">
+      <li><input type="checkbox" data-ck="s1_a1"><span data-i18n="int.a1">Write daily summary + general report.</span></li>
+      <li><input type="checkbox" data-ck="s1_a2"><span data-i18n="int.a2">Get workplace evaluation + company stamp on each page.</span></li>
+      <li><input type="checkbox" data-ck="s1_a3"><span data-i18n="int.a3">Seal documents in envelope with supervisor signature.</span></li>
+      <li><input type="checkbox" data-ck="s1_a4"><span data-i18n="int.a4">Spiral-bind the report and submit to the commission.</span></li>
+    </ul>
+  </div>
+
+  <div class="card staj-card">
+    <h2><span data-i18n="int.staj2Title">Internship 2 — SENG400</span> <span class="intern-progress" data-progress-for="s2">0 / 10</span></h2>
+    <p data-i18n="int.staj2Desc">Done in the summer after Semester 6 (counts toward Semester 7).</p>
+    <h3 data-i18n="int.before">Process — before internship</h3>
+    <ul class="checklist" data-checklist="s2">
+      <li><input type="checkbox" data-ck="s2_b1"><span data-i18n="int.b1">Read AYBU Internship Directive.</span></li>
+      <li><input type="checkbox" data-ck="s2_b2"><span data-i18n="int.b2">Find a suitable workplace.</span></li>
+      <li><input type="checkbox" data-ck="s2_b3"><span data-i18n="int.b3">Give e-signed internship letter to the company.</span></li>
+      <li><input type="checkbox" data-ck="s2_b4"><span data-i18n="int.b4">Get signed acceptance form.</span></li>
+      <li><input type="checkbox" data-ck="s2_b5"><span data-i18n="int.b5">Submit documents to Internship Commission before deadline.</span></li>
+      <li><input type="checkbox" data-ck="s2_b6"><span data-i18n="int.b6">Request insurance document 1-2 business days before start.</span></li>
+    </ul>
+    <h3 data-i18n="int.after">Process — after internship</h3>
+    <ul class="checklist" data-checklist="s2">
+      <li><input type="checkbox" data-ck="s2_a1"><span data-i18n="int.a1">Write daily summary + general report.</span></li>
+      <li><input type="checkbox" data-ck="s2_a2"><span data-i18n="int.a2">Get workplace evaluation + company stamp on each page.</span></li>
+      <li><input type="checkbox" data-ck="s2_a3"><span data-i18n="int.a3">Seal documents in envelope with supervisor signature.</span></li>
+      <li><input type="checkbox" data-ck="s2_a4"><span data-i18n="int.a4">Spiral-bind the report and submit to the commission.</span></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2 data-i18n="int.commission">Internship Commission</h2>
+    <div class="info-grid">
+      <div class="info-card"><div class="label" data-i18n="lbl.chair">Chair</div><div class="val">Dr. Öğr. Üyesi Fatma Küçük<br><a href="mailto:fatmakucuk@aybu.edu.tr">fatmakucuk@aybu.edu.tr</a><br>(0312) 906 2209 · B317</div></div>
+      <div class="info-card"><div class="label" data-i18n="lbl.member">Member</div><div class="val">Kübranur Gümüşlü<br><a href="mailto:kubranurgumuslu@aybu.edu.tr">kubranurgumuslu@aybu.edu.tr</a></div></div>
+      <div class="info-card"><div class="label" data-i18n="lbl.member">Member</div><div class="val">Murat Can Yılmaz<br><a href="mailto:muratcanyilmaz@aybu.edu.tr">muratcanyilmaz@aybu.edu.tr</a></div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 data-i18n="engr.title">ENGR450 — On-site Training</h2>
+    <ul class="clean">
+      <li data-i18n="engr.l1"><strong>ENGR450</strong> Engineering Application on Site — 5-0-0-15 ECTS.</li>
+      <li data-i18n="engr.l2">Long-term workplace training (counts as department elective).</li>
+      <li data-i18n="engr.l3">Forms: directive, petition, GSS commitment, application/acceptance/evaluation forms, cooperation agreement, report template.</li>
+    </ul>
+    <p><a href="https://aybu.edu.tr/yazilimmuh/tr/sayfa/10350" target="_blank" data-i18n="engr.link">ENGR450 official page</a></p>
+    <div class="info-grid">
+      <div class="info-card"><div class="label" data-i18n="lbl.chair">Chair</div><div class="val">Dr. Öğr. Üyesi Mehmet Ulvi Şimşek</div></div>
+      <div class="info-card"><div class="label" data-i18n="lbl.member">Member</div><div class="val">Kübranur Gümüşlü</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 data-i18n="grad.title">Graduation Project</h2>
+    <ul class="clean">
+      <li><strong>SENG401</strong> Graduation Project I — <span data-i18n="grad.sem7">Semester 7, 6 ECTS</span></li>
+      <li><strong>SENG402</strong> Graduation Project II — <span data-i18n="grad.sem8">Semester 8, 7 ECTS</span></li>
+    </ul>
+    <p data-i18n="grad.resources">Ready resources on department page: writing guide, Word report template, A0 poster template, PPT presentation template.</p>
+    <p><a href="https://aybu.edu.tr/yazilimmuh/tr/sayfa/11095" target="_blank" data-i18n="grad.link">Graduation Project page</a> · <a href="https://graduation-project-exhibition-evalu.vercel.app" target="_blank" data-i18n="grad.exhibit">Project Exhibition</a></p>
+    <div class="info-card"><div class="label" data-i18n="lbl.chair">Chair</div><div class="val">Doç. Dr. Tuba Çağlıkantar</div></div>
+  </div>
+</section>
+
+<!-- GRADUATION -->
+<section class="page" id="graduation">
+  <div class="card grad-hero-card">
+    <div class="grad-hero-head">
+      <div>
+        <h2 data-i18n="mez.statusTitle">My Graduation Status</h2>
+        <p data-i18n="mez.statusDesc">Live snapshot based on what you checked in the curriculum.</p>
+      </div>
+      <div class="grad-overall">
+        <div class="grad-overall-pct" id="gradOverallPct">0%</div>
+        <div class="grad-overall-lbl" data-i18n="mez.overall">overall</div>
+      </div>
+    </div>
+    <div class="grad-status" id="gradStatus"></div>
+  </div>
+
+  <div class="card">
+    <h2 data-i18n="mez.title">Graduation Requirements</h2>
+    <div class="info-grid">
+      <div class="info-card"><div class="label" data-i18n="mez.minEcts">Min ECTS</div><div class="val">240</div></div>
+      <div class="info-card"><div class="label" data-i18n="mez.minGpa">Min GPA</div><div class="val">2.00 / 4.00</div></div>
+      <div class="info-card"><div class="label" data-i18n="mez.intern">Internships</div><div class="val">SENG300 + SENG400</div></div>
+      <div class="info-card"><div class="label" data-i18n="mez.project">Graduation Project</div><div class="val">SENG401 + SENG402</div></div>
+      <div class="info-card"><div class="label" data-i18n="mez.deptEl">Department Electives</div><div class="val" data-i18n="mez.min50">Min 50 ECTS</div></div>
+      <div class="info-card"><div class="label" data-i18n="mez.facEl">Faculty/Uni Electives</div><div class="val" data-i18n="mez.min6">Min 6 ECTS</div></div>
+    </div>
+    <p><a href="https://aybu.edu.tr/yazilimmuh/tr/sayfa/10324" target="_blank" data-i18n="mez.link">Graduation page</a></p>
+  </div>
+</section>
+
+<!-- PATHWAYS -->
+<section class="page" id="pathways">
+  <div class="card">
+    <h2 data-i18n="path.title">Pathways Beyond the Bachelor</h2>
+    <p data-i18n="path.intro">Double major, exchange programs, and graduate studies — opportunities to expand your degree.</p>
+  </div>
+
+  <div class="card">
+    <h2 data-i18n="cap.title">Double Major (ÇAP)</h2>
+    <p data-i18n="cap.desc">Software Engineering can be combined as a double major with:</p>
+    <div class="pill-row">
+      <span class="pill">Electrical & Electronics Eng.</span>
+      <span class="pill">Industrial Eng.</span>
+      <span class="pill">Mechanical Eng.</span>
+    </div>
+    <p><a href="https://aybu.edu.tr/yazilimmuh/tr/sayfa/8270" target="_blank" data-i18n="cap.link">ÇAP requirements (Excel files per program)</a></p>
+    <div class="info-grid">
+      <div class="info-card"><div class="label" data-i18n="lbl.chair">Chair</div><div class="val">Dr. Öğr. Üyesi Ömer Mintemur</div></div>
+      <div class="info-card"><div class="label" data-i18n="lbl.member">Member</div><div class="val">Büşra Yıldırım</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 data-i18n="exch.title">Erasmus+ / Farabi & Transfers</h2>
+    <p data-i18n="exch.desc">Exchange programs are handled by the International Relations Office.</p>
+    <p><a href="https://aybu.edu.tr/dib/tr" target="_blank" data-i18n="exch.link">International Relations Office</a></p>
+    <h4 data-i18n="exch.dept">Department coordinators</h4>
+    <ul class="clean">
+      <li><strong data-i18n="exch.erasmus">Erasmus:</strong> Dr. Öğr. Üyesi Ömer Mintemur</li>
+      <li><strong data-i18n="exch.transfer">Horizontal Transfer:</strong> Dr. Öğr. Üyesi Fatma Küçük</li>
+      <li><strong data-i18n="exch.exempt">Exemption / Adaptation:</strong> Doç. Dr. Hilal Arslan</li>
+      <li><strong data-i18n="exch.summer">Summer School:</strong> Dr. Öğr. Üyesi Mehmet Ulvi Şimşek</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2 data-i18n="ms.title">Graduate Studies (MSc)</h2>
+    <p data-i18n="ms.desc"><strong>Software Engineering MSc with Thesis</strong> · 100% English · 2 years (max 3).</p>
+    <h4 data-i18n="ms.reqTitle">Application Requirements</h4>
+    <div class="info-grid">
+      <div class="info-card"><div class="label" data-i18n="ms.gpa">Bachelor GPA</div><div class="val">≥ 2.5 / 4.0</div></div>
+      <div class="info-card"><div class="label">ALES</div><div class="val">≥ 70</div></div>
+      <div class="info-card"><div class="label" data-i18n="ms.lang">Foreign Language</div><div class="val">≥ 60</div></div>
+      <div class="info-card"><div class="label" data-i18n="ms.letter">Letter of Intent</div><div class="val" data-i18n="ms.required">Required</div></div>
+      <div class="info-card"><div class="label" data-i18n="ms.ref">References</div><div class="val" data-i18n="ms.min1">Min 1 letter</div></div>
+    </div>
+    <h4 data-i18n="ms.areasTitle">Research areas</h4>
+    <div class="pill-row">
+      <span class="pill">AI</span><span class="pill">ML</span><span class="pill">Deep Learning</span><span class="pill">NLP</span>
+      <span class="pill">Data Mining</span><span class="pill">Image Processing</span><span class="pill">Computer Vision</span>
+      <span class="pill">Robotics</span><span class="pill">Blockchain</span><span class="pill">Cybersecurity</span>
+      <span class="pill">IoT</span><span class="pill">Cloud</span><span class="pill">Game Dev</span><span class="pill">SQA</span>
+    </div>
+    <p><a href="https://aybu.edu.tr/yazilimmuh/tr/sayfa/11204" target="_blank" data-i18n="ms.link">Graduate program page</a></p>
+  </div>
+</section>
+
+<!-- PEOPLE -->
+<section class="page" id="people">
+  <div class="card">
+    <h2 data-i18n="ppl.facTitle">Faculty Members</h2>
+    <div class="ppl-filter-wrap"><input class="ppl-filter" id="pplFilter" type="search" placeholder="Filter by name or research…" data-i18n-attr="placeholder" data-i18n="ppl.filterPh"></div>
+    <div class="table-wrap"><table data-ppl="1">
+      <thead><tr><th data-i18n="ppl.name">Name</th><th data-i18n="ppl.title">Title</th><th>Email</th><th data-i18n="lbl.phone">Phone</th><th data-i18n="lbl.office">Office</th><th data-i18n="ppl.research">Research</th></tr></thead>
+      <tbody>
+        <tr><td>Hilal Arslan</td><td>Doç. Dr.</td><td><a href="mailto:hilalarslan@aybu.edu.tr">hilalarslan</a></td><td>906 2282</td><td>B317</td><td>Parallel computing, graphs, bioinformatics, ML, AI</td></tr>
+        <tr><td>Yenal Arslan</td><td>Doç. Dr.</td><td><a href="mailto:yenalarslan@aybu.edu.tr">yenalarslan</a></td><td>916 2313</td><td>B318</td><td>InfoSec, AI, project mgmt, testing</td></tr>
+        <tr><td>Tuba Çağlıkantar</td><td>Doç. Dr.</td><td><a href="mailto:tubacaglikantar@aybu.edu.tr">tubacaglikantar</a></td><td>—</td><td>B321</td><td>Image processing, 3D modeling, optimization, ML</td></tr>
+        <tr><td>Ömer Mintemur</td><td>Dr. Öğr. Üyesi</td><td><a href="mailto:omermintemur@aybu.edu.tr">omermintemur</a></td><td>916 2275</td><td>B318</td><td>Computer vision, pattern recognition, NN</td></tr>
+        <tr><td>Fatma Küçük</td><td>Dr. Öğr. Üyesi</td><td><a href="mailto:fatmakucuk@aybu.edu.tr">fatmakucuk</a></td><td>906 2209</td><td>B317</td><td>Hyperspectral image processing</td></tr>
+        <tr><td>Abdulkadir Taşdelen</td><td>Dr. Öğr. Üyesi</td><td><a href="mailto:abdulkadirtasdelen@aybu.edu.tr">abdulkadirtasdelen</a></td><td>916 2202</td><td>B318</td><td>CS, bioinformatics, AI, ML</td></tr>
+        <tr><td>Rasha Osman</td><td>Dr. Öğr. Üyesi</td><td><a href="mailto:rosman@aybu.edu.tr">rosman</a></td><td>—</td><td>B321</td><td>Data-driven SE, AI/ML, DB performance</td></tr>
+        <tr><td>Mehmet Ulvi Şimşek</td><td>Dr. Öğr. Üyesi</td><td><a href="mailto:mehmetulvisimsek@aybu.edu.tr">mehmetulvisimsek</a></td><td>—</td><td>—</td><td>IoT, fog/cloud, AI, ML</td></tr>
+        <tr><td>Murat Akın</td><td>Dr. Öğr. Üyesi</td><td><a href="mailto:muratakin@aybu.edu.tr">muratakin</a></td><td>916 2213</td><td>C313</td><td>AI, big data, data mining, InfoSec</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 data-i18n="ppl.raTitle">Research Assistants (B Block, 5th floor)</h3>
+    <div class="table-wrap"><table data-ppl="1">
+      <thead><tr><th data-i18n="ppl.name">Name</th><th>Email</th><th data-i18n="ppl.research">Research</th></tr></thead>
+      <tbody>
+        <tr><td>Murat Can Yılmaz</td><td><a href="mailto:muratcanyilmaz@aybu.edu.tr">muratcanyilmaz</a></td><td>Augmented reality</td></tr>
+        <tr><td>Emine Aşar</td><td><a href="mailto:easar@aybu.edu.tr">easar</a></td><td>ML, image processing</td></tr>
+        <tr><td>Büşra Yıldırım</td><td><a href="mailto:busrayildirim@aybu.edu.tr">busrayildirim</a></td><td>Optimization, metaheuristics, AI</td></tr>
+        <tr><td>Kübranur Gümüşlü</td><td><a href="mailto:kubranurgumuslu@aybu.edu.tr">kubranurgumuslu</a></td><td>Data mining, ML</td></tr>
+        <tr><td>Pelin Nur Çöl</td><td><a href="mailto:pelinnurcol@aybu.edu.tr">pelinnurcol</a></td><td>CS theory, AI, SE, robotics</td></tr>
+        <tr><td>Esma Nur Kocataş</td><td><a href="mailto:kocatasesmanur@aybu.edu.tr">kocatasesmanur</a></td><td>ML, deep learning, bioinformatics</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <h2 data-i18n="comm.title">Commissions</h2>
+    <p><a href="https://aybu.edu.tr/yazilimmuh/tr/sayfa/9413" target="_blank" data-i18n="comm.link">Full commission list</a></p>
+    <div class="table-wrap"><table>
+      <thead><tr><th data-i18n="comm.name">Commission</th><th data-i18n="lbl.chair">Chair</th><th data-i18n="lbl.member">Members</th></tr></thead>
+      <tbody>
+        <tr><td data-i18n="comm.curriculum">Curriculum Exemption & Adaptation</td><td>Hilal Arslan</td><td>Yenal Arslan, M. C. Yılmaz</td></tr>
+        <tr><td data-i18n="comm.doubleMajor">Double Major / Minor</td><td>Ömer Mintemur</td><td>Büşra Yıldırım</td></tr>
+        <tr><td>Erasmus</td><td>Ömer Mintemur</td><td>Büşra Yıldırım</td></tr>
+        <tr><td data-i18n="comm.internship">Internship</td><td>Fatma Küçük</td><td>K. Gümüşlü, M. C. Yılmaz</td></tr>
+        <tr><td>ENGR450</td><td>Mehmet Ulvi Şimşek</td><td>Kübranur Gümüşlü</td></tr>
+        <tr><td data-i18n="comm.transfer">Horizontal Transfer</td><td>Fatma Küçük</td><td>Esma Nur Kocataş</td></tr>
+        <tr><td data-i18n="comm.summer">Summer School</td><td>Mehmet Ulvi Şimşek</td><td>Pelin Nur Çöl</td></tr>
+        <tr><td data-i18n="comm.accred">MÜDEK Accreditation</td><td>Abdulkadir Taşdelen</td><td>Esma Nur Kocataş</td></tr>
+        <tr><td data-i18n="comm.grad">Graduation</td><td>Abdulkadir Taşdelen</td><td>Emine Aşar</td></tr>
+        <tr><td data-i18n="comm.project">Project Monitoring</td><td>Tuba Çağlıkantar</td><td>Pelin Nur Çöl</td></tr>
+        <tr><td data-i18n="comm.quality">Quality</td><td>Murat Akın</td><td>Pelin Nur Çöl</td></tr>
+        <tr><td data-i18n="comm.lab">Lab / Technical</td><td>Tuba Çağlıkantar</td><td>Emine Aşar</td></tr>
+        <tr><td data-i18n="comm.web">Website</td><td>Abdulkadir Taşdelen</td><td>Murat Can Yılmaz</td></tr>
+        <tr><td data-i18n="comm.alumni">Alumni Relations</td><td>Yenal Arslan</td><td>M. U. Şimşek, B. Yıldırım</td></tr>
+        <tr><td data-i18n="comm.library">Library / Academic Support</td><td>Fatma Küçük</td><td>Murat Can Yılmaz</td></tr>
+        <tr><td data-i18n="comm.seminar">Education, Seminar, Panel</td><td>Abdulkadir Taşdelen</td><td>Kübranur Gümüşlü</td></tr>
+        <tr><td data-i18n="comm.social">Social Responsibility</td><td>Murat Akın</td><td>Pelin Nur Çöl</td></tr>
+        <tr><td data-i18n="comm.promo">Promotion</td><td>Tuba Çağlıkantar</td><td>M. U. Şimşek, P. N. Çöl, E. Aşar</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<!-- CLUB -->
+<section class="page" id="club">
+  <div class="card">
+    <h2>ASEC <span data-i18n="club.title">— Student Software Club</span></h2>
+    <p data-i18n="club.desc">AYBU Software Engineering Club. 7 active departments · 180+ members · 20+ projects. Slogan: "Shaping the Technology of the Future."</p>
+    <p><a href="https://aybuasec.org/" target="_blank">aybuasec.org</a></p>
+
+    <h3 data-i18n="club.deptsTitle">Departments & Activities</h3>
+    <ul class="clean">
+      <li data-i18n="club.d1"><strong>Project Commission</strong> — idea to completion guidance</li>
+      <li data-i18n="club.d2"><strong>Events Department</strong> — conferences, seminars with industry experts</li>
+      <li data-i18n="club.d3"><strong>Internship, Job & Scholarship</strong> — listings, CV help, career guidance</li>
+      <li data-i18n="club.d4"><strong>Social Media Department</strong></li>
+      <li data-i18n="club.d5"><strong>International Commission</strong> — abroad opportunities</li>
+    </ul>
+
+    <h3 data-i18n="club.joinTitle">How to join</h3>
+    <p data-i18n="club.joinDesc">Register on the website or jump into the WhatsApp group.</p>
+    <p><a href="https://aybuasec.org/register" target="_blank" data-i18n="club.register">Register</a> · <a href="https://aybuasec.org/login" target="_blank" data-i18n="club.login">Login</a></p>
+
+    <h3 data-i18n="club.contactTitle">Contact & social</h3>
+    <div class="info-grid">
+      <div class="info-card"><div class="label" data-i18n="lbl.phone">Phone</div><div class="val">+90 551 553 6339</div></div>
+      <div class="info-card"><div class="label" data-i18n="lbl.address">Address</div><div class="val">Ayvalı Mah. 150 Sk. Etlik-Keçiören Ankara</div></div>
+      <div class="info-card"><div class="label">Instagram</div><div class="val"><a href="https://www.instagram.com/asecaybu" target="_blank">@asecaybu</a></div></div>
+      <div class="info-card"><div class="label">LinkedIn</div><div class="val"><a href="https://www.linkedin.com/company/aybu-software-engineering-club/" target="_blank">AYBU SE Club</a></div></div>
+      <div class="info-card"><div class="label">YouTube</div><div class="val"><a href="https://youtube.com/@asecaybu" target="_blank">@asecaybu</a></div></div>
+      <div class="info-card"><div class="label">WhatsApp</div><div class="val"><a href="https://chat.whatsapp.com/DuZcHLL1ybg63MHOQKrkav" target="_blank" data-i18n="club.wa">Group link</a></div></div>
+    </div>
+
+    <h3 data-i18n="club.boardTitle">Board</h3>
+    <ul class="clean">
+      <li><strong data-i18n="club.advisor">Advisor:</strong> Doç. Dr. Yenal Arslan</li>
+      <li><strong data-i18n="club.president">President:</strong> Can Kankılıç</li>
+      <li><strong data-i18n="club.vp">Vice President:</strong> Nihat Eren Özturan</li>
+      <li><strong data-i18n="club.head">Club Head:</strong> YUNUS EMRE Ceran — <a href="tel:+905426702210">+90 542 670 22 10</a></li>
+    </ul>
+
+    <h3 data-i18n="club.eventsTitle">Sample events</h3>
+    <div class="pill-row">
+      <span class="pill">GameJam</span><span class="pill" data-i18n="club.e1">Spring Picnic</span>
+      <span class="pill" data-i18n="club.e2">Entrepreneurship Summit</span><span class="pill" data-i18n="club.e3">Orientation</span>
+      <span class="pill" data-i18n="club.e4">Technical Tours</span><span class="pill" data-i18n="club.e5">Industry Seminars</span>
+    </div>
+  </div>
+</section>
+
+<!-- Search popup -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-panel">
+    <input type="search" id="searchInput" placeholder="Search…" data-i18n-attr="placeholder" data-i18n="search.placeholder" autocomplete="off">
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<!-- Course detail modal -->
+<div class="modal-overlay" id="courseModal">
+  <div class="modal">
+    <div class="modal-head">
+      <h3 id="cmCode">—</h3>
+      <button class="modal-close" id="cmClose" aria-label="Close">×</button>
+    </div>
+    <div id="cmName" style="font-size:1.05rem;margin:6px 0 14px;"></div>
+    <div class="info-grid" id="cmInfo"></div>
+  </div>
+</div>
+
+<footer>
+  <p data-i18n="footer.txt">AYBU Software Engineering Student Guide · For official information also check the department page.</p>
+  <p class="credit"><span data-i18n="footer.madeBy">Made by</span> <a href="https://github.com/mohamedattiaDev" target="_blank" rel="noopener">Mohamed Attia</a></p>
+</footer>

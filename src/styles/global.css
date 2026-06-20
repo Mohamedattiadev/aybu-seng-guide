@@ -1,0 +1,77 @@
+/* ===== Imported original site styles (preserved verbatim) ===== */
+@import './_original.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Responsive enhancements layered on top ===== */
+
+/* Hamburger button — hidden on desktop, shown on small screens */
+.menu-toggle {
+  display: none;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--text);
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.menu-toggle:hover { border-color: var(--accent); color: var(--accent); }
+.menu-toggle svg { width: 20px; height: 20px; }
+
+/* Mobile: tabs become a slide-down drawer */
+@media (max-width: 820px) {
+  .menu-toggle { display: inline-flex; }
+  .nav-tabs {
+    position: absolute;
+    top: 100%;
+    inset-inline: 0;
+    flex-direction: column;
+    align-items: stretch;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    padding: 8px;
+    gap: 4px;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.25s ease, padding 0.25s ease;
+    pointer-events: none;
+    padding-block: 0;
+  }
+  .nav-tabs.open {
+    max-height: 80vh;
+    padding-block: 8px;
+    pointer-events: auto;
+    overflow-y: auto;
+  }
+  .nav-tab {
+    width: 100%;
+    text-align: start;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    border-radius: 6px;
+  }
+  .topbar { position: sticky; }
+  .topbar-inner { position: relative; flex-wrap: nowrap; }
+  .logo { flex: 1; font-size: 0.95rem; }
+}
+
+@media (max-width: 480px) {
+  .logo { font-size: 0.88rem; }
+  .hero { padding: 28px 16px; border-radius: 14px; }
+  .card { padding: 14px; }
+  .info-grid { grid-template-columns: 1fr; }
+  .grad-status { grid-template-columns: 1fr; }
+}
+
+/* Make every table horizontally scrollable on narrow screens (extra safety) */
+@media (max-width: 640px) {
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  .gpa-row { grid-template-columns: 1fr 70px 70px 32px; gap: 6px; }
+}
