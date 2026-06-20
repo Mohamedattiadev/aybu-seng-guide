@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AYBÜ Yazılım Mühendisliği — Öğrenci Rehberi</title>
+<style>
+:root {
+  --bg: #0f172a;
+  --bg-soft: #1e293b;
+  --surface: #ffffff;
+  --surface-alt: #f8fafc;
+  --border: #e2e8f0;
+  --text: #0f172a;
+  --text-muted: #64748b;
+  --accent: #2563eb;
+  --accent-soft: #dbeafe;
+  --accent-dark: #1e40af;
+  --warn: #f59e0b;
+  --good: #10b981;
+  --shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+  --radius: 12px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface: #0f172a;
+    --surface-alt: #1e293b;
+    --border: #334155;
+    --text: #f1f5f9;
+    --text-muted: #94a3b8;
+    --accent: #60a5fa;
+    --accent-soft: #1e3a8a;
+    --accent-dark: #93c5fd;
+    --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--surface-alt);
+  color: var(--text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Header */
+.hero {
+  background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #3b82f6 100%);
+  color: white;
+  padding: 64px 24px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 70%, rgba(255,255,255,0.08) 0%, transparent 50%);
+}
+.hero-content { position: relative; max-width: 900px; margin: 0 auto; }
+.hero h1 {
+  font-size: clamp(1.8rem, 4vw, 2.75rem);
+  margin: 0 0 12px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.hero p {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  margin: 8px 0;
+  opacity: 0.92;
+}
+.hero-badges {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.badge {
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(10px);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+/* Layout */
+.layout {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 32px;
+  padding: 32px 24px;
+}
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; padding: 16px; gap: 16px; }
+}
+
+/* Sidebar TOC */
+.sidebar {
+  position: sticky;
+  top: 16px;
+  align-self: start;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  box-shadow: var(--shadow);
+}
+.sidebar h3 {
+  margin: 0 0 12px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+.sidebar ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: toc;
+}
+.sidebar li {
+  counter-increment: toc;
+  margin: 2px 0;
+}
+.sidebar a {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.92rem;
+  transition: background 0.15s, color 0.15s;
+}
+.sidebar a::before {
+  content: counter(toc) ". ";
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+.sidebar a:hover {
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+}
+@media (max-width: 900px) {
+  .sidebar { position: static; max-height: none; }
+  .sidebar.collapsed ol { display: none; }
+  .sidebar h3 { cursor: pointer; }
+}
+
+/* Main */
+.main { min-width: 0; }
+section.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+  scroll-margin-top: 24px;
+}
+@media (max-width: 640px) {
+  section.card { padding: 18px; }
+}
+section.card h2 {
+  margin: 0 0 16px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+section.card h2 .num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: var(--accent);
+  color: white;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+section.card h3 {
+  margin: 24px 0 10px;
+  font-size: 1.1rem;
+  color: var(--accent-dark);
+}
+section.card h4 {
+  margin: 18px 0 8px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Tables */
+.table-wrap {
+  overflow-x: auto;
+  margin: 12px 0;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+thead {
+  background: var(--surface-alt);
+}
+th, td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+th {
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+tbody tr:hover { background: var(--surface-alt); }
+tbody tr:last-child td { border-bottom: none; }
+td.code {
+  font-family: "SF Mono", Monaco, "Cascadia Code", monospace;
+  font-size: 0.82rem;
+  white-space: nowrap;
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+td.num { text-align: center; font-variant-numeric: tabular-nums; }
+
+/* Quick info grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 12px 0;
+}
+.info-card {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+.info-card .label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.info-card .val {
+  font-size: 0.95rem;
+  font-weight: 500;
+  word-break: break-word;
+}
+.info-card a { color: var(--accent); text-decoration: none; }
+.info-card a:hover { text-decoration: underline; }
+
+/* Pills */
+.pill-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+.pill {
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-family: "SF Mono", Monaco, monospace;
+  font-weight: 600;
+}
+
+/* Notes / callouts */
+.note {
+  border-left: 4px solid var(--accent);
+  background: var(--accent-soft);
+  padding: 12px 16px;
+  border-radius: 0 8px 8px 0;
+  margin: 14px 0;
+  font-size: 0.92rem;
+}
+.note.warn { border-color: var(--warn); background: rgba(245, 158, 11, 0.1); }
+.note.good { border-color: var(--good); background: rgba(16, 185, 129, 0.1); }
+.note strong { display: block; margin-bottom: 4px; }
+
+/* Lists */
+ul.clean { padding-left: 20px; margin: 8px 0; }
+ul.clean li { margin: 4px 0; }
+ol.steps { padding-left: 20px; margin: 8px 0; }
+ol.steps li { margin: 6px 0; }
+
+/* Links */
+a { color: var(--accent); }
+a:hover { color: var(--accent-dark); }
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 32px 16px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+  margin-top: 24px;
+}
+
+/* Search */
+.search-box {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-alt);
+  color: var(--text);
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+.search-box:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: var(--surface);
+}
+
+/* Print */
+@media print {
+  .sidebar, .hero { display: none; }
+  .layout { grid-template-columns: 1fr; }
+  section.card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-content">
+    <h1>AYBÜ Yazılım Mühendisliği</h1>
+    <p><strong>Öğrenci Rehberi</strong> — Müfredat, staj, kadro, kulüp ve tüm önemli kaynaklar tek yerde.</p>
+    <div class="hero-badges">
+      <span class="badge">%100 İngilizce</span>
+      <span class="badge">1+4 Yıl</span>
+      <span class="badge">240+ AKTS</span>
+      <span class="badge">Esenboğa Külliyesi</span>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+
+  <aside class="sidebar">
+    <h3>İçindekiler</h3>
+    <input type="search" class="search-box" placeholder="Arama..." id="tocSearch">
+    <ol id="tocList">
+      <li><a href="#iletisim">Hızlı İletişim</a></li>
+      <li><a href="#sistemler">Sistemler & Bağlantılar</a></li>
+      <li><a href="#mufredat">Lisans Müfredatı</a></li>
+      <li><a href="#secmeli">Seçmeli Dersler</a></li>
+      <li><a href="#staj">Staj</a></li>
+      <li><a href="#aday">Aday Mühendislik</a></li>
+      <li><a href="#bitirme">Bitirme Projesi</a></li>
+      <li><a href="#mezuniyet">Mezuniyet Şartları</a></li>
+      <li><a href="#cap">ÇAP & Erasmus</a></li>
+      <li><a href="#lisansustu">Lisansüstü</a></li>
+      <li><a href="#kadro">Akademik Kadro</a></li>
+      <li><a href="#komisyon">Komisyonlar</a></li>
+      <li><a href="#asec">ASEC Kulübü</a></li>
+      <li><a href="#harita">Sayfa Haritası</a></li>
+    </ol>
+  </aside>
+
+  <main class="main">
+
+    <section class="card" id="iletisim">
+      <h2><span class="num">1</span> Hızlı İletişim</h2>
+      <h4>Bölüm</h4>
+      <div class="info-grid">
+        <div class="info-card"><div class="label">Adres</div><div class="val">Ayvalı Mh. Takdir Cad. 150 Sk. No:5 Etlik-Keçiören / Ankara</div></div>
+        <div class="info-card"><div class="label">Telefon</div><div class="val">(0312) 906 2202 / 2330</div></div>
+        <div class="info-card"><div class="label">Faks</div><div class="val">(0312) 906 2955</div></div>
+        <div class="info-card"><div class="label">E-posta</div><div class="val"><a href="mailto:seng@aybu.edu.tr">seng@aybu.edu.tr</a></div></div>
+        <div class="info-card"><div class="label">Ofis</div><div class="val">B421</div></div>
+        <div class="info-card"><div class="label">Santral</div><div class="val">+90 312 906 1000</div></div>
+      </div>
+      <h4>Yönetim</h4>
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="label">Bölüm Başkanı</div>
+          <div class="val">Doç. Dr. Hilal Arslan<br><a href="mailto:hilalarslan@aybu.edu.tr">hilalarslan@aybu.edu.tr</a><br>+90 312 906 2282 · B317</div>
+        </div>
+        <div class="info-card">
+          <div class="label">Başkan Yardımcısı</div>
+          <div class="val">Dr. Öğr. Üyesi Mehmet Ulvi Şimşek<br><a href="mailto:mehmetulvisimsek@aybu.edu.tr">mehmetulvisimsek@aybu.edu.tr</a></div>
+        </div>
+        <div class="info-card">
+          <div class="label">Başkan Yardımcısı</div>
+          <div class="val">Dr. Öğr. Üyesi Ömer Mintemur<br><a href="mailto:omermintemur@aybu.edu.tr">omermintemur@aybu.edu.tr</a><br>+90 312 916 2275 · B318</div>
+        </div>
+        <div class="info-card">
+          <div class="label">Bölüm Sekreteri</div>
+          <div class="val">Hasancan Suer<br><a href="mailto:hasancansuer@aybu.edu.tr">hasancansuer@aybu.edu.tr</a><br>+90 312 906 2828</div>
+        </div>
+      </div>
+      <div class="note warn"><strong>Not</strong>Sekreter ismi iki resmi sayfada farklı (Hasancan Suer vs Sude Selim — (0312) 906 2235). Güncel için bölüme sor.</div>
+    </section>
+
+    <section class="card" id="sistemler">
+      <h2><span class="num">2</span> Sistemler & Bağlantılar</h2>
+      <div class="info-grid">
+        <div class="info-card"><div class="label">OBS</div><div class="val"><a href="https://obs.aybu.edu.tr/" target="_blank">obs.aybu.edu.tr</a><br><small>Ders kayıt, not, transkript</small></div></div>
+        <div class="info-card"><div class="label">AYBUZEM</div><div class="val"><a href="https://aybuzem.aybu.edu.tr/" target="_blank">aybuzem.aybu.edu.tr</a><br><small>Uzaktan eğitim</small></div></div>
+        <div class="info-card"><div class="label">Bölüm Sitesi</div><div class="val"><a href="https://aybu.edu.tr/yazilimmuh/" target="_blank">aybu.edu.tr/yazilimmuh</a></div></div>
+        <div class="info-card"><div class="label">Duyurular</div><div class="val"><a href="https://aybu.edu.tr/yazilimmuh/tr/duyurular" target="_blank">Tüm duyurular</a></div></div>
+        <div class="info-card"><div class="label">Erasmus / Farabi</div><div class="val"><a href="https://aybu.edu.tr/dib/tr" target="_blank">Dış İlişkiler Birimi</a></div></div>
+        <div class="info-card"><div class="label">Bitirme Vitrini</div><div class="val"><a href="https://graduation-project-exhibition-evalu.vercel.app" target="_blank">Proje vitrini</a></div></div>
+      </div>
+    </section>
+
+    <section class="card" id="mufredat">
+      <h2><span class="num">3</span> Lisans Müfredatı (2025-2026)</h2>
+      <p>PDF: <a href="https://aybu.edu.tr/GetFile?id=Upload/b178548a-063c-4f2c-8dbd-1df82304a97c.pdf" target="_blank">2025-26 Müfredat</a> · Eski: <a href="https://aybu.edu.tr/GetFile?id=Upload/dfb3c096-640f-4e83-a89a-e40721fa05a7.pdf" target="_blank">2023-24</a>, <a href="https://aybu.edu.tr/GetFile?id=Upload/24c72683-8133-4b96-ab27-b4af553f0193.pdf" target="_blank">2022-23</a></p>
+      <div class="note"><strong>Format</strong>T (Teori) · U (Uygulama) · L (Ulusal Kredi) · AKTS. Ön şart * = en az <strong>DD</strong> almak.</div>
+
+      <h3>1. Yarıyıl — 30 AKTS</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Kod</th><th>Ders</th><th>T</th><th>U</th><th>L</th><th>AKTS</th><th>Ön Şart</th></tr></thead>
+        <tbody>
+          <tr><td class="code">PHYS101</td><td>Physics I</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">4</td><td>—</td></tr>
+          <tr><td class="code">PHYS103</td><td>Physics Laboratory I</td><td class="num">0</td><td class="num">2</td><td class="num">0</td><td class="num">2</td><td>—</td></tr>
+          <tr><td class="code">TDL101</td><td>Türk Dili I</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td>—</td></tr>
+          <tr><td class="code">TİT101</td><td>Türk İnkılap Tarihi I</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td>—</td></tr>
+          <tr><td class="code">MATH101</td><td>Calculus I</td><td class="num">4</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td>—</td></tr>
+          <tr><td class="code">CHEM101</td><td>General Chemistry</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td></tr>
+          <tr><td class="code">ENG101</td><td>Academic English I</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td>—</td></tr>
+          <tr><td class="code">SENG113</td><td>Computer Programming I</td><td class="num">3</td><td class="num">2</td><td class="num">0</td><td class="num">5</td><td>—</td></tr>
+          <tr><td class="code">SENG101</td><td>Introduction to Software Engineering</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td>—</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>2. Yarıyıl — 30 AKTS</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Kod</th><th>Ders</th><th>T</th><th>U</th><th>L</th><th>AKTS</th><th>Ön Şart</th></tr></thead>
+        <tbody>
+          <tr><td class="code">ENG102</td><td>Academic English II</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td>—</td></tr>
+          <tr><td class="code">PHYS102</td><td>Physics II</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">4</td><td>—</td></tr>
+          <tr><td class="code">PHYS104</td><td>Physics Laboratory II</td><td class="num">0</td><td class="num">2</td><td class="num">0</td><td class="num">2</td><td>—</td></tr>
+          <tr><td class="code">MATH104</td><td>Applied Linear Algebra</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td>—</td></tr>
+          <tr><td class="code">MATH102</td><td>Calculus II</td><td class="num">4</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td>MATH101*</td></tr>
+          <tr><td class="code">TİT102</td><td>Türk İnkılap Tarihi II</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td>—</td></tr>
+          <tr><td class="code">TDL102</td><td>Türk Dili II</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td>—</td></tr>
+          <tr><td class="code">SENG114</td><td>Computer Programming II</td><td class="num">3</td><td class="num">2</td><td class="num">0</td><td class="num">6</td><td>SENG113*</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>3. Yarıyıl — 33 AKTS</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Kod</th><th>Ders</th><th>T</th><th>U</th><th>L</th><th>AKTS</th><th>Ön Şart</th></tr></thead>
+        <tbody>
+          <tr><td class="code">SENG207</td><td>Probability and Statistics</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td>—</td></tr>
+          <tr><td class="code">SENG201</td><td>Object Oriented Programming</td><td class="num">3</td><td class="num">2</td><td class="num">0</td><td class="num">6</td><td>SENG114*</td></tr>
+          <tr><td class="code">ENGR201</td><td>Differential Equations</td><td class="num">4</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td>—</td></tr>
+          <tr><td class="code">SENG209</td><td>Software Requirements Engineering</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td>—</td></tr>
+          <tr><td class="code">ENGR265</td><td>Occupational Health and Safety I</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">3</td><td>—</td></tr>
+          <tr><td class="code">SENG211</td><td>Software Project Management</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td>—</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>4. Yarıyıl — 30 AKTS</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Kod</th><th>Ders</th><th>T</th><th>U</th><th>L</th><th>AKTS</th><th>Ön Şart</th></tr></thead>
+        <tbody>
+          <tr><td class="code">ENGR202</td><td>Discrete Mathematics</td><td class="num">4</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td>—</td></tr>
+          <tr><td class="code">SENG206</td><td>Concepts of Programming Languages</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td>SENG114*</td></tr>
+          <tr><td class="code">ENGR266</td><td>Occupational Health and Safety II</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">3</td><td>—</td></tr>
+          <tr><td class="code">SENG214</td><td>Software Testing & QA</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td>—</td></tr>
+          <tr><td class="code">ENGR/UE</td><td>Fakülte / Üniversite Seçmeli</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">3</td><td>—</td></tr>
+          <tr><td class="code">SENG204</td><td>Data Structures</td><td class="num">3</td><td class="num">2</td><td class="num">0</td><td class="num">6</td><td>SENG201*</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>5. Yarıyıl — 31 AKTS</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Kod</th><th>Ders</th><th>T</th><th>U</th><th>L</th><th>AKTS</th><th>Ön Şart</th></tr></thead>
+        <tbody>
+          <tr><td class="code">SENG303</td><td>Design & Analysis of Algorithms</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>SENG204*</td></tr>
+          <tr><td class="code">SENG301</td><td>Database Management Systems</td><td class="num">3</td><td class="num">2</td><td class="num">0</td><td class="num">5</td><td>SENG201*</td></tr>
+          <tr><td class="code">SENG319</td><td>Software Design Patterns</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td>SENG201*</td></tr>
+          <tr><td class="code">SENG305</td><td>Operating Systems</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td>SENG204*</td></tr>
+          <tr><td class="code">SENG-X</td><td>Bölüm Seçmeli</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td></tr>
+          <tr><td class="code">SENG300</td><td>Industrial Practice I (Staj I)</td><td class="num">0</td><td class="num">2</td><td class="num">0</td><td class="num">4</td><td>—</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>6. Yarıyıl — 30 AKTS</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Kod</th><th>Ders</th><th>T</th><th>U</th><th>L</th><th>AKTS</th><th>Ön Şart</th></tr></thead>
+        <tbody>
+          <tr><td class="code">SENG304</td><td>Computer Networks</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td>—</td></tr>
+          <tr><td class="code">SENG326</td><td>Software Architecture</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td>—</td></tr>
+          <tr><td class="code">SENG302</td><td>Secure Software Development</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td>—</td></tr>
+          <tr><td class="code">SENG-X</td><td>Bölüm Seçmeli</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td>—</td></tr>
+          <tr><td class="code">SENG306</td><td>Scientific Computing</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">7</td><td>SENG113*</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>7. Yarıyıl — 30 AKTS</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Kod</th><th>Ders</th><th>T</th><th>U</th><th>L</th><th>AKTS</th><th>Ön Şart</th></tr></thead>
+        <tbody>
+          <tr><td class="code">SENG401</td><td>Graduation Project I</td><td class="num">3</td><td class="num">3</td><td class="num">0</td><td class="num">6</td><td>SENG204*</td></tr>
+          <tr><td class="code">SENG400</td><td>Industrial Practice II (Staj II)</td><td class="num">0</td><td class="num">2</td><td class="num">0</td><td class="num">4</td><td>—</td></tr>
+          <tr><td class="code">SENG-X ×4</td><td>Bölüm Seçmeli × 4</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5×4</td><td>—</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>8. Yarıyıl — 30 AKTS</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Kod</th><th>Ders</th><th>T</th><th>U</th><th>L</th><th>AKTS</th><th>Ön Şart</th></tr></thead>
+        <tbody>
+          <tr><td class="code">SENG402</td><td>Graduation Project II</td><td class="num">3</td><td class="num">3</td><td class="num">0</td><td class="num">7</td><td>SENG204*</td></tr>
+          <tr><td class="code">ENGR/UE</td><td>Fakülte / Üniversite Seçmeli</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">3</td><td>—</td></tr>
+          <tr><td class="code">SENG-X ×4</td><td>Bölüm Seçmeli × 4</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">5×4</td><td>—</td></tr>
+        </tbody>
+      </table></div>
+
+      <div class="note good"><strong>Toplam: 244 AKTS</strong>Asgari 240 üzeri.</div>
+    </section>
+
+    <section class="card" id="secmeli">
+      <h2><span class="num">4</span> Seçmeli Dersler</h2>
+      <p>Tüm SENG seçmelileri <strong>3-0-0-5 AKTS</strong> (aksi belirtilmedikçe).</p>
+
+      <h3>Bölüm Seçmelileri (SENG)</h3>
+      <div class="pill-row">
+        <span class="pill">SENG310 HCI</span><span class="pill">SENG311 Web Tech</span><span class="pill">SENG312 Robotics</span>
+        <span class="pill">SENG313 Compiler Design</span><span class="pill">SENG314 Formal Languages</span><span class="pill">SENG315 Computer Graphics</span>
+        <span class="pill">SENG316 Comp Architecture</span><span class="pill">SENG317 AI</span><span class="pill">SENG318 Rapid App Dev</span>
+        <span class="pill">SENG320 Numerical Analysis</span><span class="pill">SENG324 Advanced DB</span><span class="pill">SENG410 Data Mining</span>
+        <span class="pill">SENG411 Web Programming</span><span class="pill">SENG412 Robotics Adv</span><span class="pill">SENG413 Open Source</span>
+        <span class="pill">SENG414 3D & Game</span><span class="pill">SENG415 Internet Eng</span><span class="pill">SENG416 Digital Image Proc</span>
+        <span class="pill">SENG417 ERP</span><span class="pill">SENG418 Parallel Computing</span><span class="pill">SENG419 Sys Admin</span>
+        <span class="pill">SENG420 NLP</span><span class="pill">SENG421 Real Time Net</span><span class="pill">SENG422 Cloud</span>
+        <span class="pill">SENG423 IoT</span><span class="pill">SENG424 Embedded</span><span class="pill">SENG425 Data Science</span>
+        <span class="pill">SENG426 Optimization</span><span class="pill">SENG427 Bioinformatics</span><span class="pill">SENG428 Neural Net</span>
+        <span class="pill">SENG429 Cyber Security</span><span class="pill">SENG430 InfoSec</span><span class="pill">SENG431 Simulation</span>
+        <span class="pill">SENG432 SW Metrics</span><span class="pill">SENG433 Blockchain</span><span class="pill">SENG434 Green SE</span>
+        <span class="pill">SENG435 Intro DIP</span><span class="pill">SENG445 Intro ML</span>
+      </div>
+      <div class="note"><strong>ENGR450</strong>Engineering Application on Site — <strong>5-0-0-15 AKTS</strong> (Aday Mühendislik / İş Yeri Eğitimi).</div>
+
+      <h3>Diğer Bölümlerden (CENG / MATH / MCE)</h3>
+      <p>Detay: <a href="https://aybu.edu.tr/GetFile?id=Upload/1592fb84-b8c3-44e0-99bd-5860311a685e.pdf" target="_blank">Seçmeli ders listesi PDF</a></p>
+      <ul class="clean">
+        <li><strong>Bilgi Teknolojisi:</strong> CENG311 (ön şart SENG201), CENG314, 411, 423, 425, 427, 429, 433, 406, 416, 420, 462, 465, 466.</li>
+        <li><strong>Multimedya/Görüntüleme:</strong> CENG310, 315 (ön şart SENG201 & ENGR202), 316, 407, 415 (ön şart CENG315), 422, 441.</li>
+        <li><strong>Donanım:</strong> CENG312, 313, 318, 322, 426, MCE484.</li>
+        <li><strong>Ağ/Güvenlik:</strong> CENG321, 325, 421, 451, 474, 417, 419.</li>
+        <li><strong>Bilimsel/Paralel:</strong> CENG409, 424, 430, 342, 443, 470.</li>
+        <li><strong>Yapay Zeka:</strong> CENG317, 329, 408, 410 (ön şart SENG301), 412, 413, 414, 418, 428, 432, 440 (ön şart SENG301), 442, 463, 472.</li>
+        <li><strong>Diğer:</strong> CENG319, 403, 404, ENGR450, CENG460, MATH426 Cryptography.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="staj">
+      <h2><span class="num">5</span> Staj (Zorunlu)</h2>
+      <p>Kaynak: <a href="https://aybu.edu.tr/yazilimmuh/tr/sayfa/4927" target="_blank">Bölüm staj sayfası</a></p>
+      <div class="note warn"><strong>2 Zorunlu Staj</strong>SENG300 Industrial Practice I (5. yarıyıl) + SENG400 Industrial Practice II (7. yarıyıl). Mezuniyet için her ikisi zorunlu.</div>
+
+      <h3>Teslim Edilecek Belgeler</h3>
+      <ul class="clean">
+        <li>Zorunlu Staj Yazısı (e-imzalı)</li>
+        <li>Staj Kabul Formu (işyeri imzalı)</li>
+        <li>Staj Öncesi Kontrol Formu</li>
+        <li>GSS Beyan ve Taahhütnamesi</li>
+        <li>Staj Raporu (günlük özet dahil)</li>
+        <li>Staj Sonuç Belgesi (işyeri mühendisi)</li>
+        <li>Staj Sonrası Kontrol Formu</li>
+      </ul>
+
+      <h3>Süreç — Staj Öncesi</h3>
+      <ol class="steps">
+        <li>AYBÜ Staj Yönergesi'ni oku.</li>
+        <li>Uygun işyeri belirle.</li>
+        <li>E-imzalı staj yazısını işyerine ver.</li>
+        <li>İmzalı kabul formunu al.</li>
+        <li>Belgeleri Staj Komisyonu'na son tarihten önce teslim et.</li>
+        <li>Staj başlamadan <strong>1-2 iş günü önce</strong> sigorta belgesini iste.</li>
+      </ol>
+
+      <h3>Süreç — Staj Sonrası</h3>
+      <ol class="steps">
+        <li>Günlük özet + genel rapor yaz.</li>
+        <li>İşyeri değerlendirmesi al, sayfa başına işyeri kaşesi vurdur.</li>
+        <li>Belgeleri zarfla, denetçi imzasıyla kapat.</li>
+        <li>Raporu spiral ciltlet, komisyona teslim et.</li>
+      </ol>
+
+      <h3>Staj Komisyonu</h3>
+      <div class="info-grid">
+        <div class="info-card"><div class="label">Başkan</div><div class="val">Dr. Öğr. Üyesi Fatma Küçük<br><a href="mailto:fatmakucuk@aybu.edu.tr">fatmakucuk@aybu.edu.tr</a><br>(0312) 906 2209 · B317</div></div>
+        <div class="info-card"><div class="label">Üye</div><div class="val">Arş. Gör. Kübranur Gümüşlü<br><a href="mailto:kubranurgumuslu@aybu.edu.tr">kubranurgumuslu@aybu.edu.tr</a></div></div>
+        <div class="info-card"><div class="label">Üye</div><div class="val">Arş. Gör. Murat Can Yılmaz<br><a href="mailto:muratcanyilmaz@aybu.edu.tr">muratcanyilmaz@aybu.edu.tr</a></div></div>
+      </div>
+    </section>
+
+    <section class="card" id="aday">
+      <h2><span class="num">6</span> Aday Mühendislik / ENGR450</h2>
+      <p>Sayfa: <a href="https://aybu.edu.tr/yazilimmuh/tr/sayfa/10350" target="_blank">Aday Mühendislik</a></p>
+      <ul class="clean">
+        <li><strong>ENGR450</strong> Engineering Application on Site — 5-0-0-15 AKTS.</li>
+        <li>Uzun süreli iş yeri eğitimi (bölüm seçmelisi yerine sayılır).</li>
+        <li>İndirilebilir: Yönerge, dilekçe, GSS taahhütnamesi, başvuru/kabul/değerlendirme formları, işbirliği sözleşmesi, rapor şablonu.</li>
+      </ul>
+      <div class="info-grid">
+        <div class="info-card"><div class="label">Komisyon Başkanı</div><div class="val">Dr. Öğr. Üyesi Mehmet Ulvi Şimşek</div></div>
+        <div class="info-card"><div class="label">Üye</div><div class="val">Arş. Gör. Kübranur Gümüşlü</div></div>
+      </div>
+    </section>
+
+    <section class="card" id="bitirme">
+      <h2><span class="num">7</span> Bitirme Projesi</h2>
+      <p>Sayfa: <a href="https://aybu.edu.tr/yazilimmuh/tr/sayfa/11095" target="_blank">Bitirme Projesi</a> · <a href="https://graduation-project-exhibition-evalu.vercel.app" target="_blank">Proje Vitrini</a></p>
+      <ul class="clean">
+        <li><strong>SENG401</strong> Graduation Project I (7. yarıyıl, 6 AKTS)</li>
+        <li><strong>SENG402</strong> Graduation Project II (8. yarıyıl, 7 AKTS)</li>
+      </ul>
+      <p>Hazır kaynak: Rapor Yazım Kılavuzu, Word rapor şablonu, A0 Poster şablonu, PPT sunum şablonu.</p>
+      <div class="info-card"><div class="label">İzleme Komisyonu Başkanı</div><div class="val">Doç. Dr. Tuba Çağlıkantar</div></div>
+    </section>
+
+    <section class="card" id="mezuniyet">
+      <h2><span class="num">8</span> Mezuniyet Şartları</h2>
+      <p>Sayfa: <a href="https://aybu.edu.tr/yazilimmuh/tr/sayfa/10324" target="_blank">Mezuniyet</a></p>
+      <div class="info-grid">
+        <div class="info-card"><div class="label">Min AKTS</div><div class="val">240</div></div>
+        <div class="info-card"><div class="label">Min GNO</div><div class="val">2.00 / 4.00</div></div>
+        <div class="info-card"><div class="label">Zorunlu Staj</div><div class="val">SENG300 + SENG400</div></div>
+        <div class="info-card"><div class="label">Bitirme Projesi</div><div class="val">SENG401 + SENG402</div></div>
+        <div class="info-card"><div class="label">Bölüm Seçmeli</div><div class="val">Min 50 AKTS</div></div>
+        <div class="info-card"><div class="label">Fakülte/Üni Seçmeli</div><div class="val">Min 6 AKTS</div></div>
+      </div>
+      <div class="info-grid">
+        <div class="info-card"><div class="label">Komisyon Başkanı</div><div class="val">Dr. Öğr. Üyesi Abdulkadir Taşdelen</div></div>
+        <div class="info-card"><div class="label">Üye</div><div class="val">Arş. Gör. Emine Aşar</div></div>
+      </div>
+    </section>
+
+    <section class="card" id="cap">
+      <h2><span class="num">9</span> ÇAP, Yandal, Yatay Geçiş, Erasmus</h2>
+
+      <h3>Çift Anadal (ÇAP)</h3>
+      <p>Sayfa: <a href="https://aybu.edu.tr/yazilimmuh/tr/sayfa/8270" target="_blank">ÇAP kriterleri</a> — her program için Excel dosyaları sayfada.</p>
+      <div class="pill-row">
+        <span class="pill">Elektrik Elektronik Müh.</span>
+        <span class="pill">Endüstri Müh.</span>
+        <span class="pill">Makina Müh.</span>
+      </div>
+      <p><strong>Komisyon:</strong> Dr. Öğr. Üyesi Ömer Mintemur (Başkan) · Arş. Gör. Büşra Yıldırım</p>
+
+      <h3>Erasmus+ / Farabi</h3>
+      <p>Dış İlişkiler Birimi üzerinden: <a href="https://aybu.edu.tr/dib/tr" target="_blank">aybu.edu.tr/dib</a><br>
+      Bölüm Koordinatörü: <strong>Dr. Öğr. Üyesi Ömer Mintemur</strong></p>
+
+      <h3>Yatay Geçiş</h3>
+      <p>Komisyon: Dr. Öğr. Üyesi Fatma Küçük (Başkan) · Arş. Gör. Esma Nur Kocataş</p>
+
+      <h3>Ders Muafiyet / İntibak</h3>
+      <p>Komisyon: Doç. Dr. Hilal Arslan (Başkan) · Doç. Dr. Yenal Arslan · Arş. Gör. Murat Can Yılmaz</p>
+
+      <h3>Yaz Okulu</h3>
+      <p>Komisyon: Dr. Öğr. Üyesi Mehmet Ulvi Şimşek (Başkan) · Arş. Gör. Pelin Nur Çöl</p>
+    </section>
+
+    <section class="card" id="lisansustu">
+      <h2><span class="num">10</span> Lisansüstü</h2>
+      <p>Sayfa: <a href="https://aybu.edu.tr/yazilimmuh/tr/sayfa/11204" target="_blank">Lisansüstü Eğitim</a></p>
+      <p><strong>Tezli Yüksek Lisans — Software Engineering</strong> (%100 İngilizce, normal 2 yıl, max 3 yıl).</p>
+
+      <h4>Başvuru Şartları</h4>
+      <div class="info-grid">
+        <div class="info-card"><div class="label">GNO</div><div class="val">≥ 2.5 / 4.0</div></div>
+        <div class="info-card"><div class="label">ALES</div><div class="val">≥ 70 (son 5 yıl)</div></div>
+        <div class="info-card"><div class="label">Yabancı Dil</div><div class="val">≥ 60 (son 5 yıl)</div></div>
+        <div class="info-card"><div class="label">Niyet Mektubu</div><div class="val">Gerekli</div></div>
+        <div class="info-card"><div class="label">Referans</div><div class="val">Min 1 mektup</div></div>
+      </div>
+
+      <h4>Uzmanlık Alanları</h4>
+      <div class="pill-row">
+        <span class="pill">AI</span><span class="pill">ML</span><span class="pill">Deep Learning</span><span class="pill">NLP</span>
+        <span class="pill">Data Mining</span><span class="pill">Image Processing</span><span class="pill">Computer Vision</span>
+        <span class="pill">Robotics</span><span class="pill">Blockchain</span><span class="pill">Cybersecurity</span>
+        <span class="pill">IoT</span><span class="pill">Cloud</span><span class="pill">Game Dev</span><span class="pill">SQA</span>
+      </div>
+      <p>Müfredat: 7 seçmeli + <strong>FBE900</strong> Research Methods and Ethics + tez.</p>
+    </section>
+
+    <section class="card" id="kadro">
+      <h2><span class="num">11</span> Akademik Kadro</h2>
+
+      <h3>Öğretim Üyeleri</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Ad</th><th>Unvan</th><th>E-posta</th><th>Tel</th><th>Ofis</th><th>İlgi Alanı</th></tr></thead>
+        <tbody>
+          <tr><td>Hilal Arslan</td><td>Doç. Dr.</td><td><a href="mailto:hilalarslan@aybu.edu.tr">hilalarslan</a></td><td>906 2282</td><td>B317</td><td>Parallel comp, graph algo, bioinfo, ML, AI</td></tr>
+          <tr><td>Yenal Arslan</td><td>Doç. Dr.</td><td><a href="mailto:yenalarslan@aybu.edu.tr">yenalarslan</a></td><td>916 2313</td><td>B318</td><td>InfoSec, AI, proj mgmt, testing</td></tr>
+          <tr><td>Tuba Çağlıkantar</td><td>Doç. Dr.</td><td><a href="mailto:tubacaglikantar@aybu.edu.tr">tubacaglikantar</a></td><td>—</td><td>B321</td><td>Image proc, 3D, optimization, ML</td></tr>
+          <tr><td>Ömer Mintemur</td><td>Dr. Öğr. Üyesi</td><td><a href="mailto:omermintemur@aybu.edu.tr">omermintemur</a></td><td>916 2275</td><td>B318</td><td>CV, pattern recognition, NN</td></tr>
+          <tr><td>Fatma Küçük</td><td>Dr. Öğr. Üyesi</td><td><a href="mailto:fatmakucuk@aybu.edu.tr">fatmakucuk</a></td><td>906 2209</td><td>B317</td><td>Hyperspectral image proc</td></tr>
+          <tr><td>Abdulkadir Taşdelen</td><td>Dr. Öğr. Üyesi</td><td><a href="mailto:abdulkadirtasdelen@aybu.edu.tr">abdulkadirtasdelen</a></td><td>916 2202</td><td>B318</td><td>CS, bioinfo, AI, ML</td></tr>
+          <tr><td>Rasha Osman</td><td>Dr. Öğr. Üyesi</td><td><a href="mailto:rosman@aybu.edu.tr">rosman</a></td><td>—</td><td>B321</td><td>Data-driven SE, AI/ML, DB perf</td></tr>
+          <tr><td>Mehmet Ulvi Şimşek</td><td>Dr. Öğr. Üyesi</td><td><a href="mailto:mehmetulvisimsek@aybu.edu.tr">mehmetulvisimsek</a></td><td>—</td><td>—</td><td>IoT, fog/cloud, AI, ML</td></tr>
+          <tr><td>Murat Akın</td><td>Dr. Öğr. Üyesi</td><td><a href="mailto:muratakin@aybu.edu.tr">muratakin</a></td><td>916 2213</td><td>C313</td><td>AI, big data, data mining, InfoSec</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>Araştırma Görevlileri (B Blok 5. Kat)</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Ad</th><th>E-posta</th><th>İlgi Alanı</th></tr></thead>
+        <tbody>
+          <tr><td>Murat Can Yılmaz</td><td><a href="mailto:muratcanyilmaz@aybu.edu.tr">muratcanyilmaz</a></td><td>Augmented reality</td></tr>
+          <tr><td>Emine Aşar</td><td><a href="mailto:easar@aybu.edu.tr">easar</a></td><td>ML, image processing</td></tr>
+          <tr><td>Büşra Yıldırım</td><td><a href="mailto:busrayildirim@aybu.edu.tr">busrayildirim</a></td><td>Optimization, metaheuristics, AI</td></tr>
+          <tr><td>Kübranur Gümüşlü</td><td><a href="mailto:kubranurgumuslu@aybu.edu.tr">kubranurgumuslu</a></td><td>Data mining, ML</td></tr>
+          <tr><td>Pelin Nur Çöl</td><td><a href="mailto:pelinnurcol@aybu.edu.tr">pelinnurcol</a></td><td>CS theory, AI, SE, robotics</td></tr>
+          <tr><td>Esma Nur Kocataş</td><td><a href="mailto:kocatasesmanur@aybu.edu.tr">kocatasesmanur</a></td><td>ML, deep learning, bioinfo</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="card" id="komisyon">
+      <h2><span class="num">12</span> Bölüm Komisyonları</h2>
+      <p>Tam liste: <a href="https://aybu.edu.tr/yazilimmuh/tr/sayfa/9413" target="_blank">Komisyonlar sayfası</a></p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Komisyon</th><th>Başkan</th><th>Üyeler</th></tr></thead>
+        <tbody>
+          <tr><td>Müfredat Muafiyet & İntibak</td><td>Hilal Arslan</td><td>Yenal Arslan, M. C. Yılmaz</td></tr>
+          <tr><td>Çift Anadal / Yandal</td><td>Ömer Mintemur</td><td>Büşra Yıldırım</td></tr>
+          <tr><td>Erasmus</td><td>Ömer Mintemur</td><td>Büşra Yıldırım</td></tr>
+          <tr><td>Staj</td><td>Fatma Küçük</td><td>K. Gümüşlü, M. C. Yılmaz</td></tr>
+          <tr><td>ENGR450 Aday Mühendislik</td><td>Mehmet Ulvi Şimşek</td><td>Kübranur Gümüşlü</td></tr>
+          <tr><td>Yatay Geçiş</td><td>Fatma Küçük</td><td>Esma Nur Kocataş</td></tr>
+          <tr><td>Yaz Okulu</td><td>Mehmet Ulvi Şimşek</td><td>Pelin Nur Çöl</td></tr>
+          <tr><td>MÜDEK Akreditasyon</td><td>Abdulkadir Taşdelen</td><td>Esma Nur Kocataş</td></tr>
+          <tr><td>Mezuniyet</td><td>Abdulkadir Taşdelen</td><td>Emine Aşar</td></tr>
+          <tr><td>Proje Dersleri İzleme</td><td>Tuba Çağlıkantar</td><td>Pelin Nur Çöl</td></tr>
+          <tr><td>Kalite</td><td>Murat Akın</td><td>Pelin Nur Çöl</td></tr>
+          <tr><td>Lab Yazılım/Teknik</td><td>Tuba Çağlıkantar</td><td>Emine Aşar</td></tr>
+          <tr><td>Web Sitesi</td><td>Abdulkadir Taşdelen</td><td>Murat Can Yılmaz</td></tr>
+          <tr><td>Mezun İlişkileri</td><td>Yenal Arslan</td><td>M. U. Şimşek, B. Yıldırım, M. C. Yılmaz</td></tr>
+          <tr><td>Kütüphane / Akademik Destek</td><td>Fatma Küçük</td><td>Murat Can Yılmaz</td></tr>
+          <tr><td>Eğitim, Seminer, Panel</td><td>Abdulkadir Taşdelen</td><td>Kübranur Gümüşlü</td></tr>
+          <tr><td>Toplumsal Katkı</td><td>Murat Akın</td><td>Pelin Nur Çöl</td></tr>
+          <tr><td>İç/Dış Paydaş İlişkileri</td><td>Yenal Arslan</td><td>Büşra Yıldırım</td></tr>
+          <tr><td>Tanıtım</td><td>Tuba Çağlıkantar</td><td>M. U. Şimşek, P. N. Çöl, E. Aşar</td></tr>
+          <tr><td>Akademik İş Yükü</td><td>Ömer Mintemur</td><td>Esma Nur Kocataş</td></tr>
+          <tr><td>AVESİS</td><td>Murat Akın</td><td>Emine Aşar</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="card" id="asec">
+      <h2><span class="num">13</span> ASEC Öğrenci Kulübü</h2>
+      <p>Site: <a href="https://aybuasec.org/" target="_blank">aybuasec.org</a></p>
+      <p>AYBÜ Yazılım Mühendisliği Kulübü. <strong>7 aktif departman · 180+ üye · 20+ proje.</strong></p>
+
+      <h3>Departmanlar</h3>
+      <ul class="clean">
+        <li><strong>Proje Komisyonu</strong> — fikir → tamamlama rehberliği</li>
+        <li><strong>Etkinlik Departmanı</strong> — konferans, seminer</li>
+        <li><strong>Staj, İş, Burs Departmanı</strong> — ilan, CV, kariyer</li>
+        <li><strong>Sosyal Medya Departmanı</strong></li>
+        <li><strong>Yurt Dışı Komisyonu</strong></li>
+      </ul>
+
+      <h3>Üyelik</h3>
+      <p><a href="https://aybuasec.org/register" target="_blank">Kayıt Ol</a> · <a href="https://aybuasec.org/login" target="_blank">Giriş Yap</a></p>
+
+      <h3>İletişim & Sosyal</h3>
+      <div class="info-grid">
+        <div class="info-card"><div class="label">Telefon</div><div class="val">+90 551 553 6339</div></div>
+        <div class="info-card"><div class="label">Adres</div><div class="val">Ayvalı Mah. 150 Sk. Etlik-Keçiören Ankara</div></div>
+        <div class="info-card"><div class="label">Instagram</div><div class="val"><a href="https://www.instagram.com/asecaybu" target="_blank">@asecaybu</a></div></div>
+        <div class="info-card"><div class="label">LinkedIn</div><div class="val"><a href="https://www.linkedin.com/company/aybu-software-engineering-club/" target="_blank">AYBU SE Club</a></div></div>
+        <div class="info-card"><div class="label">YouTube</div><div class="val"><a href="https://youtube.com/@asecaybu" target="_blank">@asecaybu</a></div></div>
+        <div class="info-card"><div class="label">WhatsApp</div><div class="val"><a href="https://chat.whatsapp.com/DuZcHLL1ybg63MHOQKrkav" target="_blank">Grup linki</a></div></div>
+      </div>
+
+      <h3>Yönetim</h3>
+      <ul class="clean">
+        <li><strong>Danışman:</strong> Doç. Dr. Yenal Arslan</li>
+        <li><strong>Başkan:</strong> Can Kankılıç</li>
+        <li><strong>Başkan Yardımcısı:</strong> Nihat Eren Özturan</li>
+        <li>Sosyal Medya: Azra Kuyucu · Yurt Dışı: İlayda Akınet · Staj/İş/Burs: Emirkan Dağ · Proje: Ali Baran Korkmaz</li>
+      </ul>
+
+      <h3>Etkinlik Örnekleri</h3>
+      <div class="pill-row">
+        <span class="pill">GameJam</span><span class="pill">Bahar Pikniği</span>
+        <span class="pill">Girişimcilik Zirvesi</span><span class="pill">Oryantasyon</span>
+        <span class="pill">Teknik Geziler</span><span class="pill">Sektör Seminerleri</span>
+      </div>
+    </section>
+
+    <section class="card" id="harita">
+      <h2><span class="num">14</span> Resmi Sayfa Haritası</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Başlık</th><th>URL</th></tr></thead>
+        <tbody>
+          <tr><td>Genel Bilgi</td><td><a href="https://aybu.edu.tr/yazilimmuh/tr/sayfa/4931" target="_blank">/sayfa/4931</a></td></tr>
+          <tr><td>Mesaj</td><td><a href="https://aybu.edu.tr/yazilimmuh/tr/sayfa/4933" target="_blank">/sayfa/4933</a></td></tr>
+          <tr><td>Öğrenci Gözüyle</td><td><a href="https://aybu.edu.tr/yazilimmuh/tr/sayfa/10136" target="_blank">/sayfa/10136</a></td></tr>
+          <tr><td>Komisyonlar</td><td><a href="https://aybu.edu.tr/yazilimmuh/tr/sayfa/9413" target="_blank">/sayfa/9413</a></td></tr>
+          <tr><td>Akademik Kadro</td><td><a href="https://aybu.edu.tr/yazilimmuh/tr/sayfa/4940" target="_blank">/sayfa/4940</a></td></tr>
+          <tr><td>İdari Kadro</td><td><a href="https://aybu.edu.tr/yazilimmuh/tr/sayfa/9028" target="_blank">/sayfa/9028</a></td></tr>
+          <tr><td>Lisans Müfredat</td><td><a href="https://aybu.edu.tr/yazilimmuh/tr/sayfa/4935" target="_blank">/sayfa/4935</a></td></tr>
+          <tr><td>Lisansüstü</td><td><a href="https://aybu.edu.tr/yazilimmuh/tr/sayfa/11204" target="_blank">/sayfa/11204</a></td></tr>
+          <tr><td>ÇAP</td><td><a href="https://aybu.edu.tr/yazilimmuh/tr/sayfa/8270" target="_blank">/sayfa/8270</a></td></tr>
+          <tr><td>Mezuniyet</td><td><a href="https://aybu.edu.tr/yazilimmuh/tr/sayfa/10324" target="_blank">/sayfa/10324</a></td></tr>
+          <tr><td>Aday Mühendislik</td><td><a href="https://aybu.edu.tr/yazilimmuh/tr/sayfa/10350" target="_blank">/sayfa/10350</a></td></tr>
+          <tr><td>Bitirme Projesi</td><td><a href="https://aybu.edu.tr/yazilimmuh/tr/sayfa/11095" target="_blank">/sayfa/11095</a></td></tr>
+          <tr><td>Staj</td><td><a href="https://aybu.edu.tr/yazilimmuh/tr/sayfa/4927" target="_blank">/sayfa/4927</a></td></tr>
+          <tr><td>İletişim</td><td><a href="https://aybu.edu.tr/yazilimmuh/tr/sayfa/4934" target="_blank">/sayfa/4934</a></td></tr>
+          <tr><td>Duyurular</td><td><a href="https://aybu.edu.tr/yazilimmuh/tr/duyurular" target="_blank">/duyurular</a></td></tr>
+          <tr><td>Haberler</td><td><a href="https://aybu.edu.tr/yazilimmuh/tr/haberler" target="_blank">/haberler</a></td></tr>
+        </tbody>
+      </table></div>
+
+      <div class="note warn"><strong>Sayfada bulunmayan konular</strong>
+        Burs detayı, ders muafiyet detay sayfası, mazeret/bütünleme prosedürü, SSS, formlar arşivi, yönetmelik/yönerge → ilgili komisyona veya Üniversite Öğrenci İşleri'ne sor. Duyuruları takip et.</div>
+    </section>
+
+  </main>
+
+</div>
+
+<footer>
+  <p>AYBÜ Yazılım Mühendisliği Öğrenci Rehberi · Resmi bilgiler için bölüm sayfasını da kontrol et.</p>
+</footer>
+
+<script>
+// TOC search filter
+const search = document.getElementById('tocSearch');
+const tocItems = document.querySelectorAll('#tocList li');
+if (search) {
+  search.addEventListener('input', (e) => {
+    const q = e.target.value.toLowerCase();
+    tocItems.forEach(li => {
+      const text = li.textContent.toLowerCase();
+      li.style.display = text.includes(q) ? '' : 'none';
+    });
+  });
+}
+// Highlight active section on scroll
+const sections = document.querySelectorAll('section.card');
+const navLinks = document.querySelectorAll('.sidebar a');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(a => {
+        a.style.background = '';
+        a.style.color = '';
+        if (a.getAttribute('href') === '#' + entry.target.id) {
+          a.style.background = 'var(--accent-soft)';
+          a.style.color = 'var(--accent-dark)';
+        }
+      });
+    }
+  });
+}, { rootMargin: '-30% 0px -60% 0px' });
+sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
