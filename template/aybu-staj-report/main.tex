@@ -1,0 +1,252 @@
+% =====================================================================
+% AYBU - Yazılım Mühendisliği / Software Engineering
+% Summer Practice (Staj) Report - Reusable LaTeX Template
+% ---------------------------------------------------------------------
+% Compile: pdflatex main.tex  (run twice for TOC)
+%      or: latexmk -pdf main.tex
+%      or: make build
+% License: MIT
+% =====================================================================
+\documentclass[11pt,a4paper]{article}
+
+% -------- packages --------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{makecell}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{lipsum}
+\usepackage{etoolbox}
+
+\hypersetup{hidelinks}
+
+% AYBU writing-rules compliance:
+%   - Font: Arial / sans-serif look (use \familydefault sf)
+%   - Body size: 11pt, line spacing 1.5
+%   - Margins: 2.5 cm on every side
+%   - Page numbers: bottom-center, every page except cover
+\renewcommand{\familydefault}{\sfdefault}
+\onehalfspacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+% section headings
+\allowdisplaybreaks
+\titleformat{\section}{\Large\bfseries\MakeUppercase}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.6em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{0.6em}{}
+
+% TOC tweaks
+\renewcommand{\contentsname}{TABLE OF CONTENTS}
+\setcounter{tocdepth}{3}
+
+% page header / footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+% =====================================================================
+% STUDENT INFORMATION  --  EDIT THESE FIELDS
+% =====================================================================
+\newcommand{\StudentName}{Your Name Surname}
+\newcommand{\StudentDept}{Software Engineering}
+\newcommand{\StudentID}{00000000000}
+\newcommand{\StudentEmail}{your.email@example.com}
+\newcommand{\StudentPhone}{0000 000 00 00}
+
+\newcommand{\InternshipPlace}{Company Name, City}
+\newcommand{\InternshipStart}{DD / MM / YYYY}
+\newcommand{\InternshipEnd}{DD / MM / YYYY}
+\newcommand{\InternshipSupervisor}{Supervisor Name, Title}
+
+% =====================================================================
+% WEEKLY REPORT MACRO
+%   Usage: \WeekTable{Week N}{startDate}{endDate}{
+%       {Mon DD/MM}{What you did on Monday}{8} %
+%       {Tue DD/MM}{What you did on Tuesday}{8} %
+%       {Wed DD/MM}{...}{8} %
+%       {Thu DD/MM}{...}{8} %
+%       {Fri DD/MM}{...}{8} %
+%   }
+%   Five rows expected. Cells may be left empty for blank templates.
+% =====================================================================
+\newcommand{\SigBlock}{%
+  \vspace{1.2em}
+  \begin{tabular}{@{}p{0.48\textwidth}p{0.48\textwidth}@{}}
+    \dotfill & \dotfill \\
+    Signature of trainee & Work place \\[1.4em]
+    \dotfill & \dotfill \\
+    Name and title of the controlling superior & Signature and Stamp \\
+  \end{tabular}%
+}
+
+% Single weekly table. Rows are passed positionally for clarity.
+\newcommand{\WeekRow}[3]{#1 & #2 & #3 \\ \hline}
+
+\newenvironment{weekreport}[3]{%
+  % #1 = week label (e.g. "Week 1")
+  % #2 = start date
+  % #3 = end date
+  \subsection{#1}
+  \noindent\textbf{Dates: #2 -- #3} \hfill \textbf{Place: \InternshipPlace}\\[0.4em]
+  \renewcommand{\arraystretch}{1.6}
+  \begin{tabular}{|>{\centering\arraybackslash}p{2.6cm}|p{10.2cm}|>{\centering\arraybackslash}p{2.6cm}|}
+  \hline
+  \textbf{DAYS} & \textbf{WORK ACCOMPLISHED} & \textbf{WORKING HOURS} \\ \hline
+}{%
+  \end{tabular}\\
+  \SigBlock
+  \newpage
+}
+
+% =====================================================================
+\begin{document}
+
+% --------------------- COVER PAGE ---------------------
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{center}
+    \vspace*{0.4cm}
+    \includegraphics[width=6.5cm]{images/aybu-logo.png}\\[1.2cm]
+
+    {\Large\bfseries ANKARA YILDIRIM BEYAZIT UNIVERSITY}\\[0.4cm]
+    {\Large\bfseries FACULTY OF ENGINEERING \& NATURAL SCIENCES}\\[0.4cm]
+    {\Large\bfseries SUMMER PRACTICE REPORT}\\[2.4cm]
+\end{center}
+
+\noindent\textbf{STUDENT'S}\\[-0.4em]
+\noindent\rule{\textwidth}{0.4pt}\\[1.2em]
+
+\renewcommand{\arraystretch}{1.9}
+\noindent\begin{tabular}{@{}p{4.5cm}p{\dimexpr\textwidth-4.7cm\relax}@{}}
+\textbf{NAME SURNAME:}   & \StudentName  \\
+\textbf{DEPARTMENT:}     & \StudentDept  \\
+\textbf{STUDENT ID:}     & \StudentID    \\
+\textbf{E-MAIL ADRESS:}  & \StudentEmail \\
+\textbf{PHONE NUMBER:}   & \StudentPhone \\
+\end{tabular}
+
+\vfill
+\begin{center}\small Internship period: \InternshipStart{} -- \InternshipEnd\end{center}
+\end{titlepage}
+
+% --------------------- TOC ---------------------
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+% =====================================================================
+\section{DAILY REPORT}
+% Add or remove weeks as needed. Each week is one page.
+
+\begin{weekreport}{Week 1}{DD/MM/YYYY}{DD/MM/YYYY}
+  \WeekRow{Monday \\ DD/MM}    {\textit{Describe work accomplished on Monday.}}    {8}
+  \WeekRow{Tuesday \\ DD/MM}   {\textit{Describe work accomplished on Tuesday.}}   {8}
+  \WeekRow{Wednesday \\ DD/MM} {\textit{Describe work accomplished on Wednesday.}} {8}
+  \WeekRow{Thursday \\ DD/MM}  {\textit{Describe work accomplished on Thursday.}}  {8}
+  \WeekRow{Friday \\ DD/MM}    {\textit{Describe work accomplished on Friday.}}    {8}
+\end{weekreport}
+
+\begin{weekreport}{Week 2}{DD/MM/YYYY}{DD/MM/YYYY}
+  \WeekRow{Monday \\ DD/MM}    {}{}
+  \WeekRow{Tuesday \\ DD/MM}   {}{}
+  \WeekRow{Wednesday \\ DD/MM} {}{}
+  \WeekRow{Thursday \\ DD/MM}  {}{}
+  \WeekRow{Friday \\ DD/MM}    {}{}
+\end{weekreport}
+
+\begin{weekreport}{Week 3}{DD/MM/YYYY}{DD/MM/YYYY}
+  \WeekRow{Monday \\ DD/MM}    {}{}
+  \WeekRow{Tuesday \\ DD/MM}   {}{}
+  \WeekRow{Wednesday \\ DD/MM} {}{}
+  \WeekRow{Thursday \\ DD/MM}  {}{}
+  \WeekRow{Friday \\ DD/MM}    {}{}
+\end{weekreport}
+
+\begin{weekreport}{Week 4}{DD/MM/YYYY}{DD/MM/YYYY}
+  \WeekRow{Monday \\ DD/MM}    {}{}
+  \WeekRow{Tuesday \\ DD/MM}   {}{}
+  \WeekRow{Wednesday \\ DD/MM} {}{}
+  \WeekRow{Thursday \\ DD/MM}  {}{}
+  \WeekRow{Friday \\ DD/MM}    {}{}
+\end{weekreport}
+
+\begin{weekreport}{Week 5}{DD/MM/YYYY}{DD/MM/YYYY}
+  \WeekRow{Monday \\ DD/MM}    {}{}
+  \WeekRow{Tuesday \\ DD/MM}   {}{}
+  \WeekRow{Wednesday \\ DD/MM} {}{}
+  \WeekRow{Thursday \\ DD/MM}  {}{}
+  \WeekRow{Friday \\ DD/MM}    {}{}
+\end{weekreport}
+
+% =====================================================================
+\section{GENERAL REPORT}
+
+\subsection{Introduction}
+
+\subsubsection{Information about the Institution}
+% TODO: Write 2-4 paragraphs about the company / institution where you did
+% the internship: sector, products, team structure, work culture.
+\lipsum[1]
+
+\subsubsection{Overview of the Internship}
+% TODO: High-level summary of what you worked on, what you learned, the
+% main projects you contributed to, and the technologies involved.
+\lipsum[2]
+
+\subsection{Internship Description}
+
+\subsubsection{Onboarding and Environment Setup}
+% TODO: Describe accounts/access granted, repository setup, internal tools
+% (issue tracker, code review, communication), coding standards introduced.
+\lipsum[3]
+
+\subsubsection{Project 1: \textit{Project Title}}
+% TODO: Goal, your role, technologies used, what you built/changed, results.
+\lipsum[4]
+
+\subsubsection{Project 2: \textit{Project Title}}
+% TODO: As above.
+\lipsum[5]
+
+\subsubsection{Project 3: \textit{Project Title}}
+% TODO: As above.
+\lipsum[6]
+
+\subsubsection{Additional Tasks and Contributions}
+% TODO: Bug fixes, research spikes, small features, code reviews you did.
+\lipsum[7]
+
+\subsection{Conclusion}
+% TODO: What you learned, soft skills, hard skills, how it relates to the
+% curriculum, what you would do differently next time.
+\lipsum[8]
+
+\newpage
+\subsection{Appendices}
+% TODO: screenshots, diagrams, links. Use \includegraphics for images.
+% Example:
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.9\textwidth]{images/example.png}
+%   \caption{Screenshot of feature X.}
+% \end{figure}
+
+\end{document}
