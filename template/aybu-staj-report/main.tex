@@ -107,27 +107,27 @@
   \subsection*{\thesection.\arabic{weekcounter}\quad #1}%
   \addcontentsline{toc}{subsection}{\protect\numberline{\thesection.\arabic{weekcounter}}#1}%
   \stepcounter{weekcounter}%
-  \vspace{0.6em}%
+  \vspace{0.8em}%
   \setlength{\fboxrule}{1.4pt}%
-  \setlength{\fboxsep}{10pt}%
+  \setlength{\fboxsep}{22pt}%
   \begin{lrbox}{\weekbox}%
   \begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}%
   \renewcommand{\arraystretch}{2.0}%
   \setlength{\arrayrulewidth}{0.5pt}%
   \centering
-  \begin{tabular}{|>{\centering\arraybackslash}p{2.2cm}|p{8.6cm}|>{\centering\arraybackslash}p{2.8cm}|}
+  \begin{tabular}{|>{\centering\arraybackslash}p{2.2cm}|p{7.6cm}|>{\centering\arraybackslash}p{2.8cm}|}
   \hline
   \multicolumn{1}{|c|}{\textit{DAYS}} &
   \multicolumn{1}{c|}{\textit{WORK ACCOMPLISHED}} &
   \multicolumn{1}{c|}{\textit{WORKING HOURS}} \\ \hline
 }{%
-  \end{tabular}\par
-  \vspace{1.2em}%
-  \raggedright\SigBlock
+  \end{tabular}%
   \end{minipage}%
   \end{lrbox}%
   \noindent\fbox{\usebox{\weekbox}}\par
   \setlength{\arrayrulewidth}{0.4pt}%
+  \vspace{2em}%
+  \SigBlock
   \newpage
 }
 
