@@ -27,11 +27,11 @@ Each week is one page produced by the `weekreport` environment:
 
 ```latex
 \begin{weekreport}{Week 1}{02/06/2025}{06/06/2025}
-  \WeekRow{Monday \\ 02/06}    {Set up Vue 3 dev env, cloned repo.}{8}
-  \WeekRow{Tuesday \\ 03/06}   {Implemented login form.}            {8}
-  \WeekRow{Wednesday \\ 04/06} {Unit tests + code review.}          {8}
-  \WeekRow{Thursday \\ 05/06}  {API integration.}                   {8}
-  \WeekRow{Friday \\ 06/06}    {Bug fixes, doc.}                    {8}
+  \DailyRow{Monday}   {02/06/2025}{Set up Vue 3 dev env, cloned repo.}{8:00 - 17:00}
+  \DailyRow{Tuesday}  {03/06/2025}{Implemented login form.}           {8:00 - 17:00}
+  \DailyRow{Wednesday}{04/06/2025}{Unit tests + code review.}         {8:00 - 17:00}
+  \DailyRow{Thursday} {05/06/2025}{API integration.}                  {8:00 - 17:00}
+  \DailyRow{Friday}   {06/06/2025}{Bug fixes, doc.}                   {8:00 - 17:00}
 \end{weekreport}
 ```
 
@@ -74,7 +74,10 @@ The preamble already applies the formatting expected by the AYBU SENG
 Internship Directive (and the rules listed on the project website):
 
 - A4 paper, **2.5 cm margins** on all sides
-- **Sans-serif body font** (Arial-style) at **11pt**
+- **Sans-serif body font** at **11pt** — uses Computer Modern Sans Serif by
+  default (works on every TeX Live install). For a Helvetica/Arial-clone,
+  add `\usepackage{helvet}` after `\usepackage[T1]{fontenc}` if your TeX
+  Live install includes `texlive-fontsrecommended`.
 - **1.5 line spacing** (`\onehalfspacing`)
 - Page numbers **bottom-center**, every page except the cover
 - Numbered sections (1. DAILY REPORT, 2. GENERAL REPORT) with auto TOC

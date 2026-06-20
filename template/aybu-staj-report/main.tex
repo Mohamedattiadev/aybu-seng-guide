@@ -13,7 +13,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
-\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage[a4paper,margin=2.5cm]{geometry}
 \usepackage{setspace}
 \usepackage{graphicx}
 \usepackage{array}
@@ -24,6 +24,9 @@
 \usepackage{booktabs}
 \usepackage{xcolor}
 \usepackage{enumitem}
+% Use Computer Modern Sans Serif (always available with T1).
+% Helvetica via `helvet` would be closer to Arial but requires
+% texlive-fontsrecommended which is not installed on this system.
 \usepackage{titlesec}
 \usepackage{tocloft}
 \usepackage{fancyhdr}
@@ -36,7 +39,7 @@
 \hypersetup{hidelinks}
 
 % AYBU writing-rules compliance:
-%   - Font: Arial / sans-serif look (use \familydefault sf)
+%   - Font: sans-serif (Helvetica via helvet, close to Arial)
 %   - Body size: 11pt, line spacing 1.5
 %   - Margins: 2.5 cm on every side
 %   - Page numbers: bottom-center, every page except cover
@@ -45,21 +48,17 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.5em}
 
-% section headings
-\allowdisplaybreaks
-\titleformat{\section}{\Large\bfseries\MakeUppercase}{\thesection}{0.6em}{}
-\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.6em}{}
-\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{0.6em}{}
+% section headings - sans-serif, bold
+\titleformat{\section}{\large\bfseries\sffamily\MakeUppercase}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries\sffamily}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\sffamily}{\thesubsubsection}{1em}{}
 
 % TOC tweaks
 \renewcommand{\contentsname}{TABLE OF CONTENTS}
 \setcounter{tocdepth}{3}
 
-% page header / footer
-\pagestyle{fancy}
-\fancyhf{}
-\fancyfoot[C]{\thepage}
-\renewcommand{\headrulewidth}{0pt}
+% page footer: centered page number
+\pagestyle{plain}
 
 % =====================================================================
 % STUDENT INFORMATION  --  EDIT THESE FIELDS
@@ -76,44 +75,50 @@
 \newcommand{\InternshipSupervisor}{Supervisor Name, Title}
 
 % =====================================================================
-% WEEKLY REPORT MACRO
-%   Usage: \WeekTable{Week N}{startDate}{endDate}{
-%       {Mon DD/MM}{What you did on Monday}{8} %
-%       {Tue DD/MM}{What you did on Tuesday}{8} %
-%       {Wed DD/MM}{...}{8} %
-%       {Thu DD/MM}{...}{8} %
-%       {Fri DD/MM}{...}{8} %
-%   }
-%   Five rows expected. Cells may be left empty for blank templates.
+% WEEKLY REPORT MACROS
 % =====================================================================
+% Signature block - italic labels with dotted leaders
+\newcommand{\SigLine}[1]{%
+  \makebox[10cm][l]{\textit{#1}}\,:\,\dotfill\par
+}
 \newcommand{\SigBlock}{%
   \vspace{1.2em}
-  \begin{tabular}{@{}p{0.48\textwidth}p{0.48\textwidth}@{}}
-    \dotfill & \dotfill \\
-    Signature of trainee & Work place \\[1.4em]
-    \dotfill & \dotfill \\
-    Name and title of the controlling superior & Signature and Stamp \\
-  \end{tabular}%
+  \SigLine{Signature of trainee}
+  \SigLine{Work place}
+  \SigLine{Name and title of the controlling superior}
+  \SigLine{Signature and Stamp}
 }
 
-% Single weekly table. Rows are passed positionally for clarity.
-\newcommand{\WeekRow}[3]{#1 & #2 & #3 \\ \hline}
+% One daily row: \DailyRow{Day}{Date}{Work}{Hours}
+\newcommand{\DailyRow}[4]{%
+  \makecell{\textit{#1}\\\textit{#2}} & #3 & #4 \\ \hline
+}
 
+% Weekly report environment with thick outer frame.
+% Usage:
+%   \begin{weekreport}{Week 1}{start}{end} ... rows ... \end{weekreport}
 \newenvironment{weekreport}[3]{%
-  % #1 = week label (e.g. "Week 1")
-  % #2 = start date
-  % #3 = end date
-  \subsection{#1}
-  \noindent\textbf{Dates: #2 -- #3} \hfill \textbf{Place: \InternshipPlace}\\[0.4em]
-  \renewcommand{\arraystretch}{1.6}
-  \begin{tabular}{|>{\centering\arraybackslash}p{2.6cm}|p{10.2cm}|>{\centering\arraybackslash}p{2.6cm}|}
+  \subsection*{\thesection.\arabic{weekcounter}\quad #1}%
+  \addcontentsline{toc}{subsection}{\protect\numberline{\thesection.\arabic{weekcounter}}#1}%
+  \stepcounter{weekcounter}%
+  \noindent\textbf{Dates: #2 -- #3} \hfill \textbf{Place: \InternshipPlace}\\[0.6em]
+  \renewcommand{\arraystretch}{2.0}%
+  \setlength{\arrayrulewidth}{1pt}%
+  \begin{tabular}{|>{\centering\arraybackslash}p{2.4cm}|p{10.4cm}|>{\centering\arraybackslash}p{2.6cm}|}
   \hline
-  \textbf{DAYS} & \textbf{WORK ACCOMPLISHED} & \textbf{WORKING HOURS} \\ \hline
+  \multicolumn{1}{|c|}{\textit{DAYS}} &
+  \multicolumn{1}{c|}{\textit{WORK ACCOMPLISHED}} &
+  \multicolumn{1}{c|}{\textit{WORKING HOURS}} \\ \hline
 }{%
-  \end{tabular}\\
+  \end{tabular}\par
+  \setlength{\arrayrulewidth}{0.4pt}%
+  \vspace{1.4em}
   \SigBlock
   \newpage
 }
+
+\newcounter{weekcounter}
+\setcounter{weekcounter}{1}
 
 % =====================================================================
 \begin{document}
@@ -157,43 +162,43 @@
 % Add or remove weeks as needed. Each week is one page.
 
 \begin{weekreport}{Week 1}{DD/MM/YYYY}{DD/MM/YYYY}
-  \WeekRow{Monday \\ DD/MM}    {\textit{Describe work accomplished on Monday.}}    {8}
-  \WeekRow{Tuesday \\ DD/MM}   {\textit{Describe work accomplished on Tuesday.}}   {8}
-  \WeekRow{Wednesday \\ DD/MM} {\textit{Describe work accomplished on Wednesday.}} {8}
-  \WeekRow{Thursday \\ DD/MM}  {\textit{Describe work accomplished on Thursday.}}  {8}
-  \WeekRow{Friday \\ DD/MM}    {\textit{Describe work accomplished on Friday.}}    {8}
+  \DailyRow{Monday}{DD/MM/YYYY}{}{}
+  \DailyRow{Tuesday}{DD/MM/YYYY}{}{}
+  \DailyRow{Wednesday}{DD/MM/YYYY}{}{}
+  \DailyRow{Thursday}{DD/MM/YYYY}{}{}
+  \DailyRow{Friday}{DD/MM/YYYY}{}{}
 \end{weekreport}
 
 \begin{weekreport}{Week 2}{DD/MM/YYYY}{DD/MM/YYYY}
-  \WeekRow{Monday \\ DD/MM}    {}{}
-  \WeekRow{Tuesday \\ DD/MM}   {}{}
-  \WeekRow{Wednesday \\ DD/MM} {}{}
-  \WeekRow{Thursday \\ DD/MM}  {}{}
-  \WeekRow{Friday \\ DD/MM}    {}{}
+  \DailyRow{Monday}{DD/MM/YYYY}{}{}
+  \DailyRow{Tuesday}{DD/MM/YYYY}{}{}
+  \DailyRow{Wednesday}{DD/MM/YYYY}{}{}
+  \DailyRow{Thursday}{DD/MM/YYYY}{}{}
+  \DailyRow{Friday}{DD/MM/YYYY}{}{}
 \end{weekreport}
 
 \begin{weekreport}{Week 3}{DD/MM/YYYY}{DD/MM/YYYY}
-  \WeekRow{Monday \\ DD/MM}    {}{}
-  \WeekRow{Tuesday \\ DD/MM}   {}{}
-  \WeekRow{Wednesday \\ DD/MM} {}{}
-  \WeekRow{Thursday \\ DD/MM}  {}{}
-  \WeekRow{Friday \\ DD/MM}    {}{}
+  \DailyRow{Monday}{DD/MM/YYYY}{}{}
+  \DailyRow{Tuesday}{DD/MM/YYYY}{}{}
+  \DailyRow{Wednesday}{DD/MM/YYYY}{}{}
+  \DailyRow{Thursday}{DD/MM/YYYY}{}{}
+  \DailyRow{Friday}{DD/MM/YYYY}{}{}
 \end{weekreport}
 
 \begin{weekreport}{Week 4}{DD/MM/YYYY}{DD/MM/YYYY}
-  \WeekRow{Monday \\ DD/MM}    {}{}
-  \WeekRow{Tuesday \\ DD/MM}   {}{}
-  \WeekRow{Wednesday \\ DD/MM} {}{}
-  \WeekRow{Thursday \\ DD/MM}  {}{}
-  \WeekRow{Friday \\ DD/MM}    {}{}
+  \DailyRow{Monday}{DD/MM/YYYY}{}{}
+  \DailyRow{Tuesday}{DD/MM/YYYY}{}{}
+  \DailyRow{Wednesday}{DD/MM/YYYY}{}{}
+  \DailyRow{Thursday}{DD/MM/YYYY}{}{}
+  \DailyRow{Friday}{DD/MM/YYYY}{}{}
 \end{weekreport}
 
 \begin{weekreport}{Week 5}{DD/MM/YYYY}{DD/MM/YYYY}
-  \WeekRow{Monday \\ DD/MM}    {}{}
-  \WeekRow{Tuesday \\ DD/MM}   {}{}
-  \WeekRow{Wednesday \\ DD/MM} {}{}
-  \WeekRow{Thursday \\ DD/MM}  {}{}
-  \WeekRow{Friday \\ DD/MM}    {}{}
+  \DailyRow{Monday}{DD/MM/YYYY}{}{}
+  \DailyRow{Tuesday}{DD/MM/YYYY}{}{}
+  \DailyRow{Wednesday}{DD/MM/YYYY}{}{}
+  \DailyRow{Thursday}{DD/MM/YYYY}{}{}
+  \DailyRow{Friday}{DD/MM/YYYY}{}{}
 \end{weekreport}
 
 % =====================================================================
