@@ -104,15 +104,19 @@
 
 \newsavebox{\weekbox}
 
+% Fixed weekly-page frame height so every week page has identical layout.
+\newlength{\weekframeheight}
+\setlength{\weekframeheight}{20.5cm}
+
 \newenvironment{weekreport}[3]{%
   \subsection*{\thesection.\arabic{weekcounter}\quad #1}%
   \addcontentsline{toc}{subsection}{\protect\numberline{\thesection.\arabic{weekcounter}}#1}%
   \stepcounter{weekcounter}%
-  \vspace{0.8em}%
+  \vspace{0.6em}%
   \setlength{\fboxrule}{1.4pt}%
-  \setlength{\fboxsep}{28pt}%
+  \setlength{\fboxsep}{20pt}%
   \begin{lrbox}{\weekbox}%
-  \begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}%
+  \begin{minipage}[t][\weekframeheight][t]{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}%
   \renewcommand{\arraystretch}{2.8}%
   \setlength{\arrayrulewidth}{0.5pt}%
   \centering
@@ -123,8 +127,9 @@
   \multicolumn{1}{c|}{\textit{WORKING HOURS}} \\ \hline
 }{%
   \end{tabular}\par
-  \vspace{2.6em}%
+  \vfill
   \raggedright\SigBlock
+  \vspace*{0pt}%
   \end{minipage}%
   \end{lrbox}%
   \noindent\fbox{\usebox{\weekbox}}\par
