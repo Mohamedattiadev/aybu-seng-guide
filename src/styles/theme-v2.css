@@ -3,7 +3,7 @@
    Layered ON TOP of _original.css. Overrides only what shapes the look.
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 /* -------- Palette: AYBU official (navy + cyan + red) -------- */
 :root {
@@ -26,7 +26,7 @@
   --good: #31b978;
   --shadow: none;
   --radius: 10px;
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-sans: 'League Spartan', 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
   --font-display: 'Libre Baskerville', 'Baskerville', Georgia, serif;
 }
@@ -645,6 +645,33 @@ body {
 }
 .chatbot-chip:hover { border-color: var(--text); background: var(--surface-alt); }
 .chatbot-footer { background: var(--surface); border-top: 1px solid var(--border); font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.08em; }
+
+/* -------- Callout (info / warn) -------- */
+.callout {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 18px;
+  margin: 14px 0 0;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--text-muted);
+  background: var(--surface-alt);
+  border-radius: 6px;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+.callout p { margin: 0; color: var(--text-soft); }
+.callout-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--text-muted);
+}
+.callout-info { border-left-color: var(--highlight); }
+.callout-info .callout-icon { color: var(--highlight); }
+.callout-warn { border-left-color: var(--warn); }
+.callout-warn .callout-icon { color: var(--warn); }
+.callout-danger { border-left-color: var(--danger); }
+.callout-danger .callout-icon { color: var(--danger); }
 
 /* -------- Graduation status hero badge -------- */
 .grad-overall {
