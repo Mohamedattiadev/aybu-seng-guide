@@ -428,6 +428,11 @@ ul.clean li::marker { color: var(--accent); font-size: 1.1em; }
 .latex-cta .src-link { color: var(--text-muted); font-size: .9em; text-decoration: none; }
 .latex-cta .src-link:hover { color: var(--accent); }
 .submit-note { margin: 8px 0 0; padding: 10px 14px; border-left: 3px solid var(--warn); background: color-mix(in srgb, var(--warn) 12%, var(--surface)); color: var(--text); border-radius: 6px; font-size: .92em; }
+.forms-table td:first-child, .rules-table td:first-child { width: 36px; text-align: center; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.forms-table td:nth-child(3) { width: 70px; font-family: "SF Mono", Monaco, monospace; font-size: .78rem; color: var(--text-muted); text-transform: uppercase; }
+.forms-table td:last-child { width: 70px; text-align: center; font-size: 1.2rem; }
+.forms-table td:last-child a { text-decoration: none; }
+.rules-table td:last-child { line-height: 1.55; }
 ol.steps { padding-inline-start: 20px; margin: 8px 0; }
 ol.steps li { margin: 6px 0; }
 a { color: var(--accent); }
