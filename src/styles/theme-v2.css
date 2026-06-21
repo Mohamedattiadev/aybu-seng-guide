@@ -623,6 +623,16 @@ body {
 .chatbot-chip:hover { border-color: var(--text); background: var(--surface-alt); }
 .chatbot-footer { background: var(--surface); border-top: 1px solid var(--border); font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.08em; }
 
+/* -------- Graduation status hero badge -------- */
+.grad-overall {
+  background: var(--highlight) !important;
+  color: #fff !important;
+  border-radius: 10px !important;
+  border: 1px solid var(--highlight) !important;
+}
+.grad-overall-pct { font-family: var(--font-display); font-weight: 700; }
+.grad-overall-lbl { font-family: var(--font-mono); }
+
 /* -------- Footer -------- */
 footer {
   max-width: 1080px;
