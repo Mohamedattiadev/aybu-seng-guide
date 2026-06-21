@@ -2,7 +2,7 @@ const i18n = {
   en: {
     "brand": "Student Guide",
     "nav.home": "Home", "nav.curriculum": "Curriculum", "nav.internship": "Internship & Project",
-    "nav.graduation": "Graduation", "nav.pathways": "Pathways", "nav.people": "People", "nav.club": "Club",
+    "nav.graduation": "Graduation", "nav.pathways": "Pathways", "nav.people": "Faculty", "nav.club": "Club",
     "path.title": "Pathways Beyond the Bachelor",
     "path.intro": "Double major, exchange programs, and graduate studies — opportunities to expand your degree.",
     "home.qPath": "Double major, Erasmus, MSc.",
@@ -28,6 +28,36 @@ const i18n = {
     "home.q7": "Distance learning platform.",
     "home.q8": "Announcements", "home.q9": "Department news feed.",
     "home.contactTitle": "Department contact",
+    "home.faqTitle": "Frequently Asked Questions",
+    "home.faqIntro": "Quick answers to the most common student questions. Use the chatbot (bottom-right) for anything else.",
+    "home.faqSearch": "Search questions…",
+    "home.faqNoResults": "No questions matched. Try the chatbot for a custom answer.",
+    "faq.q1": "What is the prerequisite for MATH222?",
+    "faq.a1": "MATH222 (Probability & Statistics) requires MATH103 / MATH151. Check the <a href=\"#curriculum\">Curriculum page</a> for the full prerequisite chain.",
+    "faq.q2": "What do I need to graduate?",
+    "faq.a2": "240 ECTS · GPA ≥ 2.00 · SENG300 + SENG400 internships · SENG401 + SENG402 graduation project · 50 ECTS dept electives · 6 ECTS faculty electives. See <a href=\"#graduation\">Graduation</a>.",
+    "faq.q3": "How long is the internship and when do I do it?",
+    "faq.a3": "Two mandatory 20-working-day internships: SENG300 (after 4th semester) and SENG400 (after 6th). Forms + workflow on the <a href=\"#internship\">Internship page</a>.",
+    "faq.q4": "How do I write the internship report?",
+    "faq.a4": "Use the LaTeX template (Overleaf-ready) or DOCX format. Rules: A4, 2.5 cm margins, 11 pt sans-serif, 1.5 line spacing, daily + general sections, company stamp on every page. Full rules + template on the <a href=\"#internship\">Internship page</a>.",
+    "faq.q5": "How many electives do I need?",
+    "faq.a5": "Minimum 50 ECTS department electives (SENG-prefix) + 6 ECTS faculty/university electives. Pick from the curriculum elective lists.",
+    "faq.q6": "Can I do a double major or exchange?",
+    "faq.a6": "Yes — ÇAP double major with related departments, plus Erasmus / exchange programs. Details on <a href=\"#pathways\">Pathways</a>.",
+    "faq.q7": "How do I join the SE Club (ASEC)?",
+    "faq.a7": "Register on the club site or join the WhatsApp group. Contact + advisor on the <a href=\"#club\">Club page</a>.",
+    "faq.q8": "Who do I contact at the department?",
+    "faq.a8": "Head: Doç. Dr. Hilal Arslan (hilalarslan@aybu.edu.tr). Secretary: Hasancan Suer (+90 312 906 2828). Office B421. General: seng@aybu.edu.tr.",
+    "faq.q9": "What is the graduation project?",
+    "faq.a9": "SENG401 (semester 7, 6 ECTS) + SENG402 (semester 8, 7 ECTS). Capstone project under faculty supervision. See <a href=\"#graduation\">Graduation</a>.",
+    "bot.title": "SENG Assistant",
+    "bot.sub": "Ask anything about the program",
+    "bot.welcome": "Hi! Ask about courses, internships, graduation requirements, or the club. Try: <em>\"What's the prerequisite for MATH222?\"</em>",
+    "bot.placeholder": "Ask a question…",
+    "bot.footer": "Answers based on this site · Not official advice",
+    "bot.s1": "What do I need to graduate?",
+    "bot.s2": "How long is the internship?",
+    "bot.s3": "How do I join the club?",
     "lbl.address": "Address", "lbl.phone": "Phone", "lbl.email": "Email", "lbl.office": "Office",
     "lbl.head": "Department Head", "lbl.ects": "ECTS", "lbl.secretary": "Secretary", "lbl.chair": "Chair", "lbl.member": "Member",
     "cur.title": "Undergraduate Curriculum",
@@ -87,6 +117,7 @@ const i18n = {
     "int.a4": "Spiral-bind the report and submit to the commission.",
     "int.formsTitle": "Forms & Documents (download)",
     "int.thForm": "Form", "int.thFormat": "Format", "int.thDownload": "Download", "int.thRule": "Rule",
+    "int.tblBefore": "Before Internship", "int.tblAfter": "After Internship",
     "int.formDirective": "Internship Directive — PDF",
     "int.formLetter": "Mandatory Internship Letter — PDF",
     "int.formAcceptTR": "Acceptance Form (TR) — PDF", "int.formAcceptEN": "Acceptance Form (EN) — PDF",
@@ -103,7 +134,14 @@ const i18n = {
     "int.filledTitle": "Filled Example Report (PDF)",
     "int.filledHint": "12-page completed report with realistic fake data · see how a finished staj report looks",
     "int.ctaDownloadPdf": "Download PDF",
+    "int.ctaDownloadFilledZip": "Download ZIP (source)",
     "int.filledSrc": "source on GitHub →",
+    "int.overleafHow": "How to open in Overleaf",
+    "int.overleaf1": "Download the ZIP above (don't unzip).",
+    "int.overleaf2": "Go to overleaf.com/project and sign in (free account).",
+    "int.overleaf3": "Click New Project → Upload Project and select the ZIP.",
+    "int.overleaf4": "Set the main file: Menu → Main document → main.tex. Compiler: pdfLaTeX.",
+    "int.overleaf5": "Press Recompile. Edit your content and download the PDF.",
     "int.submitNote": "⚠ After writing: print the report, spiral-bind it, and submit (or upload, if requested) the final document to the Internship Commission office. See \"Internship Commission\" below for contacts.",
     "int.formSource": "Source page (all forms)",
     "int.rulesTitle": "Report Writing Rules / Rapor Yazım Kuralları",
@@ -139,7 +177,14 @@ const i18n = {
     "footer.madeBy": "Made by",
     "mez.minEcts": "Min ECTS", "mez.minGpa": "Min GPA", "mez.intern": "Internships",
     "mez.project": "Graduation Project", "mez.deptEl": "Department Electives", "mez.facEl": "Faculty/Uni Electives",
-    "mez.min50": "Min 50 ECTS", "mez.min6": "Min 6 ECTS", "mez.link": "Graduation page",
+    "mez.min50": "Min 50 ECTS", "mez.min6": "Min 6 ECTS", "mez.link": "Official Graduation Page",
+    "mez.subtitle": "All boxes must be checked to graduate from the SENG program.",
+    "mez.minEctsNote": "total credits across all 8 semesters",
+    "mez.minGpaNote": "cumulative weighted average",
+    "mez.internNote": "two mandatory 20-day internships",
+    "mez.projectNote": "capstone, semesters 7 & 8",
+    "mez.deptElNote": "choose from SENG-prefix electives",
+    "mez.facElNote": "open courses across the university",
     "cap.title": "Double Major (ÇAP)",
     "cap.desc": "Software Engineering can be combined as a double major with:",
     "cap.link": "ÇAP requirements (Excel files per program)",
@@ -191,6 +236,9 @@ const i18n = {
     "club.contactTitle": "Contact & social", "club.wa": "Group link",
     "club.boardTitle": "Board",
     "club.advisor": "Advisor:", "club.president": "President:", "club.vp": "Vice President:", "club.head": "Club Head:",
+    "club.advisorRole": "Advisor", "club.headRole": "Club Head",
+    "club.advisorTitle": "Faculty Advisor · Dept. of Software Engineering",
+    "club.headTitle": "Student President · AYBU SE Club",
     "club.eventsTitle": "Sample events",
     "club.e1": "Spring Picnic", "club.e2": "Entrepreneurship Summit", "club.e3": "Orientation",
     "club.e4": "Technical Tours", "club.e5": "Industry Seminars",
@@ -225,6 +273,36 @@ const i18n = {
     "home.q7": "Uzaktan eğitim platformu.",
     "home.q8": "Duyurular", "home.q9": "Bölüm duyuru akışı.",
     "home.contactTitle": "Bölüm iletişimi",
+    "home.faqTitle": "Sıkça Sorulan Sorular",
+    "home.faqIntro": "Öğrencilerin en sık sorduğu sorulara hızlı cevaplar. Diğer her şey için sağ alttaki sohbet botunu kullan.",
+    "home.faqSearch": "Soru ara…",
+    "home.faqNoResults": "Eşleşen soru yok. Özel cevap için sohbet botunu dene.",
+    "faq.q1": "MATH222 ön koşulu nedir?",
+    "faq.a1": "MATH222 (Olasılık & İstatistik) için MATH103 / MATH151 gerekir. Tam ön koşul zinciri için <a href=\"#curriculum\">Müfredat sayfasına</a> bak.",
+    "faq.q2": "Mezun olmak için ne lazım?",
+    "faq.a2": "240 AKTS · GNO ≥ 2.00 · SENG300 + SENG400 stajları · SENG401 + SENG402 bitirme projesi · 50 AKTS bölüm seçmelisi · 6 AKTS fakülte seçmelisi. <a href=\"#graduation\">Mezuniyet</a> sayfasına bak.",
+    "faq.q3": "Staj ne kadar sürüyor ve ne zaman yapılır?",
+    "faq.a3": "İki zorunlu 20 iş günü stajı: SENG300 (4. yarıyıl sonrası) ve SENG400 (6. yarıyıl sonrası). Formlar ve akış <a href=\"#internship\">Staj sayfasında</a>.",
+    "faq.q4": "Staj raporu nasıl yazılır?",
+    "faq.a4": "LaTeX şablonu (Overleaf'e hazır) veya DOCX formatı kullan. Kurallar: A4, 2.5 cm kenar boşluğu, 11 pt sans-serif, 1.5 satır aralığı, günlük + genel bölümler, her sayfada şirket kaşesi. Kurallar ve şablon <a href=\"#internship\">Staj sayfasında</a>.",
+    "faq.q5": "Kaç seçmeli ders gerekiyor?",
+    "faq.a5": "En az 50 AKTS bölüm seçmelisi (SENG kodlu) + 6 AKTS fakülte/üniversite seçmelisi. Müfredat seçmeli listelerinden seç.",
+    "faq.q6": "Çift anadal veya değişim yapabilir miyim?",
+    "faq.a6": "Evet — ilgili bölümlerle ÇAP ve Erasmus / değişim programları mevcut. Detaylar <a href=\"#pathways\">Yollar sayfasında</a>.",
+    "faq.q7": "Yazılım Kulübü'ne (ASEC) nasıl katılırım?",
+    "faq.a7": "Kulüp sitesinden kayıt ol veya WhatsApp grubuna katıl. İletişim ve danışman <a href=\"#club\">Kulüp sayfasında</a>.",
+    "faq.q8": "Bölümde kiminle iletişime geçebilirim?",
+    "faq.a8": "Başkan: Doç. Dr. Hilal Arslan (hilalarslan@aybu.edu.tr). Sekreter: Hasancan Suer (+90 312 906 2828). Ofis B421. Genel: seng@aybu.edu.tr.",
+    "faq.q9": "Bitirme projesi nedir?",
+    "faq.a9": "SENG401 (7. yarıyıl, 6 AKTS) + SENG402 (8. yarıyıl, 7 AKTS). Öğretim üyesi danışmanlığında bitirme projesi. <a href=\"#graduation\">Mezuniyet</a> sayfasına bak.",
+    "bot.title": "SENG Asistanı",
+    "bot.sub": "Program hakkında her şeyi sor",
+    "bot.welcome": "Merhaba! Dersler, staj, mezuniyet şartları veya kulüp hakkında soru sor. Dene: <em>\"MATH222 ön koşulu nedir?\"</em>",
+    "bot.placeholder": "Bir soru sor…",
+    "bot.footer": "Cevaplar bu siteye dayanır · Resmi tavsiye değildir",
+    "bot.s1": "Mezun olmak için ne lazım?",
+    "bot.s2": "Staj ne kadar sürüyor?",
+    "bot.s3": "Kulübe nasıl katılırım?",
     "lbl.address": "Adres", "lbl.phone": "Telefon", "lbl.email": "E-posta", "lbl.office": "Ofis",
     "lbl.head": "Bölüm Başkanı", "lbl.ects": "AKTS", "lbl.secretary": "Bölüm Sekreteri", "lbl.chair": "Başkan", "lbl.member": "Üye",
     "cur.title": "Lisans Müfredatı",
@@ -284,6 +362,7 @@ const i18n = {
     "int.a4": "Raporu spiral ciltlet, komisyona teslim et.",
     "int.formsTitle": "Formlar & Belgeler (indir)",
     "int.thForm": "Form", "int.thFormat": "Format", "int.thDownload": "İndir", "int.thRule": "Kural",
+    "int.tblBefore": "Staj Öncesi", "int.tblAfter": "Staj Sonrası",
     "int.formDirective": "Staj Yönergesi — PDF",
     "int.formLetter": "Zorunlu Staj Yazısı — PDF",
     "int.formAcceptTR": "Staj Kabul Formu (TR) — PDF", "int.formAcceptEN": "Kabul Formu (EN) — PDF",
@@ -300,7 +379,14 @@ const i18n = {
     "int.filledTitle": "Dolu Örnek Rapor (PDF)",
     "int.filledHint": "Gerçekçi sahte verilerle 12 sayfalık tamamlanmış rapor · bitmiş staj raporu nasıl görünür",
     "int.ctaDownloadPdf": "PDF İndir",
+    "int.ctaDownloadFilledZip": "ZIP İndir (kaynak)",
     "int.filledSrc": "GitHub'da kaynak →",
+    "int.overleafHow": "Overleaf'te nasıl açılır",
+    "int.overleaf1": "Yukarıdaki ZIP'i indir (açma).",
+    "int.overleaf2": "overleaf.com/project'e git ve giriş yap (ücretsiz hesap).",
+    "int.overleaf3": "New Project → Upload Project tıkla ve ZIP'i seç.",
+    "int.overleaf4": "Ana dosyayı ayarla: Menu → Main document → main.tex. Derleyici: pdfLaTeX.",
+    "int.overleaf5": "Recompile bas. İçeriği düzenle ve PDF'i indir.",
     "int.submitNote": "⚠ Yazımdan sonra: raporu yazdır, spiral ciltlet ve son belgeyi Staj Komisyonu ofisine teslim et (veya istenirse yükle). İletişim için aşağıdaki \"Staj Komisyonu\" bölümüne bak.",
     "int.formSource": "Kaynak sayfa (tüm formlar)",
     "int.rulesTitle": "Rapor Yazım Kuralları / Report Writing Rules",
@@ -336,7 +422,14 @@ const i18n = {
     "footer.madeBy": "Hazırlayan",
     "mez.minEcts": "Min AKTS", "mez.minGpa": "Min GNO", "mez.intern": "Staj",
     "mez.project": "Bitirme Projesi", "mez.deptEl": "Bölüm Seçmeli", "mez.facEl": "Fakülte/Üni Seçmeli",
-    "mez.min50": "Min 50 AKTS", "mez.min6": "Min 6 AKTS", "mez.link": "Mezuniyet sayfası",
+    "mez.min50": "Min 50 AKTS", "mez.min6": "Min 6 AKTS", "mez.link": "Resmi Mezuniyet Sayfası",
+    "mez.subtitle": "SENG programından mezun olmak için tüm kutuların işaretli olması gerekir.",
+    "mez.minEctsNote": "8 yarıyıl boyunca toplam kredi",
+    "mez.minGpaNote": "genel ağırlıklı ortalama",
+    "mez.internNote": "iki zorunlu 20 günlük staj",
+    "mez.projectNote": "bitirme projesi, 7. ve 8. yarıyıllar",
+    "mez.deptElNote": "SENG kodlu seçmeliler arasından seç",
+    "mez.facElNote": "üniversite genelinde açık dersler",
     "cap.title": "Çift Anadal (ÇAP)",
     "cap.desc": "Yazılım Mühendisliği ile çift anadal yapılabilecek bölümler:",
     "cap.link": "ÇAP gereksinimleri (program başına Excel dosyaları)",
@@ -388,6 +481,9 @@ const i18n = {
     "club.contactTitle": "İletişim & sosyal", "club.wa": "Grup linki",
     "club.boardTitle": "Yönetim",
     "club.advisor": "Danışman:", "club.president": "Başkan:", "club.vp": "Başkan Yardımcısı:", "club.head": "Kulüp Başkanı:",
+    "club.advisorRole": "Danışman", "club.headRole": "Kulüp Başkanı",
+    "club.advisorTitle": "Akademik Danışman · Yazılım Mühendisliği Bölümü",
+    "club.headTitle": "Öğrenci Başkanı · AYBU Yazılım Kulübü",
     "club.eventsTitle": "Örnek etkinlikler",
     "club.e1": "Bahar Pikniği", "club.e2": "Girişimcilik Zirvesi", "club.e3": "Oryantasyon",
     "club.e4": "Teknik Geziler", "club.e5": "Sektör Seminerleri",
@@ -481,6 +577,7 @@ const i18n = {
     "int.a4": "اطبع التقرير بتجليد حلزوني وقدّمه للجنة.",
     "int.formsTitle": "النماذج والوثائق (تحميل)",
     "int.thForm": "النموذج", "int.thFormat": "الصيغة", "int.thDownload": "تحميل", "int.thRule": "القاعدة",
+    "int.tblBefore": "قبل التدريب", "int.tblAfter": "بعد التدريب",
     "int.formDirective": "لائحة التدريب — PDF",
     "int.formLetter": "خطاب التدريب الإلزامي — PDF",
     "int.formAcceptTR": "نموذج القبول (TR) — PDF", "int.formAcceptEN": "نموذج القبول (EN) — PDF",
@@ -585,6 +682,9 @@ const i18n = {
     "club.contactTitle": "اتصال ووسائل اجتماعية", "club.wa": "رابط المجموعة",
     "club.boardTitle": "الإدارة",
     "club.advisor": "المستشار:", "club.president": "الرئيس:", "club.vp": "نائب الرئيس:", "club.head": "رئيس النادي:",
+    "club.advisorRole": "المستشار", "club.headRole": "رئيس النادي",
+    "club.advisorTitle": "المستشار الأكاديمي · قسم هندسة البرمجيات",
+    "club.headTitle": "رئيس الطلاب · نادي AYBU لهندسة البرمجيات",
     "club.eventsTitle": "أمثلة على الفعاليات",
     "club.e1": "نزهة الربيع", "club.e2": "قمة ريادة الأعمال", "club.e3": "التوجيه",
     "club.e4": "جولات تقنية", "club.e5": "ندوات صناعية",
@@ -678,6 +778,7 @@ const i18n = {
     "int.a4": "Relier le rapport en spirale et soumettre à la commission.",
     "int.formsTitle": "Formulaires & Documents (téléchargement)",
     "int.thForm": "Formulaire", "int.thFormat": "Format", "int.thDownload": "Télécharger", "int.thRule": "Règle",
+    "int.tblBefore": "Avant le stage", "int.tblAfter": "Après le stage",
     "int.formDirective": "Directive de stage — PDF",
     "int.formLetter": "Lettre de stage obligatoire — PDF",
     "int.formAcceptTR": "Formulaire d'acceptation (TR) — PDF", "int.formAcceptEN": "Formulaire d'acceptation (EN) — PDF",
@@ -782,6 +883,9 @@ const i18n = {
     "club.contactTitle": "Contact & social", "club.wa": "Lien du groupe",
     "club.boardTitle": "Bureau",
     "club.advisor": "Conseiller :", "club.president": "Président :", "club.vp": "Vice-Président :", "club.head": "Chef du club :",
+    "club.advisorRole": "Conseiller", "club.headRole": "Chef du club",
+    "club.advisorTitle": "Conseiller pédagogique · Dépt. Génie Logiciel",
+    "club.headTitle": "Président étudiant · Club AYBU SE",
     "club.eventsTitle": "Exemples d'événements",
     "club.e1": "Pique-nique de Printemps", "club.e2": "Sommet Entrepreneuriat", "club.e3": "Orientation",
     "club.e4": "Visites Techniques", "club.e5": "Séminaires Industriels",
@@ -875,6 +979,7 @@ const i18n = {
     "int.a4": "Bericht spiralbinden und Kommission übergeben.",
     "int.formsTitle": "Formulare & Dokumente (Download)",
     "int.thForm": "Formular", "int.thFormat": "Format", "int.thDownload": "Download", "int.thRule": "Regel",
+    "int.tblBefore": "Vor dem Praktikum", "int.tblAfter": "Nach dem Praktikum",
     "int.formDirective": "Praktikumsrichtlinie — PDF",
     "int.formLetter": "Pflichtpraktikumsschreiben — PDF",
     "int.formAcceptTR": "Annahmeformular (TR) — PDF", "int.formAcceptEN": "Annahmeformular (EN) — PDF",
@@ -979,6 +1084,9 @@ const i18n = {
     "club.contactTitle": "Kontakt & Sozial", "club.wa": "Gruppenlink",
     "club.boardTitle": "Vorstand",
     "club.advisor": "Berater:", "club.president": "Präsident:", "club.vp": "Vizepräsident:", "club.head": "Clubleiter:",
+    "club.advisorRole": "Berater", "club.headRole": "Clubleiter",
+    "club.advisorTitle": "Akademischer Berater · Software Engineering",
+    "club.headTitle": "Studentenpräsident · AYBU SE Club",
     "club.eventsTitle": "Beispielveranstaltungen",
     "club.e1": "Frühlingspicknick", "club.e2": "Unternehmensgipfel", "club.e3": "Orientierung",
     "club.e4": "Technische Touren", "club.e5": "Branchenseminare",
@@ -1452,4 +1560,179 @@ buildSearchIndex();
       btn.setAttribute('aria-expanded', 'false');
     }
   });
+})();
+
+/* ===== FAQ live search ===== */
+(function () {
+  const input = document.getElementById('faqSearch');
+  const list = document.getElementById('faqList');
+  const noRes = document.getElementById('faqNoResults');
+  if (!input || !list) return;
+  const items = Array.from(list.querySelectorAll('.faq-item'));
+  input.addEventListener('input', () => {
+    const q = input.value.trim().toLowerCase();
+    let shown = 0;
+    items.forEach((it) => {
+      const hay = (it.getAttribute('data-q') + ' ' + it.textContent).toLowerCase();
+      const match = !q || hay.includes(q);
+      it.hidden = !match;
+      if (match) shown++;
+    });
+    if (noRes) noRes.hidden = shown > 0;
+  });
+})();
+
+/* ===== Chatbot widget =====
+   Strategy:
+     1. Build knowledge base from FAQ + curated facts.
+     2. Local keyword/scored match → instant answer with site links.
+     3. If no good match AND endpoint configured → POST to chat endpoint.
+        Endpoint URL is read from window.__CHAT_ENDPOINT (set at build/deploy time).
+*/
+(function () {
+  const toggle = document.getElementById('chatbotToggle');
+  const panel = document.getElementById('chatbotPanel');
+  const closeBtn = document.getElementById('chatbotClose');
+  const form = document.getElementById('chatbotForm');
+  const input = document.getElementById('chatbotInput');
+  const msgs = document.getElementById('chatbotMessages');
+  const suggestions = document.getElementById('chatbotSuggestions');
+  if (!toggle || !panel || !form || !input || !msgs) return;
+
+  // Knowledge base: derived from FAQ items + curated curriculum/prereq facts.
+  const kb = [];
+  document.querySelectorAll('.faq-item').forEach((it) => {
+    const q = it.querySelector('summary')?.textContent?.trim() || '';
+    const a = it.querySelector('div')?.innerHTML?.trim() || '';
+    const tags = (it.getAttribute('data-q') || '').toLowerCase();
+    kb.push({ q, a, tags: (tags + ' ' + q).toLowerCase() });
+  });
+
+  // Curated extras: prereq map from curriculum table.
+  document.querySelectorAll('[data-prereq]').forEach((tr) => {
+    const code = tr.getAttribute('data-code');
+    const prereq = tr.getAttribute('data-prereq');
+    if (!code) return;
+    const nameCell = tr.querySelector('td:nth-child(3)');
+    const name = nameCell ? nameCell.textContent.trim() : '';
+    kb.push({
+      q: `Prerequisite for ${code}`,
+      a: `<strong>${code}${name ? ' — ' + name : ''}</strong>: prerequisite is <strong>${prereq || 'none'}</strong>. See <a href="#curriculum">Curriculum</a>.`,
+      tags: `${code.toLowerCase()} ${name.toLowerCase()} prereq prerequisite need before take`,
+    });
+  });
+
+  function tokenize(s) {
+    return s.toLowerCase().replace(/[^a-z0-9çğıöşüÇĞİÖŞÜ\s]/g, ' ').split(/\s+/).filter((w) => w.length > 1);
+  }
+  const STOP = new Set(['the','a','an','for','of','to','is','i','do','can','what','how','when','where','my','me','it','in','on','need','want','this','that','and','or','be','if']);
+
+  function bestMatch(query) {
+    const tokens = tokenize(query).filter((t) => !STOP.has(t));
+    if (!tokens.length) return null;
+    let best = null;
+    let bestScore = 0;
+    for (const e of kb) {
+      let score = 0;
+      for (const t of tokens) {
+        if (e.tags.includes(t)) score += 1;
+        if (e.q.toLowerCase().includes(t)) score += 0.8;
+      }
+      // Boost code matches like seng300, math222
+      for (const t of tokens) {
+        if (/^[a-z]{3,5}\d{2,3}$/.test(t) && e.tags.includes(t)) score += 3;
+      }
+      if (score > bestScore) {
+        bestScore = score;
+        best = e;
+      }
+    }
+    return bestScore >= 1 ? best : null;
+  }
+
+  function addMsg(role, html) {
+    const wrap = document.createElement('div');
+    wrap.className = `chatbot-msg ${role}`;
+    const bubble = document.createElement('div');
+    bubble.className = 'chatbot-bubble';
+    bubble.innerHTML = html;
+    wrap.appendChild(bubble);
+    msgs.appendChild(wrap);
+    msgs.scrollTop = msgs.scrollHeight;
+    return bubble;
+  }
+
+  function showTyping() {
+    const wrap = document.createElement('div');
+    wrap.className = 'chatbot-msg bot chatbot-typing-wrap';
+    wrap.innerHTML = '<div class="chatbot-bubble chatbot-typing"><span></span><span></span><span></span></div>';
+    msgs.appendChild(wrap);
+    msgs.scrollTop = msgs.scrollHeight;
+    return wrap;
+  }
+
+  async function callRemote(query) {
+    const endpoint = window.__CHAT_ENDPOINT;
+    if (!endpoint) return null;
+    try {
+      const ctx = kb.slice(0, 30).map((e) => `Q: ${e.q}\nA: ${e.q ? e.a.replace(/<[^>]+>/g, '') : ''}`).join('\n\n');
+      const r = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query, context: ctx, lang: document.documentElement.lang || 'en' }),
+      });
+      if (!r.ok) return null;
+      const data = await r.json();
+      return data.answer || null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  async function handleQuery(q) {
+    if (!q.trim()) return;
+    addMsg('user', q.replace(/</g, '&lt;'));
+    const typing = showTyping();
+    if (suggestions) suggestions.style.display = 'none';
+
+    const local = bestMatch(q);
+    if (local) {
+      typing.remove();
+      addMsg('bot', local.a);
+      return;
+    }
+    const remote = await callRemote(q);
+    typing.remove();
+    if (remote) {
+      addMsg('bot', remote);
+    } else {
+      addMsg(
+        'bot',
+        'I don\'t have a confident answer for that. Try keywords like a course code (e.g. <em>SENG300</em>, <em>MATH222</em>) or browse the page tabs above.'
+      );
+    }
+  }
+
+  toggle.addEventListener('click', () => {
+    panel.hidden = false;
+    toggle.classList.add('open');
+    setTimeout(() => input.focus(), 50);
+  });
+  closeBtn.addEventListener('click', () => {
+    panel.hidden = true;
+    toggle.classList.remove('open');
+  });
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const q = input.value;
+    input.value = '';
+    handleQuery(q);
+  });
+  if (suggestions) {
+    suggestions.addEventListener('click', (e) => {
+      const btn = e.target.closest('.chatbot-chip');
+      if (!btn) return;
+      handleQuery(btn.getAttribute('data-q') || btn.textContent);
+    });
+  }
 })();

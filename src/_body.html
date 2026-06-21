@@ -24,7 +24,7 @@
       <button class="nav-tab" data-page="internship" data-i18n="nav.internship">Internship &amp; Project</button>
       <button class="nav-tab" data-page="graduation" data-i18n="nav.graduation">Graduation</button>
       <button class="nav-tab" data-page="pathways" data-i18n="nav.pathways">Pathways</button>
-      <button class="nav-tab" data-page="people" data-i18n="nav.people">People</button>
+      <button class="nav-tab" data-page="people" data-i18n="nav.people">Faculty</button>
       <button class="nav-tab" data-page="club" data-i18n="nav.club">Club</button>
     </div>
     <button class="icon-btn" id="searchOpen" title="Search" aria-label="Search">
@@ -100,7 +100,7 @@
     </div>
     <div class="quick-card" onclick="go('people')">
       <span class="icon"><svg><use href="#i-users"/></svg></span>
-      <h3 data-i18n="nav.people">People</h3>
+      <h3 data-i18n="nav.people">Faculty</h3>
       <p data-i18n="home.q4">Faculty staff and commissions.</p>
     </div>
     <div class="quick-card" onclick="go('club')">
@@ -123,6 +123,54 @@
       <h3 data-i18n="home.q8">Announcements</h3>
       <p data-i18n="home.q9">Department news feed.</p>
     </a>
+  </div>
+
+  <div class="card faq-card">
+    <h2 data-i18n="home.faqTitle">Frequently Asked Questions</h2>
+    <p data-i18n="home.faqIntro">Quick answers to the most common student questions. Use the chatbot (bottom-right) for anything else.</p>
+    <div class="faq-search-wrap">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="faqSearch" class="faq-search" placeholder="Search questions…" data-i18n-attr="placeholder" data-i18n="home.faqSearch">
+    </div>
+    <div class="faq-list" id="faqList">
+      <details class="faq-item" data-q="prereq math222 prerequisite course can take when">
+        <summary data-i18n="faq.q1">What is the prerequisite for MATH222?</summary>
+        <div data-i18n="faq.a1">MATH222 (Probability &amp; Statistics) requires MATH103 / MATH151. Check the <a href="#curriculum">Curriculum page</a> for the full prerequisite chain.</div>
+      </details>
+      <details class="faq-item" data-q="graduate need ects gpa requirements credits">
+        <summary data-i18n="faq.q2">What do I need to graduate?</summary>
+        <div data-i18n="faq.a2">240 ECTS · GPA ≥ 2.00 · SENG300 + SENG400 internships · SENG401 + SENG402 graduation project · 50 ECTS dept electives · 6 ECTS faculty electives. See <a href="#graduation">Graduation</a>.</div>
+      </details>
+      <details class="faq-item" data-q="internship staj days requirements 20 days seng300 seng400">
+        <summary data-i18n="faq.q3">How long is the internship and when do I do it?</summary>
+        <div data-i18n="faq.a3">Two mandatory 20-working-day internships: SENG300 (after 4th semester) and SENG400 (after 6th). Forms + workflow on the <a href="#internship">Internship page</a>.</div>
+      </details>
+      <details class="faq-item" data-q="staj report writing rules format latex pdf overleaf">
+        <summary data-i18n="faq.q4">How do I write the internship report?</summary>
+        <div data-i18n="faq.a4">Use the LaTeX template (Overleaf-ready) or DOCX format. Rules: A4, 2.5 cm margins, 11 pt sans-serif, 1.5 line spacing, daily + general sections, company stamp on every page. Full rules + template on the <a href="#internship">Internship page</a>.</div>
+      </details>
+      <details class="faq-item" data-q="elective courses department dept seng how many">
+        <summary data-i18n="faq.q5">How many electives do I need?</summary>
+        <div data-i18n="faq.a5">Minimum 50 ECTS department electives (SENG-prefix) + 6 ECTS faculty/university electives. Pick from the curriculum elective lists.</div>
+      </details>
+      <details class="faq-item" data-q="double major cap pathways exchange erasmus minor">
+        <summary data-i18n="faq.q6">Can I do a double major or exchange?</summary>
+        <div data-i18n="faq.a6">Yes — ÇAP double major with related departments, plus Erasmus / exchange programs. Details on <a href="#pathways">Pathways</a>.</div>
+      </details>
+      <details class="faq-item" data-q="club asec join how register whatsapp">
+        <summary data-i18n="faq.q7">How do I join the SE Club (ASEC)?</summary>
+        <div data-i18n="faq.a7">Register on the club site or join the WhatsApp group. Contact + advisor on the <a href="#club">Club page</a>.</div>
+      </details>
+      <details class="faq-item" data-q="department contact head secretary email phone office">
+        <summary data-i18n="faq.q8">Who do I contact at the department?</summary>
+        <div data-i18n="faq.a8">Head: Doç. Dr. Hilal Arslan (hilalarslan@aybu.edu.tr). Secretary: Hasancan Suer (+90 312 906 2828). Office B421. General: seng@aybu.edu.tr.</div>
+      </details>
+      <details class="faq-item" data-q="graduation project seng401 seng402 capstone">
+        <summary data-i18n="faq.q9">What is the graduation project?</summary>
+        <div data-i18n="faq.a9">SENG401 (semester 7, 6 ECTS) + SENG402 (semester 8, 7 ECTS). Capstone project under faculty supervision. See <a href="#graduation">Graduation</a>.</div>
+      </details>
+    </div>
+    <p class="faq-no-results" id="faqNoResults" hidden data-i18n="home.faqNoResults">No questions matched. Try the chatbot for a custom answer.</p>
   </div>
 
   <div class="card">
@@ -411,12 +459,14 @@
         <tr><th>#</th><th data-i18n="int.thForm">Form</th><th data-i18n="int.thFormat">Format</th><th data-i18n="int.thDownload">Download</th></tr>
       </thead>
       <tbody>
+        <tr class="section-row"><td colspan="4" data-i18n="int.tblBefore">Before Internship</td></tr>
         <tr><td>1</td><td data-i18n="int.formDirective">Staj Yönergesi (Internship Directive)</td><td>PDF</td><td><a href="https://aybu.edu.tr/GetFile?id=Upload/05cc3518-41dc-4000-9c10-f782251951cb.pdf" target="_blank" rel="noopener" aria-label="Download" class="dl-link"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a></td></tr>
         <tr><td>2</td><td data-i18n="int.formLetter">Zorunlu Staj Yazısı</td><td>PDF</td><td><a href="https://aybu.edu.tr/GetFile?id=Upload/111110d5-416f-401a-b5ea-87ea33c0bb9b.pdf" target="_blank" rel="noopener" aria-label="Download" class="dl-link"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a></td></tr>
         <tr><td>3</td><td data-i18n="int.formAcceptTR">Staj Kabul Formu (TR)</td><td>PDF</td><td><a href="https://aybu.edu.tr/GetFile?id=Upload/a9f297fa-c651-41c6-8e3a-75c7fe6398ba.pdf" target="_blank" rel="noopener" aria-label="Download" class="dl-link"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a></td></tr>
         <tr><td>4</td><td data-i18n="int.formAcceptEN">Acceptance Form (EN)</td><td>PDF</td><td><a href="https://aybu.edu.tr/GetFile?id=Upload/eb0c8db9-d65f-418a-ba10-4c529c657a77.pdf" target="_blank" rel="noopener" aria-label="Download" class="dl-link"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a></td></tr>
         <tr><td>5</td><td data-i18n="int.formPre">Staj Öncesi Kontrol Formu</td><td>PDF</td><td><a href="https://aybu.edu.tr/GetFile?id=Upload/3ea046fa-fb97-433f-9cbd-5bfa94b3659b.pdf" target="_blank" rel="noopener" aria-label="Download" class="dl-link"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a></td></tr>
         <tr><td>6</td><td data-i18n="int.formGss">GSS Beyan ve Taahhütname</td><td>DOCX</td><td><a href="https://aybu.edu.tr/GetFile?id=Upload/52c3ea15-bfbe-4fde-98f4-974bee85211f.docx" target="_blank" rel="noopener" aria-label="Download" class="dl-link"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a></td></tr>
+        <tr class="section-row"><td colspan="4" data-i18n="int.tblAfter">After Internship</td></tr>
         <tr><td>7</td><td data-i18n="int.formReportTR">Staj Raporu Formatı (TR)</td><td>DOCX</td><td><a href="https://aybu.edu.tr/GetFile?id=Upload/d8e4aed2-d5a9-46af-92b0-b6dcd5d93866.docx" target="_blank" rel="noopener" aria-label="Download" class="dl-link"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a></td></tr>
         <tr><td>8</td><td data-i18n="int.formReportEN">Report Format (EN)</td><td>DOCX</td><td><a href="https://aybu.edu.tr/GetFile?id=Upload/f30e3dd3-eefe-444e-adc4-d0a37aa26e0e.docx" target="_blank" rel="noopener" aria-label="Download" class="dl-link"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a></td></tr>
         <tr><td>9</td><td data-i18n="int.formEvalTR">Staj Sonuç Belgesi (TR)</td><td>PDF</td><td><a href="https://aybu.edu.tr/GetFile?id=Upload/c26a2d94-6e88-4623-b532-1324e9e33421.pdf" target="_blank" rel="noopener" aria-label="Download" class="dl-link"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a></td></tr>
@@ -435,6 +485,16 @@
       <div class="cta-body">
         <strong class="cta-title" data-i18n="int.formLatex">LaTeX Report Template (download ZIP)</strong>
         <span class="cta-hint" data-i18n="int.formLatexHint">Ready-to-edit Overleaf project · AYBU cover + weekly tables</span>
+        <details class="overleaf-steps">
+          <summary data-i18n="int.overleafHow">How to open in Overleaf</summary>
+          <ol class="overleaf-list">
+            <li data-i18n="int.overleaf1">Download the ZIP above (don't unzip).</li>
+            <li data-i18n="int.overleaf2">Go to <a href="https://www.overleaf.com/project" target="_blank" rel="noopener">overleaf.com/project</a> and sign in (free account).</li>
+            <li data-i18n="int.overleaf3">Click <strong>New Project → Upload Project</strong> and select the ZIP.</li>
+            <li data-i18n="int.overleaf4">Set the main file: <strong>Menu → Main document → main.tex</strong>. Compiler: <strong>pdfLaTeX</strong>.</li>
+            <li data-i18n="int.overleaf5">Press <strong>Recompile</strong>. Edit your content and download the PDF.</li>
+          </ol>
+        </details>
       </div>
       <div class="cta-actions">
         <a class="btn-primary" href="https://github.com/Mohamedattiadev/aybu-seng-guide/raw/main/template/aybu-staj-report.zip" target="_blank" rel="noopener">
@@ -457,6 +517,10 @@
         <a class="btn-primary" href="https://github.com/Mohamedattiadev/aybu-seng-guide/raw/main/template/prof-package/aybu-staj-report-example-FILLED.pdf" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           <span data-i18n="int.ctaDownloadPdf">Download PDF</span>
+        </a>
+        <a class="btn-secondary" href="https://github.com/Mohamedattiadev/aybu-seng-guide/raw/main/template/prof-package/aybu-staj-report-example-FILLED-source.zip" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span data-i18n="int.ctaDownloadFilledZip">Download ZIP (source)</span>
         </a>
         <a class="src-link" href="https://github.com/Mohamedattiadev/aybu-seng-guide/tree/main/template/prof-package" target="_blank" rel="noopener" data-i18n="int.filledSrc">source on GitHub →</a>
       </div>
@@ -541,17 +605,72 @@
     <div class="grad-status" id="gradStatus"></div>
   </div>
 
-  <div class="card">
-    <h2 data-i18n="mez.title">Graduation Requirements</h2>
-    <div class="info-grid">
-      <div class="info-card"><div class="label" data-i18n="mez.minEcts">Min ECTS</div><div class="val">240</div></div>
-      <div class="info-card"><div class="label" data-i18n="mez.minGpa">Min GPA</div><div class="val">2.00 / 4.00</div></div>
-      <div class="info-card"><div class="label" data-i18n="mez.intern">Internships</div><div class="val">SENG300 + SENG400</div></div>
-      <div class="info-card"><div class="label" data-i18n="mez.project">Graduation Project</div><div class="val">SENG401 + SENG402</div></div>
-      <div class="info-card"><div class="label" data-i18n="mez.deptEl">Department Electives</div><div class="val" data-i18n="mez.min50">Min 50 ECTS</div></div>
-      <div class="info-card"><div class="label" data-i18n="mez.facEl">Faculty/Uni Electives</div><div class="val" data-i18n="mez.min6">Min 6 ECTS</div></div>
+  <div class="card grad-req-card">
+    <div class="grad-req-header">
+      <div class="grad-req-icon">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      </div>
+      <div>
+        <h2 data-i18n="mez.title">Graduation Requirements</h2>
+        <p class="grad-req-sub" data-i18n="mez.subtitle">All boxes must be checked to graduate from the SENG program.</p>
+      </div>
     </div>
-    <p><a href="https://aybu.edu.tr/yazilimmuh/tr/sayfa/10324" target="_blank" data-i18n="mez.link">Graduation page</a></p>
+    <div class="req-grid">
+      <div class="req-card">
+        <div class="req-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg></div>
+        <div class="req-body">
+          <div class="req-label" data-i18n="mez.minEcts">Min ECTS</div>
+          <div class="req-val">240</div>
+          <div class="req-note" data-i18n="mez.minEctsNote">total credits across all 8 semesters</div>
+        </div>
+      </div>
+      <div class="req-card">
+        <div class="req-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+        <div class="req-body">
+          <div class="req-label" data-i18n="mez.minGpa">Min GPA</div>
+          <div class="req-val">2.00 <span class="req-val-sub">/ 4.00</span></div>
+          <div class="req-note" data-i18n="mez.minGpaNote">cumulative weighted average</div>
+        </div>
+      </div>
+      <div class="req-card">
+        <div class="req-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+        <div class="req-body">
+          <div class="req-label" data-i18n="mez.intern">Internships</div>
+          <div class="req-val">SENG300 <span class="req-plus">+</span> SENG400</div>
+          <div class="req-note" data-i18n="mez.internNote">two mandatory 20-day internships</div>
+        </div>
+      </div>
+      <div class="req-card">
+        <div class="req-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+        <div class="req-body">
+          <div class="req-label" data-i18n="mez.project">Graduation Project</div>
+          <div class="req-val">SENG401 <span class="req-plus">+</span> SENG402</div>
+          <div class="req-note" data-i18n="mez.projectNote">capstone, semesters 7 &amp; 8</div>
+        </div>
+      </div>
+      <div class="req-card">
+        <div class="req-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <div class="req-body">
+          <div class="req-label" data-i18n="mez.deptEl">Department Electives</div>
+          <div class="req-val" data-i18n="mez.min50">Min 50 ECTS</div>
+          <div class="req-note" data-i18n="mez.deptElNote">choose from SENG-prefix electives</div>
+        </div>
+      </div>
+      <div class="req-card">
+        <div class="req-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <div class="req-body">
+          <div class="req-label" data-i18n="mez.facEl">Faculty/Uni Electives</div>
+          <div class="req-val" data-i18n="mez.min6">Min 6 ECTS</div>
+          <div class="req-note" data-i18n="mez.facElNote">open courses across the university</div>
+        </div>
+      </div>
+    </div>
+    <div class="grad-req-footer">
+      <a class="btn-secondary" href="https://aybu.edu.tr/yazilimmuh/tr/sayfa/10324" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        <span data-i18n="mez.link">Official Graduation Page</span>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -697,7 +816,7 @@
 
     <h3 data-i18n="club.contactTitle">Contact & social</h3>
     <div class="info-grid">
-      <div class="info-card"><div class="label" data-i18n="lbl.phone">Phone</div><div class="val">+90 551 553 6339</div></div>
+      <div class="info-card"><div class="label" data-i18n="lbl.phone">Phone</div><div class="val"><a href="tel:+905426702210">+90 542 670 22 10</a></div></div>
       <div class="info-card"><div class="label" data-i18n="lbl.address">Address</div><div class="val">Ayvalı Mah. 150 Sk. Etlik-Keçiören Ankara</div></div>
       <div class="info-card"><div class="label">Instagram</div><div class="val"><a href="https://www.instagram.com/asecaybu" target="_blank">@asecaybu</a></div></div>
       <div class="info-card"><div class="label">LinkedIn</div><div class="val"><a href="https://www.linkedin.com/company/aybu-software-engineering-club/" target="_blank">AYBU SE Club</a></div></div>
@@ -706,10 +825,20 @@
     </div>
 
     <h3 data-i18n="club.boardTitle">Board</h3>
-    <ul class="clean">
-      <li><strong data-i18n="club.advisor">Advisor:</strong> Doç. Dr. Yenal Arslan</li>
-      <li><strong data-i18n="club.head">Club Head:</strong> YUNUS EMRE Ceran — <a href="tel:+905426702210">+90 542 670 22 10</a></li>
-    </ul>
+    <div class="board-grid">
+      <div class="board-card">
+        <div class="board-role" data-i18n="club.advisorRole">Advisor</div>
+        <div class="board-name">Doç. Dr. Yenal Arslan</div>
+        <div class="board-meta" data-i18n="club.advisorTitle">Faculty Advisor · Dept. of Software Engineering</div>
+        <div class="board-contact"><a href="https://mail.google.com/mail/?view=cm&fs=1&to=yenalarslan@aybu.edu.tr" target="_blank" rel="noopener">yenalarslan@aybu.edu.tr</a></div>
+      </div>
+      <div class="board-card">
+        <div class="board-role" data-i18n="club.headRole">Club Head</div>
+        <div class="board-name">Yunus Emre Ceran</div>
+        <div class="board-meta" data-i18n="club.headTitle">Student President · AYBU SE Club</div>
+        <div class="board-contact"><a href="tel:+905426702210">+90 542 670 22 10</a></div>
+      </div>
+    </div>
 
     <h3 data-i18n="club.eventsTitle">Sample events</h3>
     <div class="pill-row">
@@ -744,3 +873,42 @@
   <p data-i18n="footer.txt">AYBU Software Engineering Student Guide · For official information also check the department page.</p>
   <p class="credit"><span data-i18n="footer.madeBy">Made by</span> <a href="https://github.com/mohamedattiaDev" target="_blank" rel="noopener">Mohamed Attia</a></p>
 </footer>
+
+<!-- Chatbot widget -->
+<button class="chatbot-toggle" id="chatbotToggle" aria-label="Open chatbot">
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+  <span class="chatbot-toggle-dot"></span>
+</button>
+<div class="chatbot-panel" id="chatbotPanel" hidden>
+  <header class="chatbot-head">
+    <div class="chatbot-head-info">
+      <div class="chatbot-avatar">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></svg>
+      </div>
+      <div>
+        <div class="chatbot-title" data-i18n="bot.title">SENG Assistant</div>
+        <div class="chatbot-sub" data-i18n="bot.sub">Ask anything about the program</div>
+      </div>
+    </div>
+    <button class="chatbot-close" id="chatbotClose" aria-label="Close">×</button>
+  </header>
+  <div class="chatbot-messages" id="chatbotMessages">
+    <div class="chatbot-msg bot">
+      <div class="chatbot-bubble" data-i18n="bot.welcome">Hi! Ask about courses, internships, graduation requirements, or the club. Try: <em>"What's the prerequisite for MATH222?"</em></div>
+    </div>
+  </div>
+  <div class="chatbot-suggestions" id="chatbotSuggestions">
+    <button class="chatbot-chip" data-q="What do I need to graduate?" data-i18n="bot.s1">What do I need to graduate?</button>
+    <button class="chatbot-chip" data-q="How long is the internship?" data-i18n="bot.s2">How long is the internship?</button>
+    <button class="chatbot-chip" data-q="How do I join the club?" data-i18n="bot.s3">How do I join the club?</button>
+  </div>
+  <form class="chatbot-input-row" id="chatbotForm">
+    <input type="text" id="chatbotInput" class="chatbot-input" placeholder="Ask a question…" data-i18n-attr="placeholder" data-i18n="bot.placeholder" autocomplete="off">
+    <button type="submit" class="chatbot-send" aria-label="Send">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    </button>
+  </form>
+  <div class="chatbot-footer">
+    <span data-i18n="bot.footer">Answers based on this site · Not official advice</span>
+  </div>
+</div>

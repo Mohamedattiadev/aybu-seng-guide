@@ -1,0 +1,11 @@
+name = "aybu-seng-chatbot"
+main = "chatbot-worker.js"
+compatibility_date = "2024-09-01"
+
+# Set plain vars in dashboard or here. Secrets go via `wrangler secret put`.
+[vars]
+ALLOWED_ORIGIN = "https://mohamedattiadev.github.io"
+
+# Add via CLI (do NOT commit secrets):
+#   wrangler secret put GROQ_API_KEY
+#   wrangler secret put GEMINI_API_KEY
