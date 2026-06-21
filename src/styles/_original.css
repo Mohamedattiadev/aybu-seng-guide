@@ -444,6 +444,8 @@ ul.clean li::marker { color: var(--accent); font-size: 1.1em; }
 .latex-cta.prof-cta .btn-primary { background: var(--ok, #2e7d32); box-shadow: 0 4px 12px color-mix(in srgb, var(--ok, #2e7d32) 35%, transparent); }
 .latex-cta.prof-cta .btn-primary:hover { background: color-mix(in srgb, var(--ok, #2e7d32) 80%, black); box-shadow: 0 6px 16px color-mix(in srgb, var(--ok, #2e7d32) 45%, transparent); }
 .submit-note { margin: 8px 0 0; padding: 10px 14px; border-left: 3px solid var(--warn); background: color-mix(in srgb, var(--warn) 12%, var(--surface)); color: var(--text); border-radius: 6px; font-size: .92em; }
+.filled-pdf-link { display: inline-flex; align-items: center; gap: 8px; margin: 10px 0 0; padding: 8px 14px; border-radius: 8px; color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, transparent); text-decoration: none; font-size: .9em; font-weight: 500; transition: background .12s ease; }
+.filled-pdf-link:hover { background: color-mix(in srgb, var(--accent) 18%, transparent); }
 .forms-table td:first-child, .rules-table td:first-child { width: 36px; text-align: center; color: var(--text-muted); font-variant-numeric: tabular-nums; }
 .forms-table td:nth-child(3) { width: 70px; font-family: "SF Mono", Monaco, monospace; font-size: .78rem; color: var(--text-muted); text-transform: uppercase; }
 .forms-table td:last-child { width: 70px; text-align: center; }
