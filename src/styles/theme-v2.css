@@ -120,6 +120,11 @@ body {
 }
 
 /* -------- Tabs: underline-driven, no fill -------- */
+.nav-tabs {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.nav-tabs::-webkit-scrollbar { display: none; height: 0; width: 0; }
 .nav-tab {
   background: transparent !important;
   color: var(--text-muted);
