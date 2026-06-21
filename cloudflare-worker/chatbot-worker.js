@@ -78,13 +78,44 @@ Dept electives (5 ECTS each): SENG317 Artificial Intelligence, SENG410 Data Mini
 - Forms (Yönerge, Acceptance, GSS, Report, Evaluation) listed on #internship page
 
 === STAFF / DEPARTMENT CONTACTS ===
-- Head: Doç. Dr. Hilal Arslan — hilalarslan@aybu.edu.tr
-- Department Secretary: Hasancan Suer — +90 312 906 2828
+General:
+- Head: Doç. Dr. Hilal Arslan — hilalarslan@aybu.edu.tr · 906 2282 · B317
+- Department Secretary: Hasancan Suer — +90 312 906 2828 (no email listed)
 - General email: seng@aybu.edu.tr
-- Office: B421, Ayvalı Mh. Takdir Cad. 150 Sk. No:5, Etlik-Keçiören / Ankara
-- Phone: (0312) 906 2202 / 2330
-- Faculty Advisor for ASEC club: Doç. Dr. Yenal Arslan — yenalarslan@aybu.edu.tr (office B318)
-- Full staff/faculty list at #people anchor
+- Address: B421, Ayvalı Mh. Takdir Cad. 150 Sk. No:5, Etlik-Keçiören / Ankara
+- Department phone: (0312) 906 2202 / 2330
+
+Faculty (name · title · email · phone · office · research areas):
+- Hilal Arslan · Doç. Dr. · hilalarslan@aybu.edu.tr · 906 2282 · B317 · Parallel computing, graphs, bioinformatics, ML, AI
+- Yenal Arslan · Doç. Dr. · yenalarslan@aybu.edu.tr · 916 2313 · B318 · InfoSec, AI, project mgmt, testing
+- Tuba Çağlıkantar · Doç. Dr. · tubacaglikantar@aybu.edu.tr · B321 · Image processing, 3D modeling, optimization, ML
+- Ömer Mintemur · Dr. Öğr. Üyesi · omermintemur@aybu.edu.tr · 916 2275 · B318 · Computer vision, pattern recognition, neural networks
+- Fatma Küçük · Dr. Öğr. Üyesi · fatmakucuk@aybu.edu.tr · 906 2209 · B317 · Hyperspectral image processing
+- Abdulkadir Taşdelen · Dr. Öğr. Üyesi · abdulkadirtasdelen@aybu.edu.tr · 916 2202 · B318 · CS, bioinformatics, AI, ML
+- Rasha Osman · Dr. Öğr. Üyesi · rosman@aybu.edu.tr · B321 · Data-driven SE, AI/ML, DB performance
+- Mehmet Ulvi Şimşek · Dr. Öğr. Üyesi · mehmetulvisimsek@aybu.edu.tr · IoT, fog/cloud, AI, ML
+- Murat Akın · Dr. Öğr. Üyesi · muratakin@aybu.edu.tr · 916 2213 · C313 · AI, big data, data mining, InfoSec
+
+Research Assistants:
+- Murat Can Yılmaz · muratcanyilmaz@aybu.edu.tr · Augmented reality
+- Emine Aşar · easar@aybu.edu.tr · ML, image processing
+- Büşra Yıldırım · busrayildirim@aybu.edu.tr · Optimization, metaheuristics, AI
+- Kübranur Gümüşlü · kubranurgumuslu@aybu.edu.tr · Data mining, ML
+- Pelin Nur Çöl · pelinnurcol@aybu.edu.tr · CS theory, AI, SE, robotics
+- Esma Nur Kocataş · kocatasesmanur@aybu.edu.tr · ML, deep learning, bioinformatics
+
+Commissions (topic · chair · members):
+- Internship · Fatma Küçük (fatmakucuk@aybu.edu.tr · 906 2209 · B317) · K. Gümüşlü, M. C. Yılmaz
+- Curriculum Exemption & Adaptation · Hilal Arslan · Yenal Arslan, M. C. Yılmaz
+- Double Major / Minor · Ömer Mintemur · Büşra Yıldırım
+- Erasmus · Ömer Mintemur · Büşra Yıldırım
+- ENGR450 Engineering Practice · Mehmet Ulvi Şimşek · Kübranur Gümüşlü
+- Horizontal Transfer · Fatma Küçük · Esma Nur Kocataş
+- Graduation · Abdulkadir Taşdelen · Emine Aşar
+- Project Monitoring · Tuba Çağlıkantar · Pelin Nur Çöl
+- Quality · Murat Akın · Pelin Nur Çöl
+
+ASEC Club advisor: Doç. Dr. Yenal Arslan — yenalarslan@aybu.edu.tr (B318)
 
 === ASEC CLUB ===
 - AYBU Software Engineering Club (aybuasec.org)
@@ -110,12 +141,13 @@ Tab anchor: #resources
 const SYSTEM_PROMPT = `You are the AYBU Software Engineering Student Guide assistant on the website https://mohamedattiadev.github.io/aybu-seng-guide/.
 
 Rules:
-- Answer ONLY using the FACTS block. If something isn't there, say you don't know and point to the relevant section.
-- Be concise: max ~70 words, 3–4 short sentences, or a tight bullet list.
-- Use plain HTML (no markdown): <strong>, <em>, <br>, <a href="#anchor">. NO markdown stars, NO code fences.
+- Answer ONLY using the FACTS block. NEVER invent course codes, names, prerequisites, ECTS values, dates, contacts, emails, or phone numbers. If something is not in FACTS, say "not listed in the guide" and point to the relevant section.
+- Be concise: max ~70 words, 2–4 short sentences, or a tight HTML list.
+- Use plain HTML (no markdown): <strong>, <em>, <ul><li>, <br>, <a href="#anchor">. NO markdown stars (* or **), NO code fences, NO numbered "1." prefixes (use <ol><li> instead).
 - Cite sections with anchor links: <a href="#curriculum">Curriculum</a>, <a href="#internship">Internship</a>, <a href="#graduation">Graduation</a>, <a href="#pathways">Pathways</a>, <a href="#people">Staff</a>, <a href="#club">Club</a>, <a href="#resources">Resources</a>.
-- When user asks "what is SENGxxx", give the course name, ECTS, category, prerequisite (if any), 1 short note if known.
-- Don't invent course names, prerequisites, dates, contacts, or links. If unsure, say "check the official department page".
+- When user asks "what is SENGxxx", give the course name, ECTS, category, prerequisite (if any). Add 1 short note only if it is in FACTS.
+- Faculty/university electives are NOT listed individually in FACTS — only the 6 ECTS minimum. Do not invent course codes for them.
+- For staff: give exact email/phone from FACTS. If email is not in FACTS, say "email not listed" and link <a href="#people">Staff</a>.
 
 FACTS:
 ${SITE_KB}`;
@@ -137,9 +169,9 @@ const PROVIDERS = [
     call: groqCall('llama-3.1-8b-instant'),
   },
   {
-    id: 'gemini-1.5',
+    id: 'gemini-flash-8b',
     keyEnv: 'GEMINI_API_KEY',
-    call: geminiCall('gemini-1.5-flash'),
+    call: geminiCall('gemini-1.5-flash-8b'),
   },
 ];
 
@@ -200,16 +232,34 @@ function geminiCall(model) {
 
 function cleanAnswer(s) {
   if (!s) return s;
-  return s
-    // strip code fences
+  let out = s
     .replace(/```[a-z]*\n?/gi, '')
     .replace(/```/g, '')
-    // strip markdown bold/italic to <strong>/<em>
     .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+    .replace(/__([^_]+)__/g, '<strong>$1</strong>')
     .replace(/(?<!\*)\*([^*\n]+)\*(?!\*)/g, '<em>$1</em>')
-    // strip leading "Answer:" garbage
     .replace(/^(Answer|A)\s*:\s*/i, '')
     .trim();
+  // Convert markdown bullets to <ul><li>...</li></ul>
+  const lines = out.split('\n');
+  const result = [];
+  let bullets = [];
+  const flush = () => {
+    if (bullets.length) {
+      result.push('<ul>' + bullets.map((b) => `<li>${b}</li>`).join('') + '</ul>');
+      bullets = [];
+    }
+  };
+  for (const line of lines) {
+    const m = line.match(/^\s*[-*•]\s+(.*\S)\s*$/);
+    if (m) bullets.push(m[1]);
+    else {
+      flush();
+      if (line.trim()) result.push(line);
+    }
+  }
+  flush();
+  return result.join(' ').replace(/\s{2,}/g, ' ').trim();
 }
 
 function cors(origin, allowed) {
