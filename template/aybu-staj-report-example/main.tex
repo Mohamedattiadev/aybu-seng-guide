@@ -1,0 +1,293 @@
+% =====================================================================
+% AYBU - Yazılım Mühendisliği / Software Engineering
+% Summer Practice (Staj) Report - FILLED EXAMPLE for Professors
+% ---------------------------------------------------------------------
+% This is a sample compiled with realistic (fictional) intern data
+% so the professor can see what a completed report from this LaTeX
+% template looks like. All names, companies and projects are invented.
+% =====================================================================
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{makecell}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{helvet}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{etoolbox}
+
+\hypersetup{hidelinks}
+
+\renewcommand{\familydefault}{\sfdefault}
+\onehalfspacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+\titleformat{\section}{\large\bfseries\sffamily\MakeUppercase}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries\sffamily}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\sffamily}{\thesubsubsection}{1em}{}
+
+\renewcommand{\contentsname}{TABLE OF CONTENTS}
+\setcounter{tocdepth}{3}
+\pagestyle{plain}
+
+% =====================================================================
+% STUDENT INFORMATION  (FILLED EXAMPLE - FICTIONAL)
+% =====================================================================
+\newcommand{\StudentName}{Ahmet Yılmaz}
+\newcommand{\StudentDept}{Software Engineering}
+\newcommand{\StudentID}{220501234567}
+\newcommand{\StudentEmail}{ahmet.yilmaz@aybu.edu.tr}
+\newcommand{\StudentPhone}{0532 000 00 00}
+
+\newcommand{\InternshipPlace}{ACME Yazılım A.Ş., Ankara}
+\newcommand{\InternshipStart}{26 / 05 / 2025}
+\newcommand{\InternshipEnd}{27 / 06 / 2025}
+\newcommand{\InternshipSupervisor}{Mehmet Demir, Senior Software Engineer}
+
+% =====================================================================
+% MACROS (unchanged from blank template)
+% =====================================================================
+\newcommand{\SigLine}[1]{%
+  \makebox[10cm][l]{\textit{#1}}\,:\,\dotfill\par
+}
+\newcommand{\SigBlock}{%
+  \vspace{3em}
+  \SigLine{Signature of trainee}
+  \SigLine{Work place}
+  \SigLine{Name and title of the controlling superior}
+  \SigLine{Signature and Stamp}
+}
+
+\newcommand{\DailyRow}[4]{%
+  \makecell{\textit{#1}\\\textit{#2}} & #3 & #4 \\ \hline
+}
+
+\newcolumntype{I}{!{\vrule width 1.4pt}}
+\newcommand{\ThickHRule}{\noalign{\hrule height 1.4pt}}
+
+\newsavebox{\weekbox}
+\newlength{\weekframeheight}
+\setlength{\weekframeheight}{20.5cm}
+
+\newenvironment{weekreport}[3]{%
+  \subsection*{\thesection.\arabic{weekcounter}\quad #1}%
+  \addcontentsline{toc}{subsection}{\protect\numberline{\thesection.\arabic{weekcounter}}#1}%
+  \stepcounter{weekcounter}%
+  \vspace{0.6em}%
+  \setlength{\fboxrule}{1.4pt}%
+  \setlength{\fboxsep}{20pt}%
+  \begin{lrbox}{\weekbox}%
+  \begin{minipage}[t][\weekframeheight][t]{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}%
+  \renewcommand{\arraystretch}{2.8}%
+  \setlength{\arrayrulewidth}{0.5pt}%
+  \centering
+  \begin{tabular}{|>{\centering\arraybackslash}p{2.6cm}|p{7.4cm}|>{\centering\arraybackslash}p{2.8cm}|}
+  \hline
+  \multicolumn{1}{|c|}{\textit{DAYS}} &
+  \multicolumn{1}{c|}{\textit{WORK ACCOMPLISHED}} &
+  \multicolumn{1}{c|}{\textit{WORKING HOURS}} \\ \hline
+}{%
+  \end{tabular}\par
+  \vspace{1em}%
+  \raggedright\SigBlock
+  \vfill
+  \end{minipage}%
+  \end{lrbox}%
+  \noindent\fbox{\usebox{\weekbox}}\par
+  \setlength{\arrayrulewidth}{0.4pt}%
+  \newpage
+}
+
+\newcounter{weekcounter}
+\setcounter{weekcounter}{1}
+
+% =====================================================================
+\begin{document}
+
+% --------------------- COVER PAGE ---------------------
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{center}
+    \vspace*{0.4cm}
+    \includegraphics[width=6.5cm]{images/aybu-logo.png}\\[1.2cm]
+
+    {\Large\bfseries ANKARA YILDIRIM BEYAZIT UNIVERSITY}\\[0.4cm]
+    {\Large\bfseries FACULTY OF ENGINEERING \& NATURAL SCIENCES}\\[0.4cm]
+    {\Large\bfseries SUMMER PRACTICE REPORT}\\[2.4cm]
+\end{center}
+
+\noindent\textbf{STUDENT'S}\\[-0.4em]
+\noindent\rule{\textwidth}{0.4pt}\\[1.2em]
+
+\renewcommand{\arraystretch}{1.9}
+\noindent\begin{tabular}{@{}p{4.5cm}p{\dimexpr\textwidth-4.7cm\relax}@{}}
+\textbf{NAME SURNAME:}   & \StudentName  \\
+\textbf{DEPARTMENT:}     & \StudentDept  \\
+\textbf{STUDENT ID:}     & \StudentID    \\
+\textbf{E-MAIL ADRESS:}  & \StudentEmail \\
+\textbf{PHONE NUMBER:}   & \StudentPhone \\
+\end{tabular}
+
+\vfill
+\end{titlepage}
+
+% --------------------- TOC ---------------------
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+% =====================================================================
+\section{DAILY REPORT}
+
+\begin{weekreport}{Week 1}{26/05/2025}{30/05/2025}
+  \DailyRow{Monday}{26/05/2025}{First day on site. HR onboarding, signed NDA, received laptop and credentials for the internal portal.}{09:00 -- 18:00}
+  \DailyRow{Tuesday}{27/05/2025}{Set up local development environment: Node.js, pnpm, Docker, PostgreSQL. Cloned the main monorepo.}{09:00 -- 18:00}
+  \DailyRow{Wednesday}{28/05/2025}{Walk-through of the codebase with the supervisor. Read the architecture document and coding-style guide.}{09:00 -- 18:00}
+  \DailyRow{Thursday}{29/05/2025}{Attended sprint planning. Picked a starter ticket: fix a tooltip alignment bug in the Vue.js dashboard.}{09:00 -- 18:00}
+  \DailyRow{Friday}{30/05/2025}{Opened my first pull request. Two rounds of code review, then merged. Wrote a short retro note.}{09:00 -- 18:00}
+\end{weekreport}
+
+\begin{weekreport}{Week 2}{02/06/2025}{06/06/2025}
+  \DailyRow{Monday}{02/06/2025}{Kicked off Project~1 (Logistics Dashboard UI). Read existing component code and sketched the new layout.}{09:00 -- 18:00}
+  \DailyRow{Tuesday}{03/06/2025}{Built the new \texttt{ShipmentTable} Vue component using Composition API and TypeScript. Added basic props.}{09:00 -- 18:00}
+  \DailyRow{Wednesday}{04/06/2025}{Wired the component to the existing REST endpoint. Handled loading and empty states.}{09:00 -- 18:00}
+  \DailyRow{Thursday}{05/06/2025}{Pair-programmed accessibility fixes (keyboard navigation, ARIA labels) with the senior frontend dev.}{09:00 -- 18:00}
+  \DailyRow{Friday}{06/06/2025}{Public holiday (Eid al-Adha / Kurban Bayramı) -- office closed.}{---}
+\end{weekreport}
+
+\begin{weekreport}{Week 3}{09/06/2025}{13/06/2025}
+  \DailyRow{Monday}{09/06/2025}{Bayram tatili devam (half-day return). Caught up on Slack and code-review backlog.}{13:00 -- 18:00}
+  \DailyRow{Tuesday}{10/06/2025}{Finished Project~1. Opened final PR, addressed review comments, merged into \texttt{main}.}{09:00 -- 18:00}
+  \DailyRow{Wednesday}{11/06/2025}{Started Project~2 (REST API rate limiter). Read the Node.js / Express service code and existing middleware.}{09:00 -- 18:00}
+  \DailyRow{Thursday}{12/06/2025}{Researched token-bucket vs sliding-window algorithms. Chose sliding-window log with Redis as the backing store.}{09:00 -- 18:00}
+  \DailyRow{Friday}{13/06/2025}{Implemented a first draft of the limiter middleware. Wrote unit tests with Jest and \texttt{ioredis-mock}.}{09:00 -- 18:00}
+\end{weekreport}
+
+\begin{weekreport}{Week 4}{16/06/2025}{20/06/2025}
+  \DailyRow{Monday}{16/06/2025}{Code review feedback on Project~2: refactored to extract config (limits per route) into env variables.}{09:00 -- 18:00}
+  \DailyRow{Tuesday}{17/06/2025}{Added logging and Prometheus metrics for blocked requests. Verified with a local Grafana dashboard.}{09:00 -- 18:00}
+  \DailyRow{Wednesday}{18/06/2025}{Wrote integration tests using a real Redis container via testcontainers. Fixed two race conditions.}{09:00 -- 18:00}
+  \DailyRow{Thursday}{19/06/2025}{Merged Project~2. Started Project~3: increase unit-test coverage on the billing module from 62\% to >80\%.}{09:00 -- 18:00}
+  \DailyRow{Friday}{20/06/2025}{Mapped uncovered branches in the billing module. Wrote tests for the invoice-generation pure functions first.}{09:00 -- 18:00}
+\end{weekreport}
+
+\begin{weekreport}{Week 5}{23/06/2025}{27/06/2025}
+  \DailyRow{Monday}{23/06/2025}{Wrote tests around the discount-calculation logic. Learned to mock the date with \texttt{@sinonjs/fake-timers}.}{09:00 -- 18:00}
+  \DailyRow{Tuesday}{24/06/2025}{Added tests for the PDF-invoice service using dependency-injected fakes. Coverage now at 74\%.}{09:00 -- 18:00}
+  \DailyRow{Wednesday}{25/06/2025}{Refactored a tangled function to make it testable. Coverage reached 81\%. Opened PR with the report.}{09:00 -- 18:00}
+  \DailyRow{Thursday}{26/06/2025}{Code reviews for two teammates. Updated the internal onboarding wiki with the dev-setup steps I had to figure out.}{09:00 -- 18:00}
+  \DailyRow{Friday}{27/06/2025}{Final day. Knowledge-transfer session, signed exit checklist, collected the evaluation form from my supervisor.}{09:00 -- 17:00}
+\end{weekreport}
+
+% =====================================================================
+\section{GENERAL REPORT}
+
+\subsection{Introduction}
+
+\subsubsection{Information about the Institution}
+ACME Yazılım A.Ş.\ is a mid-sized software company headquartered in the Bilkent technopark in Ankara. The company builds business-to-business SaaS products for the logistics sector, including a shipment-tracking dashboard, a route-optimisation engine and a customer-facing portal used by Turkish forwarders and a handful of European partners. Their main customers are medium-sized freight operators that need a modern web interface on top of their existing ERP systems.
+
+The engineering organisation has around forty people split across three product squads, a platform team and a small data team. Each squad owns its services end-to-end and follows a two-week Scrum cadence with daily stand-ups, mid-sprint refinement and a Friday demo. The stack is centred on Vue.js~3 with TypeScript on the frontend, Node.js (NestJS and plain Express) on the backend, PostgreSQL as the primary database, Redis for caching and queues, and AWS (ECS Fargate, S3, CloudWatch) for hosting.
+
+The work culture is informal and English-friendly. Code review is mandatory for every change, the trunk is protected, and deployments to staging happen on every merge through a GitHub Actions pipeline. Engineers are encouraged to spend roughly one afternoon per sprint on internal tooling, documentation or learning.
+
+\subsubsection{Overview of the Internship}
+The internship lasted five weeks, from 26 May to 27 June 2025, on the ``Dashboard'' squad. The role was primarily frontend with light backend work. Over the period I contributed to three deliverables of increasing complexity: a redesigned shipment table in the operator dashboard, a Redis-backed rate limiter for one of the public REST APIs, and a focused push to lift unit-test coverage on the billing module. In parallel I did code reviews, wrote documentation, and shadowed an on-call rotation. By the end of the internship I had eleven merged pull requests and a clear picture of how a small product team ships software in practice.
+
+\subsection{Internship Description}
+
+\subsubsection{Onboarding and Environment Setup}
+The first week was deliberately light on coding. After HR onboarding and the security briefing I received access to GitHub, Jira, Slack and the internal wiki, and pulled the main monorepo. The dev environment is fully Dockerised: a single \texttt{docker compose up} brings up PostgreSQL, Redis, the auth service and the API gateway, after which the Vue frontend runs against them with \texttt{pnpm dev}.
+
+The coding style is enforced by Prettier and ESLint with a custom config, plus a strict TypeScript setup with \texttt{noUncheckedIndexedAccess} turned on. Every commit goes through a pre-commit hook that runs the linter and the unit tests for the touched files. My supervisor walked me through the architecture document on day three and assigned a small ``starter'' ticket so I could practice the full PR workflow before being given real project work. Daily stand-ups are at 10:00 and run for ten minutes; refinement and demos are on Wednesday and Friday afternoons.
+
+\subsubsection{Project 1: \textit{Logistics Dashboard UI}}
+The first project was to rewrite the \texttt{ShipmentTable} component on the operator dashboard. The legacy version was a large Vue 2 Options-API component that mixed data fetching, sorting and presentation, and was difficult to extend. The goal was to split it into a thin container plus a presentational table built with the Composition API, add proper TypeScript types for the shipment domain model, and improve keyboard accessibility.
+
+I started by reading the existing code and writing down the props and events it actually used, which turned out to be a small subset of what the file exposed. The new component takes a typed \texttt{shipments} prop and emits \texttt{select} and \texttt{sort} events; data fetching lives in a parent container that uses a Pinia store. The main lessons were practical: how to design a component API before writing the implementation, how to keep visual changes invisible to users while changing the internals, and how much accessibility work (focus order, ARIA roles, keyboard handlers) is involved in a ``simple'' table.
+
+\subsubsection{Project 2: \textit{REST API rate limiter}}
+The second project was to add a rate limiter to the public tracking API, which had started receiving aggressive automated traffic from a single integration partner. After a short investigation I proposed a sliding-window-log algorithm backed by Redis, configurable per route and per API key, returning standard \texttt{429 Too Many Requests} responses with \texttt{Retry-After} headers.
+
+The implementation is a thin Express middleware that uses \texttt{ioredis} with a Lua script to make the window update atomic. Tests were the hardest part: unit tests with \texttt{ioredis-mock} caught logic bugs, but two subtle race conditions only appeared in integration tests against a real Redis container started with \texttt{testcontainers}. I learned that ``works on my machine'' is not a substitute for testing against the real dependency, and that middleware design benefits enormously from being a pure function of \texttt{(request, state)} so it can be exercised in isolation.
+
+\subsubsection{Project 3: \textit{Unit test coverage push}}
+The third project was less glamorous but, in hindsight, the most educational. The billing module had drifted to 62\% line coverage and the team wanted it back above 80\% before a planned refactor. My job was to write the missing tests and report any code that could not reasonably be tested.
+
+I started with the pure functions (discount calculation, tax rounding, invoice numbering) because they are easy and have a high payoff. From there I moved into the side-effecting code, mocking the database with an in-memory repository and the time with \texttt{@sinonjs/fake-timers}. One function -- the legacy PDF generator -- was so tangled with I/O that I had to refactor it into a generator plus a writer before tests became possible; my supervisor reviewed the refactor carefully. Final coverage landed at 81\%, and I came away with a much better intuition for what makes code testable: small functions, explicit dependencies, no hidden global state.
+
+\subsubsection{Additional Tasks and Contributions}
+Outside the three projects I did roughly a dozen code reviews for teammates, mostly on the same dashboard codebase. I also rewrote the ``first-day setup'' page on the internal wiki, because several of the steps that tripped me up turned out to trip up everyone, and shadowed two on-call shifts with the platform engineer to understand how production incidents are handled (paging via PagerDuty, runbooks in the wiki, post-mortems within 48 hours).
+
+\subsection{Conclusion}
+The internship gave me a concrete answer to ``what does industrial software actually look like.'' On the hard-skills side I now have working experience with Vue~3 + TypeScript, Node.js middleware, Redis, Jest and the basics of an AWS-based deployment pipeline, and a much better grasp of testing as a design tool rather than a chore. On the soft-skills side I learned how to scope a ticket, how to ask for help efficiently in Slack, and how much value a careful code review adds to both reviewer and author.
+
+The connection to the curriculum was direct. The Databases course made the schema discussions readable; Software Engineering made the Scrum cadence and review workflow feel familiar; Operating Systems and Networks helped me reason about the rate limiter and about debugging an HTTP issue end-to-end. If I were to do the internship again I would push earlier for harder backend tickets, take notes more systematically, and start writing tests on day one instead of after the first round of bug reports. Overall it was a useful, demanding and well-supervised five weeks, and I am grateful to ACME Yazılım and to my supervisor for the opportunity.
+
+\newpage
+\subsection{Appendices}
+
+\subsubsection*{Appendix A — Architecture Diagram}
+\begin{figure}[H]
+  \centering
+  \fbox{\rule{0pt}{6cm}\rule{12cm}{0pt}}
+  \caption{Placeholder — high-level architecture of the ACME logistics platform (frontend, API gateway, services, PostgreSQL, Redis, S3). To be replaced with the real diagram in the printed report.}
+  \label{fig:architecture}
+\end{figure}
+
+\subsubsection*{Appendix B — Screenshots}
+\begin{figure}[H]
+  \centering
+  \fbox{\rule{0pt}{5cm}\rule{10cm}{0pt}}
+  \caption{Placeholder — logistics dashboard mockup showing the new \texttt{ShipmentTable} component.}
+  \label{fig:screenshot-dashboard}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \fbox{\rule{0pt}{5cm}\rule{10cm}{0pt}}
+  \caption{Placeholder — Grafana panel showing rate-limited (HTTP 429) responses over a 24-hour window.}
+  \label{fig:screenshot-grafana}
+\end{figure}
+
+\subsubsection*{Appendix C — Code Listings}
+\begin{verbatim}
+// Project 2 - sliding-window rate limiter (simplified excerpt).
+export function rateLimit(opts: { limit: number; windowMs: number }) {
+  return async function middleware(req, res, next) {
+    const key = `rl:${req.apiKey}:${req.route.path}`;
+    const allowed = await slidingWindow(redis, key, opts);
+    if (!allowed) {
+      res.set("Retry-After", String(Math.ceil(opts.windowMs / 1000)));
+      return res.status(429).json({ error: "rate_limited" });
+    }
+    return next();
+  };
+}
+\end{verbatim}
+
+\subsubsection*{Appendix D — Links \& References}
+\begin{itemize}
+  \item Internship company: \texttt{https://example.com/acme-yazilim} (fictional)
+  \item Internal wiki page authored: \texttt{https://wiki.internal/dev-setup}
+  \item Pull requests merged during the internship: 11 (see GitHub profile)
+\end{itemize}
+
+\end{document}

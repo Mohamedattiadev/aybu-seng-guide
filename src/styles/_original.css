@@ -438,6 +438,11 @@ ul.clean li::marker { color: var(--accent); font-size: 1.1em; }
   .latex-cta .cta-actions { align-items: stretch; }
   .latex-cta .btn-primary { justify-content: center; }
 }
+.latex-cta.prof-cta { margin-top: 12px; background: linear-gradient(135deg, color-mix(in srgb, var(--ok, #2e7d32) 10%, var(--surface)) 0%, var(--surface) 70%); border-color: color-mix(in srgb, var(--ok, #2e7d32) 30%, var(--border)); }
+.latex-cta.prof-cta::before { background: radial-gradient(circle at 0% 0%, color-mix(in srgb, var(--ok, #2e7d32) 16%, transparent), transparent 55%); }
+.latex-cta.prof-cta .cta-badge { color: var(--ok, #2e7d32); }
+.latex-cta.prof-cta .btn-primary { background: var(--ok, #2e7d32); box-shadow: 0 4px 12px color-mix(in srgb, var(--ok, #2e7d32) 35%, transparent); }
+.latex-cta.prof-cta .btn-primary:hover { background: color-mix(in srgb, var(--ok, #2e7d32) 80%, black); box-shadow: 0 6px 16px color-mix(in srgb, var(--ok, #2e7d32) 45%, transparent); }
 .submit-note { margin: 8px 0 0; padding: 10px 14px; border-left: 3px solid var(--warn); background: color-mix(in srgb, var(--warn) 12%, var(--surface)); color: var(--text); border-radius: 6px; font-size: .92em; }
 .forms-table td:first-child, .rules-table td:first-child { width: 36px; text-align: center; color: var(--text-muted); font-variant-numeric: tabular-nums; }
 .forms-table td:nth-child(3) { width: 70px; font-family: "SF Mono", Monaco, monospace; font-size: .78rem; color: var(--text-muted); text-transform: uppercase; }
