@@ -40,10 +40,10 @@
   --text: #f5f5f5;
   --text-soft: #d4d4d4;
   --text-muted: #888888;
-  --accent: #ffffff;          /* dark mode primary = white text-on-buttons */
-  --accent-dark: #e5e5e5;
-  --accent-soft: #1a1a1a;
-  --highlight: #1fa9cf;       /* cyan stays for links/accents */
+  --accent: #1fa9cf;          /* cyan as primary in dark — used for tints and highlights */
+  --accent-dark: #0f8fb5;
+  --accent-soft: #0a1f2a;
+  --highlight: #1fa9cf;
   --highlight-soft: #0a1f2a;
   --danger: #ff4b62;
   --warn: #ffc94a;
@@ -60,9 +60,9 @@
     --text: #f5f5f5;
     --text-soft: #d4d4d4;
     --text-muted: #888888;
-    --accent: #ffffff;
-    --accent-dark: #e5e5e5;
-    --accent-soft: #1a1a1a;
+    --accent: #1fa9cf;
+    --accent-dark: #0f8fb5;
+    --accent-soft: #0a1f2a;
     --highlight: #1fa9cf;
     --highlight-soft: #0a1f2a;
     --danger: #ff4b62;
@@ -356,32 +356,42 @@ body {
 
 /* -------- Intro / grad checklist -------- */
 .intro-card { background: var(--surface-alt); border: 1px solid var(--border); }
-.grad-checklist {
-  list-style: none;
-  padding: 0;
-  margin: 16px 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
-  border-top: 1px solid var(--border);
+.card .grad-checklist {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 18px 0 !important;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 0 !important;
+  border-top: 1px solid var(--border) !important;
 }
-.grad-checklist li {
-  display: grid;
-  grid-template-columns: 100px 1fr;
-  align-items: center;
-  gap: 20px;
-  padding: 14px 4px;
-  border-bottom: 1px solid var(--border);
+.card .grad-checklist li {
+  display: grid !important;
+  grid-template-columns: 80px 1fr !important;
+  align-items: baseline !important;
+  gap: 24px !important;
+  padding: 16px 4px !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--border) !important;
+  background: transparent !important;
+  border-radius: 0 !important;
   color: var(--text-soft);
   font-size: 0.95rem;
 }
+.grad-checklist li .num,
 .grad-checklist .num {
-  font-family: var(--font-mono);
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: var(--accent);
-  letter-spacing: -0.04em;
+  background: transparent !important;
+  color: var(--highlight) !important;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
   text-align: start;
+  min-width: auto !important;
+  height: auto !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  justify-content: flex-start !important;
 }
 
 /* -------- Info-grid + info-card -------- */
