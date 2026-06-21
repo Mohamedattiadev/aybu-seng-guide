@@ -648,13 +648,21 @@ footer a { color: var(--text); text-decoration: underline; text-underline-offset
 .credit { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.02em; }
 
 /* -------- Links inside content (use cyan for pop) -------- */
-.card a, .chatbot-bubble a, .info-card a, .res-card a {
+.card a:not(.btn-primary):not(.btn-secondary):not(.res-open):not(.overleaf-open):not(.dl-link):not(.quick-card):not(.src-link):not(.cta-actions a),
+.chatbot-bubble a,
+.info-card a {
   color: var(--highlight) !important;
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
 }
-.card a:hover, .chatbot-bubble a:hover, .info-card a:hover { color: var(--accent) !important; }
+.card a:not(.btn-primary):not(.btn-secondary):not(.res-open):not(.overleaf-open):hover,
+.chatbot-bubble a:hover,
+.info-card a:hover { color: var(--accent) !important; }
+
+/* Buttons inside cards stay buttons */
+.card .btn-primary, .card .btn-secondary, .card .res-open, .card .overleaf-open,
+.card .dl-link, .card .quick-card { text-decoration: none !important; }
 
 /* Cyan highlight bar accents */
 .board-card::before { background: var(--highlight); }
