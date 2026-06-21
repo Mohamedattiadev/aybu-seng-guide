@@ -1741,11 +1741,10 @@ buildSearchIndex();
     const endpoint = window.__CHAT_ENDPOINT;
     if (!endpoint) return null;
     try {
-      const ctx = kb.map((e) => `Q: ${e.q}\nA: ${e.a.replace(/<[^>]+>/g, '')}`).join('\n\n');
       const r = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ query, context: ctx, lang: document.documentElement.lang || 'en' }),
+        body: JSON.stringify({ query, lang: document.documentElement.lang || 'en' }),
       });
       if (!r.ok) return null;
       const data = await r.json();
