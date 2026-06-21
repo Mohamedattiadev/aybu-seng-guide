@@ -1012,10 +1012,7 @@ function applyTheme(t) {
   document.documentElement.setAttribute('data-theme', t);
   localStorage.setItem(THEME_KEY, t);
   const btn = document.getElementById('themeToggle');
-  if (btn) {
-    btn.textContent = t === 'dark' ? '☀' : '☾';
-    btn.title = 'Theme: ' + t;
-  }
+  if (btn) btn.title = 'Theme: ' + t;
 }
 document.getElementById('themeToggle')?.addEventListener('click', () => {
   const cur = effectiveTheme(localStorage.getItem(THEME_KEY));
