@@ -145,6 +145,9 @@ body {
   position: relative;
   outline: none !important;
   box-shadow: none !important;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
 }
 .nav-tab:focus, .nav-tab:focus-visible { outline: none !important; box-shadow: none !important; }
 .nav-tab:hover { background: transparent !important; color: var(--text); }
