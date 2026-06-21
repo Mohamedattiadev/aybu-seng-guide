@@ -2,7 +2,26 @@ const i18n = {
   en: {
     "brand": "Student Guide",
     "nav.home": "Home", "nav.curriculum": "Curriculum", "nav.internship": "Internship & Project",
-    "nav.graduation": "Graduation", "nav.pathways": "Pathways", "nav.people": "Staff", "nav.club": "Club",
+    "nav.graduation": "Graduation", "nav.pathways": "Pathways", "nav.people": "Staff", "nav.club": "Club", "nav.resources": "Resources",
+    "res.title": "Student Drive — Resources",
+    "res.intro": "A shared Google Drive folder maintained by SENG students for SENG students. Lecture notes, past exams, project examples, cheat sheets, and study material across the curriculum — all in one place.",
+    "res.open": "Open the Drive",
+    "res.whatTitle": "What's inside",
+    "res.notesT": "Lecture notes",
+    "res.notesD": "Organized per course code (SENG / MATH / PHYS / ENGR).",
+    "res.examsT": "Past exams & quizzes",
+    "res.examsD": "Midterms and finals from previous semesters when available.",
+    "res.projT": "Project examples",
+    "res.projD": "SENG401/402 graduation projects and course assignments.",
+    "res.cheatT": "Cheat sheets & summaries",
+    "res.cheatD": "Condensed study aids for finals week.",
+    "res.note": "📌 Drive access is open to all SENG students. If a file is missing, ask classmates or contribute your own — the folder grows with the community.",
+    "res.howTitle": "How to use it",
+    "res.h1": "Click <strong>Open the Drive</strong> above (signs you into Google).",
+    "res.h2": "Browse by course code or semester folder.",
+    "res.h3": "Use <strong>File → Make a copy</strong> to save edits to your own Drive.",
+    "res.h4": "Contributing: drop your notes/exams into the matching folder. Keep filenames descriptive (e.g. <code>SENG305-Midterm-2024.pdf</code>).",
+    "res.disc": "⚠ Student-maintained. Verify accuracy against official course material before using for exams.",
     "path.title": "Pathways Beyond the Bachelor",
     "path.intro": "Double major, exchange programs, and graduate studies — opportunities to expand your degree.",
     "home.qPath": "Double major, Erasmus, MSc.",
@@ -248,7 +267,26 @@ const i18n = {
   tr: {
     "brand": "Öğrenci Rehberi",
     "nav.home": "Ana Sayfa", "nav.curriculum": "Müfredat", "nav.internship": "Staj & Bitirme",
-    "nav.graduation": "Mezuniyet", "nav.pathways": "Yollar", "nav.people": "Kadro", "nav.club": "Kulüp",
+    "nav.graduation": "Mezuniyet", "nav.pathways": "Yollar", "nav.people": "Kadro", "nav.club": "Kulüp", "nav.resources": "Kaynaklar",
+    "res.title": "Öğrenci Drive — Kaynaklar",
+    "res.intro": "SENG öğrencileri tarafından SENG öğrencileri için tutulan paylaşımlı Google Drive klasörü. Ders notları, geçmiş sınavlar, proje örnekleri, özetler ve çalışma materyalleri — hepsi tek yerde.",
+    "res.open": "Drive'ı Aç",
+    "res.whatTitle": "İçinde ne var",
+    "res.notesT": "Ders notları",
+    "res.notesD": "Ders koduna göre düzenli (SENG / MATH / PHYS / ENGR).",
+    "res.examsT": "Geçmiş sınavlar ve kısa sınavlar",
+    "res.examsD": "Önceki dönemlerden vize ve final örnekleri.",
+    "res.projT": "Proje örnekleri",
+    "res.projD": "SENG401/402 bitirme projeleri ve ders ödevleri.",
+    "res.cheatT": "Özetler ve cheat sheet'ler",
+    "res.cheatD": "Final haftası için yoğunlaştırılmış çalışma araçları.",
+    "res.note": "📌 Drive tüm SENG öğrencilerine açık. Eksik dosya varsa arkadaşlarına sor veya kendin katkıda bulun — klasör toplulukla büyür.",
+    "res.howTitle": "Nasıl kullanılır",
+    "res.h1": "Yukarıdaki <strong>Drive'ı Aç</strong> butonuna tıkla (Google girişi yapılır).",
+    "res.h2": "Ders kodu veya dönem klasörüne göre gez.",
+    "res.h3": "<strong>Dosya → Kopyasını oluştur</strong> ile kendi Drive'ına kaydet.",
+    "res.h4": "Katkı: notlarını/sınavlarını uygun klasöre at. Dosya adı açıklayıcı olsun (örn. <code>SENG305-Vize-2024.pdf</code>).",
+    "res.disc": "⚠ Öğrenci tarafından tutulur. Sınavlarda kullanmadan önce resmi ders materyaliyle doğrula.",
     "path.title": "Lisans Sonrası Yollar",
     "path.intro": "Çift anadal, değişim programları ve lisansüstü eğitim — diplomanı genişletecek fırsatlar.",
     "home.qPath": "Çift anadal, Erasmus, YL.",
@@ -494,7 +532,7 @@ const i18n = {
   ar: {
     "brand": "دليل الطالب",
     "nav.home": "الرئيسية", "nav.curriculum": "المنهج", "nav.internship": "التدريب والمشروع",
-    "nav.graduation": "التخرج", "nav.pathways": "المسارات", "nav.people": "الكادر", "nav.club": "النادي",
+    "nav.graduation": "التخرج", "nav.pathways": "المسارات", "nav.people": "الكادر", "nav.club": "النادي", "nav.resources": "الموارد",
     "path.title": "مسارات ما بعد البكالوريوس",
     "path.intro": "التخصص المزدوج وبرامج التبادل والدراسات العليا — فرص لتوسيع شهادتك.",
     "home.qPath": "تخصص مزدوج، إيراسموس، ماجستير.",
@@ -695,7 +733,7 @@ const i18n = {
   fr: {
     "brand": "Guide Étudiant",
     "nav.home": "Accueil", "nav.curriculum": "Programme", "nav.internship": "Stage & Projet",
-    "nav.graduation": "Diplôme", "nav.pathways": "Parcours", "nav.people": "Équipe", "nav.club": "Club",
+    "nav.graduation": "Diplôme", "nav.pathways": "Parcours", "nav.people": "Équipe", "nav.club": "Club", "nav.resources": "Ressources",
     "path.title": "Parcours au-delà de la Licence",
     "path.intro": "Double diplôme, programmes d'échange et études supérieures — opportunités pour élargir votre diplôme.",
     "home.qPath": "Double diplôme, Erasmus, Master.",
@@ -896,7 +934,7 @@ const i18n = {
   de: {
     "brand": "Studentenleitfaden",
     "nav.home": "Start", "nav.curriculum": "Lehrplan", "nav.internship": "Praktikum & Projekt",
-    "nav.graduation": "Abschluss", "nav.pathways": "Wege", "nav.people": "Personal", "nav.club": "Verein",
+    "nav.graduation": "Abschluss", "nav.pathways": "Wege", "nav.people": "Personal", "nav.club": "Verein", "nav.resources": "Ressourcen",
     "path.title": "Wege nach dem Bachelor",
     "path.intro": "Doppelstudium, Austauschprogramme und Aufbaustudium — Möglichkeiten, dein Studium zu erweitern.",
     "home.qPath": "Doppelstudium, Erasmus, Master.",
@@ -1612,18 +1650,39 @@ buildSearchIndex();
     kb.push({ q, a, tags: (tags + ' ' + q).toLowerCase() });
   });
 
-  // Curated extras: prereq map from curriculum table.
-  document.querySelectorAll('[data-prereq]').forEach((tr) => {
+  // All courses: code, name, ects, prereq, semester.
+  document.querySelectorAll('[data-code]').forEach((tr) => {
     const code = tr.getAttribute('data-code');
-    const prereq = tr.getAttribute('data-prereq');
-    if (!code) return;
+    const ects = tr.getAttribute('data-ects') || '';
+    const cat = tr.getAttribute('data-cat') || '';
+    const prereq = tr.getAttribute('data-prereq') || '';
+    if (!code || !/^[A-Z]+\d+$/.test(code)) return;
     const nameCell = tr.querySelector('td:nth-child(3)');
     const name = nameCell ? nameCell.textContent.trim() : '';
+    const parts = [];
+    if (name) parts.push(name);
+    if (ects) parts.push(`${ects} ECTS`);
+    if (cat) parts.push(cat.replace(/-/g, ' '));
+    if (prereq) parts.push(`prereq: ${prereq}`);
     kb.push({
-      q: `Prerequisite for ${code}`,
-      a: `<strong>${code}${name ? ' — ' + name : ''}</strong>: prerequisite is <strong>${prereq || 'none'}</strong>. See <a href="#curriculum">Curriculum</a>.`,
-      tags: `${code.toLowerCase()} ${name.toLowerCase()} prereq prerequisite need before take`,
+      q: `${code} — ${name}`,
+      a: `<strong>${code}${name ? ' — ' + name : ''}</strong>${ects ? ' · ' + ects + ' ECTS' : ''}${cat ? ' · ' + cat.replace(/-/g, ' ') : ''}${prereq ? ' · Prerequisite: <strong>' + prereq + '</strong>' : ' · No formal prereq'}. See <a href="#curriculum">Curriculum</a> for full details.`,
+      tags: `${code.toLowerCase()} ${name.toLowerCase()} ${parts.join(' ').toLowerCase()} prereq prerequisite need before take what is about course`,
     });
+  });
+
+  // Drive / resources
+  kb.push({
+    q: 'Where to find lecture notes, past exams, study material',
+    a: 'Use the <a href="#resources">Resources</a> tab — a student-maintained Google Drive with lecture notes, past exams, project examples, and cheat sheets organized by course code. <a href="https://drive.google.com/drive/folders/1M2Rh4UWbNurDlxNEAvEupJCAmvis-cau?usp=sharing" target="_blank">Open the Drive →</a>',
+    tags: 'drive resources notes exams cheat sheet study material google folder past midterm final share',
+  });
+
+  // Staff contact shortcut
+  kb.push({
+    q: 'Department head, secretary and contacts',
+    a: '<strong>Head:</strong> Doç. Dr. Hilal Arslan — <a href="https://mail.google.com/mail/?view=cm&fs=1&to=hilalarslan@aybu.edu.tr" target="_blank">hilalarslan@aybu.edu.tr</a>. <strong>Secretary:</strong> Hasancan Suer — +90 312 906 2828. <strong>Office:</strong> B421. <strong>General:</strong> seng@aybu.edu.tr. Full staff list: <a href="#people">Staff page</a>.',
+    tags: 'contact head hilal arslan secretary hasancan suer phone email office department staff people',
   });
 
   function tokenize(s) {
@@ -1682,7 +1741,7 @@ buildSearchIndex();
     const endpoint = window.__CHAT_ENDPOINT;
     if (!endpoint) return null;
     try {
-      const ctx = kb.slice(0, 30).map((e) => `Q: ${e.q}\nA: ${e.q ? e.a.replace(/<[^>]+>/g, '') : ''}`).join('\n\n');
+      const ctx = kb.map((e) => `Q: ${e.q}\nA: ${e.a.replace(/<[^>]+>/g, '')}`).join('\n\n');
       const r = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -1716,22 +1775,22 @@ buildSearchIndex();
     }
 
     const typing = showTyping();
-    const local = bestMatch(query);
-    if (local) {
-      typing.remove();
-      addMsg('bot', local.a);
-      return;
-    }
+    // Prefer LLM (richer answers); local match as fallback.
     const remote = await callRemote(query);
     typing.remove();
     if (remote) {
       addMsg('bot', remote);
-    } else {
-      addMsg(
-        'bot',
-        'I don\'t have a confident answer for that. Try a course code (e.g. <strong>SENG303</strong>, <strong>SENG311</strong>, <strong>SENG321</strong>) or pick a topic: <a href="#curriculum">Curriculum</a> · <a href="#internship">Internship</a> · <a href="#graduation">Graduation</a> · <a href="#club">Club</a>.'
-      );
+      return;
     }
+    const local = bestMatch(query);
+    if (local) {
+      addMsg('bot', local.a);
+      return;
+    }
+    addMsg(
+      'bot',
+      'I don\'t have a confident answer for that. Try a course code (e.g. <strong>SENG305</strong>, <strong>SENG301</strong>, <strong>SENG326</strong>) or pick a topic: <a href="#curriculum">Curriculum</a> · <a href="#internship">Internship</a> · <a href="#graduation">Graduation</a> · <a href="#resources">Resources</a> · <a href="#club">Club</a>.'
+    );
   }
 
   toggle.addEventListener('click', () => {
