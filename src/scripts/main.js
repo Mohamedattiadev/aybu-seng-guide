@@ -1546,7 +1546,7 @@ document.getElementById('searchOpen')?.addEventListener('click', openSearch);
 searchOverlay?.addEventListener('click', e => { if (e.target === searchOverlay) closeSearch(); });
 function runSearch(q) {
   q = q.trim().toLowerCase();
-  if (q.length < 2) { closeSearch(); return; }
+  if (q.length < 2) { searchResults.innerHTML = ''; searchResults.classList.remove('open'); return; }
   const hits = searchIndex
     .map(item => ({ item, idx: item.text.toLowerCase().indexOf(q) }))
     .filter(x => x.idx !== -1)
