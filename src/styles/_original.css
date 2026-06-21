@@ -539,7 +539,23 @@ ul.clean li::marker { color: var(--accent); font-size: 1.1em; }
   line-height: 1.55;
 }
 .overleaf-list li { margin: 4px 0; }
-.overleaf-list a { color: var(--accent); }
+.overleaf-list a { color: var(--accent); font-weight: 500; }
+.overleaf-list strong { color: var(--text); }
+.overleaf-open {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 7px 14px;
+  background: #138a07;
+  color: #fff;
+  border-radius: 6px;
+  font-size: .85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background .12s ease, transform .12s ease;
+}
+.overleaf-open:hover { background: #0f7106; transform: translateY(-1px); color: #fff; }
 
 /* Secondary CTA button */
 .latex-cta .btn-secondary {

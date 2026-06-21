@@ -2,7 +2,7 @@ const i18n = {
   en: {
     "brand": "Student Guide",
     "nav.home": "Home", "nav.curriculum": "Curriculum", "nav.internship": "Internship & Project",
-    "nav.graduation": "Graduation", "nav.pathways": "Pathways", "nav.people": "Faculty", "nav.club": "Club",
+    "nav.graduation": "Graduation", "nav.pathways": "Pathways", "nav.people": "Staff", "nav.club": "Club",
     "path.title": "Pathways Beyond the Bachelor",
     "path.intro": "Double major, exchange programs, and graduate studies — opportunities to expand your degree.",
     "home.qPath": "Double major, Erasmus, MSc.",
@@ -32,8 +32,8 @@ const i18n = {
     "home.faqIntro": "Quick answers to the most common student questions. Use the chatbot (bottom-right) for anything else.",
     "home.faqSearch": "Search questions…",
     "home.faqNoResults": "No questions matched. Try the chatbot for a custom answer.",
-    "faq.q1": "What is the prerequisite for MATH222?",
-    "faq.a1": "MATH222 (Probability & Statistics) requires MATH103 / MATH151. Check the <a href=\"#curriculum\">Curriculum page</a> for the full prerequisite chain.",
+    "faq.q1": "What are the prerequisites for core SENG courses?",
+    "faq.a1": "Quick map: <strong>SENG305 Operating Systems</strong> → needs SENG204. <strong>SENG301 Database Mgmt</strong> → needs SENG201. <strong>SENG326 Software Architecture</strong> → no formal prereq. Full prereq chain on the <a href=\"#curriculum\">Curriculum page</a> — click any course code to see details.",
     "faq.q2": "What do I need to graduate?",
     "faq.a2": "240 ECTS · GPA ≥ 2.00 · SENG300 + SENG400 internships · SENG401 + SENG402 graduation project · 50 ECTS dept electives · 6 ECTS faculty electives. See <a href=\"#graduation\">Graduation</a>.",
     "faq.q3": "How long is the internship and when do I do it?",
@@ -52,12 +52,12 @@ const i18n = {
     "faq.a9": "SENG401 (semester 7, 6 ECTS) + SENG402 (semester 8, 7 ECTS). Capstone project under faculty supervision. See <a href=\"#graduation\">Graduation</a>.",
     "bot.title": "SENG Assistant",
     "bot.sub": "Ask anything about the program",
-    "bot.welcome": "Hi! Ask about courses, internships, graduation requirements, or the club. Try: <em>\"What's the prerequisite for MATH222?\"</em>",
+    "bot.welcome": "Hi! Ask about <strong>courses, internships, graduation</strong>, or the club. Try: <em>“Prerequisite for SENG305 (Operating Systems)?”</em> or <em>“What is SENG301?”</em>",
     "bot.placeholder": "Ask a question…",
     "bot.footer": "Answers based on this site · Not official advice",
-    "bot.s1": "What do I need to graduate?",
-    "bot.s2": "How long is the internship?",
-    "bot.s3": "How do I join the club?",
+    "bot.s1": "Prereqs for SENG305 (OS)?",
+    "bot.s2": "Prereqs for SENG301 (DB)?",
+    "bot.s3": "SENG326 (Arch)?",
     "lbl.address": "Address", "lbl.phone": "Phone", "lbl.email": "Email", "lbl.office": "Office",
     "lbl.head": "Department Head", "lbl.ects": "ECTS", "lbl.secretary": "Secretary", "lbl.chair": "Chair", "lbl.member": "Member",
     "cur.title": "Undergraduate Curriculum",
@@ -136,12 +136,13 @@ const i18n = {
     "int.ctaDownloadPdf": "Download PDF",
     "int.ctaDownloadFilledZip": "Download ZIP (source)",
     "int.filledSrc": "source on GitHub →",
-    "int.overleafHow": "How to open in Overleaf",
-    "int.overleaf1": "Download the ZIP above (don't unzip).",
-    "int.overleaf2": "Go to overleaf.com/project and sign in (free account).",
-    "int.overleaf3": "Click New Project → Upload Project and select the ZIP.",
-    "int.overleaf4": "Set the main file: Menu → Main document → main.tex. Compiler: pdfLaTeX.",
-    "int.overleaf5": "Press Recompile. Edit your content and download the PDF.",
+    "int.overleafHow": "How to open in Overleaf (5 quick steps)",
+    "int.overleaf1": "<strong>Download</strong> the ZIP using the button on the right (don't unzip).",
+    "int.overleaf2": "Open <a href=\"https://www.overleaf.com/project\" target=\"_blank\" rel=\"noopener\"><strong>overleaf.com/project</strong></a> and sign in — free account, no credit card.",
+    "int.overleaf3": "Click <strong>New Project → Upload Project</strong> and drop the ZIP in.",
+    "int.overleaf4": "Set main file: <strong>Menu (top-left) → Main document → main.tex</strong>. Compiler: <strong>pdfLaTeX</strong>.",
+    "int.overleaf5": "Hit <strong>Recompile</strong> ▶. Edit your content. Download the PDF with the <strong>↓</strong> button when done.",
+    "int.overleafOpen": "Open Overleaf",
     "int.submitNote": "⚠ After writing: print the report, spiral-bind it, and submit (or upload, if requested) the final document to the Internship Commission office. See \"Internship Commission\" below for contacts.",
     "int.formSource": "Source page (all forms)",
     "int.rulesTitle": "Report Writing Rules / Rapor Yazım Kuralları",
@@ -277,8 +278,8 @@ const i18n = {
     "home.faqIntro": "Öğrencilerin en sık sorduğu sorulara hızlı cevaplar. Diğer her şey için sağ alttaki sohbet botunu kullan.",
     "home.faqSearch": "Soru ara…",
     "home.faqNoResults": "Eşleşen soru yok. Özel cevap için sohbet botunu dene.",
-    "faq.q1": "MATH222 ön koşulu nedir?",
-    "faq.a1": "MATH222 (Olasılık & İstatistik) için MATH103 / MATH151 gerekir. Tam ön koşul zinciri için <a href=\"#curriculum\">Müfredat sayfasına</a> bak.",
+    "faq.q1": "Temel SENG derslerinin ön koşulları nedir?",
+    "faq.a1": "Hızlı harita: <strong>SENG305 İşletim Sistemleri</strong> → SENG204 gerekir. <strong>SENG301 Veritabanı Yönetimi</strong> → SENG201 gerekir. <strong>SENG326 Yazılım Mimarisi</strong> → resmi ön koşul yok. Tam zincir için <a href=\"#curriculum\">Müfredat sayfasına</a> bak — kod tıklanarak detay açılır.",
     "faq.q2": "Mezun olmak için ne lazım?",
     "faq.a2": "240 AKTS · GNO ≥ 2.00 · SENG300 + SENG400 stajları · SENG401 + SENG402 bitirme projesi · 50 AKTS bölüm seçmelisi · 6 AKTS fakülte seçmelisi. <a href=\"#graduation\">Mezuniyet</a> sayfasına bak.",
     "faq.q3": "Staj ne kadar sürüyor ve ne zaman yapılır?",
@@ -297,12 +298,12 @@ const i18n = {
     "faq.a9": "SENG401 (7. yarıyıl, 6 AKTS) + SENG402 (8. yarıyıl, 7 AKTS). Öğretim üyesi danışmanlığında bitirme projesi. <a href=\"#graduation\">Mezuniyet</a> sayfasına bak.",
     "bot.title": "SENG Asistanı",
     "bot.sub": "Program hakkında her şeyi sor",
-    "bot.welcome": "Merhaba! Dersler, staj, mezuniyet şartları veya kulüp hakkında soru sor. Dene: <em>\"MATH222 ön koşulu nedir?\"</em>",
+    "bot.welcome": "Merhaba! <strong>Dersler, staj, mezuniyet</strong> veya kulüp hakkında soru sor. Dene: <em>“SENG305 (İşletim Sistemleri) ön koşulu?”</em> veya <em>“SENG301 nedir?”</em>",
     "bot.placeholder": "Bir soru sor…",
     "bot.footer": "Cevaplar bu siteye dayanır · Resmi tavsiye değildir",
-    "bot.s1": "Mezun olmak için ne lazım?",
-    "bot.s2": "Staj ne kadar sürüyor?",
-    "bot.s3": "Kulübe nasıl katılırım?",
+    "bot.s1": "SENG305 (OS) ön koşulu?",
+    "bot.s2": "SENG301 (DB) ön koşulu?",
+    "bot.s3": "SENG326 (Mimari)?",
     "lbl.address": "Adres", "lbl.phone": "Telefon", "lbl.email": "E-posta", "lbl.office": "Ofis",
     "lbl.head": "Bölüm Başkanı", "lbl.ects": "AKTS", "lbl.secretary": "Bölüm Sekreteri", "lbl.chair": "Başkan", "lbl.member": "Üye",
     "cur.title": "Lisans Müfredatı",
@@ -381,12 +382,13 @@ const i18n = {
     "int.ctaDownloadPdf": "PDF İndir",
     "int.ctaDownloadFilledZip": "ZIP İndir (kaynak)",
     "int.filledSrc": "GitHub'da kaynak →",
-    "int.overleafHow": "Overleaf'te nasıl açılır",
-    "int.overleaf1": "Yukarıdaki ZIP'i indir (açma).",
-    "int.overleaf2": "overleaf.com/project'e git ve giriş yap (ücretsiz hesap).",
-    "int.overleaf3": "New Project → Upload Project tıkla ve ZIP'i seç.",
-    "int.overleaf4": "Ana dosyayı ayarla: Menu → Main document → main.tex. Derleyici: pdfLaTeX.",
-    "int.overleaf5": "Recompile bas. İçeriği düzenle ve PDF'i indir.",
+    "int.overleafHow": "Overleaf'te nasıl açılır (5 adım)",
+    "int.overleaf1": "<strong>İndir</strong> butonuyla ZIP'i indir (açma).",
+    "int.overleaf2": "<a href=\"https://www.overleaf.com/project\" target=\"_blank\" rel=\"noopener\"><strong>overleaf.com/project</strong></a> aç ve giriş yap — ücretsiz, kart gerekmez.",
+    "int.overleaf3": "<strong>New Project → Upload Project</strong> tıkla ve ZIP'i sürükle.",
+    "int.overleaf4": "Ana dosyayı seç: <strong>Menu (sol üst) → Main document → main.tex</strong>. Derleyici: <strong>pdfLaTeX</strong>.",
+    "int.overleaf5": "<strong>Recompile</strong> ▶ bas. İçeriği düzenle. <strong>↓</strong> ile PDF'i indir.",
+    "int.overleafOpen": "Overleaf'i Aç",
     "int.submitNote": "⚠ Yazımdan sonra: raporu yazdır, spiral ciltlet ve son belgeyi Staj Komisyonu ofisine teslim et (veya istenirse yükle). İletişim için aşağıdaki \"Staj Komisyonu\" bölümüne bak.",
     "int.formSource": "Kaynak sayfa (tüm formlar)",
     "int.rulesTitle": "Rapor Yazım Kuralları / Report Writing Rules",
@@ -1118,8 +1120,10 @@ function setLang(lang) {
     const key = el.getAttribute('data-i18n');
     if (!dict[key]) return;
     const attr = el.getAttribute('data-i18n-attr');
-    if (attr) el.setAttribute(attr, dict[key]);
-    else el.textContent = dict[key];
+    const val = dict[key];
+    if (attr) el.setAttribute(attr, val);
+    else if (/<[a-z][^>]*>/i.test(val)) el.innerHTML = val;
+    else el.textContent = val;
   });
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
   const cur = document.getElementById('langCurrent');
@@ -1623,9 +1627,11 @@ buildSearchIndex();
   });
 
   function tokenize(s) {
-    return s.toLowerCase().replace(/[^a-z0-9çğıöşüÇĞİÖŞÜ\s]/g, ' ').split(/\s+/).filter((w) => w.length > 1);
+    return s.toLowerCase().replace(/[^a-z0-9çğıöşüÇĞİÖŞÜ\s]/g, ' ').split(/\s+/).filter((w) => w.length >= 3);
   }
-  const STOP = new Set(['the','a','an','for','of','to','is','i','do','can','what','how','when','where','my','me','it','in','on','need','want','this','that','and','or','be','if']);
+  const STOP = new Set(['the','and','for','that','this','with','what','how','when','where','need','want','can','have','are','from','about','will','should','please','tell','give','show','help']);
+  const GREETINGS = /^(hi|hey|hello|hola|merhaba|salam|selam|yo|sup|good\s*(morning|afternoon|evening))\b/i;
+  const THANKS = /^(thanks|thank you|teşekkür|sağol|sagol|merci|danke)\b/i;
 
   function bestMatch(query) {
     const tokens = tokenize(query).filter((t) => !STOP.has(t));
@@ -1634,20 +1640,21 @@ buildSearchIndex();
     let bestScore = 0;
     for (const e of kb) {
       let score = 0;
+      const qLower = e.q.toLowerCase();
       for (const t of tokens) {
-        if (e.tags.includes(t)) score += 1;
-        if (e.q.toLowerCase().includes(t)) score += 0.8;
-      }
-      // Boost code matches like seng300, math222
-      for (const t of tokens) {
-        if (/^[a-z]{3,5}\d{2,3}$/.test(t) && e.tags.includes(t)) score += 3;
+        // Word-boundary match (avoid 'hi' matching 'this')
+        const re = new RegExp('\\b' + t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'i');
+        if (re.test(e.tags)) score += 1.2;
+        if (re.test(qLower)) score += 1;
+        // Course code exact boost
+        if (/^[a-z]{3,5}\d{2,3}$/.test(t) && e.tags.includes(t)) score += 4;
       }
       if (score > bestScore) {
         bestScore = score;
         best = e;
       }
     }
-    return bestScore >= 1 ? best : null;
+    return bestScore >= 2 ? best : null;
   }
 
   function addMsg(role, html) {
@@ -1690,25 +1697,39 @@ buildSearchIndex();
   }
 
   async function handleQuery(q) {
-    if (!q.trim()) return;
-    addMsg('user', q.replace(/</g, '&lt;'));
-    const typing = showTyping();
+    const query = q.trim();
+    if (!query) return;
+    addMsg('user', query.replace(/</g, '&lt;').replace(/>/g, '&gt;'));
     if (suggestions) suggestions.style.display = 'none';
 
-    const local = bestMatch(q);
+    // Greetings — answer instantly, no LLM.
+    if (GREETINGS.test(query)) {
+      addMsg(
+        'bot',
+        'Hi! I can answer questions about <strong>courses, prerequisites, internships, graduation, electives, the SE Club, and contacts</strong>. Try asking: <em>“What does SENG311 cover?”</em> or <em>“How do I graduate?”</em>'
+      );
+      return;
+    }
+    if (THANKS.test(query)) {
+      addMsg('bot', 'Anytime. Ask anything else about the SENG program.');
+      return;
+    }
+
+    const typing = showTyping();
+    const local = bestMatch(query);
     if (local) {
       typing.remove();
       addMsg('bot', local.a);
       return;
     }
-    const remote = await callRemote(q);
+    const remote = await callRemote(query);
     typing.remove();
     if (remote) {
       addMsg('bot', remote);
     } else {
       addMsg(
         'bot',
-        'I don\'t have a confident answer for that. Try keywords like a course code (e.g. <em>SENG300</em>, <em>MATH222</em>) or browse the page tabs above.'
+        'I don\'t have a confident answer for that. Try a course code (e.g. <strong>SENG303</strong>, <strong>SENG311</strong>, <strong>SENG321</strong>) or pick a topic: <a href="#curriculum">Curriculum</a> · <a href="#internship">Internship</a> · <a href="#graduation">Graduation</a> · <a href="#club">Club</a>.'
       );
     }
   }

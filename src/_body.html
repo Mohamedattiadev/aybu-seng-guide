@@ -24,7 +24,7 @@
       <button class="nav-tab" data-page="internship" data-i18n="nav.internship">Internship &amp; Project</button>
       <button class="nav-tab" data-page="graduation" data-i18n="nav.graduation">Graduation</button>
       <button class="nav-tab" data-page="pathways" data-i18n="nav.pathways">Pathways</button>
-      <button class="nav-tab" data-page="people" data-i18n="nav.people">Faculty</button>
+      <button class="nav-tab" data-page="people" data-i18n="nav.people">Staff</button>
       <button class="nav-tab" data-page="club" data-i18n="nav.club">Club</button>
     </div>
     <button class="icon-btn" id="searchOpen" title="Search" aria-label="Search">
@@ -100,7 +100,7 @@
     </div>
     <div class="quick-card" onclick="go('people')">
       <span class="icon"><svg><use href="#i-users"/></svg></span>
-      <h3 data-i18n="nav.people">Faculty</h3>
+      <h3 data-i18n="nav.people">Staff</h3>
       <p data-i18n="home.q4">Faculty staff and commissions.</p>
     </div>
     <div class="quick-card" onclick="go('club')">
@@ -133,9 +133,9 @@
       <input type="text" id="faqSearch" class="faq-search" placeholder="Search questions…" data-i18n-attr="placeholder" data-i18n="home.faqSearch">
     </div>
     <div class="faq-list" id="faqList">
-      <details class="faq-item" data-q="prereq math222 prerequisite course can take when">
-        <summary data-i18n="faq.q1">What is the prerequisite for MATH222?</summary>
-        <div data-i18n="faq.a1">MATH222 (Probability &amp; Statistics) requires MATH103 / MATH151. Check the <a href="#curriculum">Curriculum page</a> for the full prerequisite chain.</div>
+      <details class="faq-item" data-q="prereq prerequisite seng305 seng301 seng326 os operating system database architecture course can take when">
+        <summary data-i18n="faq.q1">What are the prerequisites for core SENG courses?</summary>
+        <div data-i18n="faq.a1">Quick map: <strong>SENG305 Operating Systems</strong> → needs SENG204. <strong>SENG301 Database Mgmt</strong> → needs SENG201. <strong>SENG326 Software Architecture</strong> → no formal prereq. Full prereq chain on the <a href="#curriculum">Curriculum page</a> — click any course code to see details.</div>
       </details>
       <details class="faq-item" data-q="graduate need ects gpa requirements credits">
         <summary data-i18n="faq.q2">What do I need to graduate?</summary>
@@ -486,14 +486,18 @@
         <strong class="cta-title" data-i18n="int.formLatex">LaTeX Report Template (download ZIP)</strong>
         <span class="cta-hint" data-i18n="int.formLatexHint">Ready-to-edit Overleaf project · AYBU cover + weekly tables</span>
         <details class="overleaf-steps">
-          <summary data-i18n="int.overleafHow">How to open in Overleaf</summary>
+          <summary data-i18n="int.overleafHow">How to open in Overleaf (5 quick steps)</summary>
           <ol class="overleaf-list">
-            <li data-i18n="int.overleaf1">Download the ZIP above (don't unzip).</li>
-            <li data-i18n="int.overleaf2">Go to <a href="https://www.overleaf.com/project" target="_blank" rel="noopener">overleaf.com/project</a> and sign in (free account).</li>
-            <li data-i18n="int.overleaf3">Click <strong>New Project → Upload Project</strong> and select the ZIP.</li>
-            <li data-i18n="int.overleaf4">Set the main file: <strong>Menu → Main document → main.tex</strong>. Compiler: <strong>pdfLaTeX</strong>.</li>
-            <li data-i18n="int.overleaf5">Press <strong>Recompile</strong>. Edit your content and download the PDF.</li>
+            <li data-i18n="int.overleaf1"><strong>Download</strong> the ZIP using the button on the right (don't unzip).</li>
+            <li data-i18n="int.overleaf2">Open <a href="https://www.overleaf.com/project" target="_blank" rel="noopener"><strong>overleaf.com/project</strong></a> and sign in — free account, no credit card.</li>
+            <li data-i18n="int.overleaf3">Click <strong>New Project → Upload Project</strong> and drop the ZIP in.</li>
+            <li data-i18n="int.overleaf4">Set main file: <strong>Menu (top-left) → Main document → main.tex</strong>. Compiler: <strong>pdfLaTeX</strong>.</li>
+            <li data-i18n="int.overleaf5">Hit <strong>Recompile</strong> ▶. Edit your content. Download the PDF with the <strong>↓</strong> button when done.</li>
           </ol>
+          <a class="overleaf-open" href="https://www.overleaf.com/project" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <span data-i18n="int.overleafOpen">Open Overleaf</span>
+          </a>
         </details>
       </div>
       <div class="cta-actions">
@@ -894,13 +898,13 @@
   </header>
   <div class="chatbot-messages" id="chatbotMessages">
     <div class="chatbot-msg bot">
-      <div class="chatbot-bubble" data-i18n="bot.welcome">Hi! Ask about courses, internships, graduation requirements, or the club. Try: <em>"What's the prerequisite for MATH222?"</em></div>
+      <div class="chatbot-bubble" data-i18n="bot.welcome">Hi! Ask about <strong>courses, internships, graduation</strong>, or the club. Try: <em>“Prerequisite for SENG305 (Operating Systems)?”</em> or <em>“What is SENG301?”</em></div>
     </div>
   </div>
   <div class="chatbot-suggestions" id="chatbotSuggestions">
-    <button class="chatbot-chip" data-q="What do I need to graduate?" data-i18n="bot.s1">What do I need to graduate?</button>
-    <button class="chatbot-chip" data-q="How long is the internship?" data-i18n="bot.s2">How long is the internship?</button>
-    <button class="chatbot-chip" data-q="How do I join the club?" data-i18n="bot.s3">How do I join the club?</button>
+    <button class="chatbot-chip" data-q="Prerequisite for SENG305 Operating Systems?" data-i18n="bot.s1">Prereqs for SENG305 (OS)?</button>
+    <button class="chatbot-chip" data-q="Prerequisite for SENG301 Database?" data-i18n="bot.s2">Prereqs for SENG301 (DB)?</button>
+    <button class="chatbot-chip" data-q="What is SENG326 Software Architecture?" data-i18n="bot.s3">SENG326 (Arch)?</button>
   </div>
   <form class="chatbot-input-row" id="chatbotForm">
     <input type="text" id="chatbotInput" class="chatbot-input" placeholder="Ask a question…" data-i18n-attr="placeholder" data-i18n="bot.placeholder" autocomplete="off">
