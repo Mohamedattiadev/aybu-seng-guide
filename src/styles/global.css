@@ -1,5 +1,6 @@
 /* ===== Imported original site styles (preserved verbatim) ===== */
 @import './_original.css';
+@import './theme-v2.css';
 
 @tailwind base;
 @tailwind components;
