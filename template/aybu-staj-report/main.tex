@@ -24,9 +24,10 @@
 \usepackage{booktabs}
 \usepackage{xcolor}
 \usepackage{enumitem}
-% Use Computer Modern Sans Serif (always available with T1).
-% Helvetica via `helvet` would be closer to Arial but requires
-% texlive-fontsrecommended which is not installed on this system.
+% Helvetica (closest free metric-compatible Arial substitute).
+% Requires `psnfss` (helvet.sty) — ships with texlive-fontsrecommended.
+% Fallback: comment the next line out to use Computer Modern Sans Serif.
+\usepackage{helvet}
 \usepackage{titlesec}
 \usepackage{tocloft}
 \usepackage{fancyhdr}
@@ -109,10 +110,10 @@
   \stepcounter{weekcounter}%
   \vspace{0.8em}%
   \setlength{\fboxrule}{1.4pt}%
-  \setlength{\fboxsep}{18pt}%
+  \setlength{\fboxsep}{28pt}%
   \begin{lrbox}{\weekbox}%
   \begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}%
-  \renewcommand{\arraystretch}{2.0}%
+  \renewcommand{\arraystretch}{2.8}%
   \setlength{\arrayrulewidth}{0.5pt}%
   \centering
   \begin{tabular}{|>{\centering\arraybackslash}p{2.6cm}|p{7.4cm}|>{\centering\arraybackslash}p{2.8cm}|}
@@ -122,7 +123,7 @@
   \multicolumn{1}{c|}{\textit{WORKING HOURS}} \\ \hline
 }{%
   \end{tabular}\par
-  \vspace{1.6em}%
+  \vspace{2.6em}%
   \raggedright\SigBlock
   \end{minipage}%
   \end{lrbox}%

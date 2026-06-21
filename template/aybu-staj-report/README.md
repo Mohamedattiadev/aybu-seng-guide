@@ -74,10 +74,12 @@ The preamble already applies the formatting expected by the AYBU SENG
 Internship Directive (and the rules listed on the project website):
 
 - A4 paper, **2.5 cm margins** on all sides
-- **Sans-serif body font** at **11pt** — uses Computer Modern Sans Serif by
-  default (works on every TeX Live install). For a Helvetica/Arial-clone,
-  add `\usepackage{helvet}` after `\usepackage[T1]{fontenc}` if your TeX
-  Live install includes `texlive-fontsrecommended`.
+- **Sans-serif body font** at **11pt** — uses **Helvetica** via
+  `\usepackage{helvet}` (the closest free Arial-clone, ships with
+  `texlive-fontsrecommended` / `psnfss`, present on Overleaf by default).
+  Fallback: if your TeX Live install lacks `helvet.sty`, comment the
+  `\usepackage{helvet}` line — the template will silently fall back to
+  Computer Modern Sans Serif and still compile.
 - **1.5 line spacing** (`\onehalfspacing`)
 - Page numbers **bottom-center**, every page except the cover
 - Numbered sections (1. DAILY REPORT, 2. GENERAL REPORT) with auto TOC
